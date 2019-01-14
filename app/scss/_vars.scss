@@ -1,0 +1,15 @@
+$regular-color: #eee;
+$w2560: 2560px;
+$w1440: 1440px;
+$w1366: 1366px;
+$w1024: 1024px;
+$w768: 768px;
+$w480: 480px;
+$w375: 375px;
+$w320: 320px;
+
+@mixin w1366 {
+	@media screen and (max-width: $w1366) {
+		@content
+	}
+} 
