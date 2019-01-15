@@ -20,8 +20,13 @@ a {
 }
 
 .container {
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
+}
+
+.header {
+	position: relative;
+	z-index: 20;
 }
 
 .header-wrapper {
@@ -120,6 +125,7 @@ a {
 
 .header-nav {
 	position: relative;
+	z-index: 2;
 	display: flex;
 	justify-content: space-between;
 	border-top: 1px solid #DEDEDE;
@@ -141,6 +147,14 @@ a {
 		}
 		&-ul-outter {
 			width: 100%;
+			z-index: 1;
+			background: #FFF;
+			overflow: hidden;
+			&__shadow {
+				box-shadow: 0px 0px 10px 3px #DEDEDE;
+				height: 1px;
+				border-top: 1px solid #DEDEDE;
+			}
 		}
 		&-item {
 			width: 127px;
@@ -209,10 +223,10 @@ a {
 		flex: 1;
 		padding: 0 0 0 22px;
 		border-left: 1px solid #DEDEDE;
-		transition: 0.5s;
 		&.active {
 			justify-content: flex-start;
 			border-left: 1px solid transparent;
+			transition: 0.5s;
 		}
 		&__search-input {
 			border: none;
@@ -229,10 +243,10 @@ a {
 			display: flex;
 			align-items: stretch;
 			flex: 0 1 271px;
-			transition: 0.5s;
 			&.active {
 				flex: 1;
 				padding: 0 0 0 183px;
+				transition: 0.5s;
 			}
 		}
 	}
@@ -258,5 +272,71 @@ a {
 	}
 }
 
+.slider-wrapper{
+	height: 550px;
+	position: relative;
+}
 
+.first-slider{
+	&__arrow-next, &__arrow-prev {
+		opacity: 0.4;
+		position: absolute;
+		z-index: 10;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: 0.5s;
+		cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&__arrow-next {
+		right: 10px;
+	}
+	&__arrow-prev {
+		left: 10px;
+	}
+	&-item {
+		outline: none;
+		max-height: 500px;
+		img {
+			height: 100%;
+			width: 100%;
+			margin: 0 auto;
+		}
+	}
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%,0);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	li {
+		list-style: none;
+		margin-right: 12px;
+		&:last-child {
+			margin-right: 0px;
+		}
+		button {
+			border: 2px solid #FFF;
+			background: transparent;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			font-size: 0;
+			cursor: pointer;
+			outline: none;
+			transition: 0.3s;
+		}
+	}
+	.slick-active {
+		button {
+			background: #FFF;
+		}
+	}
+}
 
