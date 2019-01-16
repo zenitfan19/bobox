@@ -56,6 +56,10 @@
   font-weight: 700;
   font-style: normal; }
 
+@font-face {
+  font-family: "Proxima Nova Extrabold";
+  src: url(../fonts/ProximaNovaExtrabld.ttf); }
+
 * {
   padding: 0;
   margin: 0;
@@ -496,3 +500,146 @@ a {
       transition: 0.3s; }
   .slick-dots .slick-active button {
     background: #FFF; }
+
+.in-work {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .in-work-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 275px; }
+    .in-work-item__head {
+      font-size: 20px;
+      font-family: 'Proxima Nova Extrabold', sans-serif;
+      font-weight: 900;
+      margin-bottom: 10px; }
+    .in-work-item__img {
+      height: 70px;
+      margin-bottom: 28px; }
+    .in-work-item__text {
+      text-align: center; }
+
+.card-item {
+  background: #FFFFFF;
+  border: 1px solid #E3E8F0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  max-width: 325px;
+  padding: 10px 0 20px; }
+  .card-item:hover {
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #A7A7A7; }
+  .card-item-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 10px; }
+    .card-item-row__fast-search {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 14px;
+      color: #3D3D3D;
+      cursor: pointer; }
+      .card-item-row__fast-search svg {
+        margin-left: 10px; }
+    .card-item-row__like {
+      cursor: pointer; }
+    .card-item-row-item {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 1 50%;
+          -ms-flex: 0 1 50%;
+              flex: 0 1 50%; }
+      .card-item-row-item__head {
+        font-size: 14px;
+        color: #737373; }
+      .card-item-row-item__value {
+        font-size: 18px;
+        color: #000; }
+      .card-item-row-item__cost {
+        font-size: 24px; }
+      .card-item-row-item__button {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        background: #D71921;
+        color: #FFF;
+        text-transform: uppercase;
+        -webkit-border-radius: 4px;
+                border-radius: 4px;
+        font-size: 14px;
+        height: 37px;
+        width: 140px; }
+    .card-item-row-colors {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
