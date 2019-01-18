@@ -6,7 +6,10 @@ $(document).ready(function() {
 		secondSliderArrowPrev = '.second-slider__arrow-prev',
 		secondSliderArrowNext = '.second-slider__arrow-next',
 		heightTextSectionMain = $('.text-section-main').height(),
-		textSectionMain 	  = $('.text-section-main');
+		textSectionMain 	  = $('.text-section-main'),
+		textSectionRec        = $('.recomendation-text__main'),
+		recArrow              = $('.recomendation-text__arrow'),
+		heightTextSectionRec;
 
 	//Функция для стрелок слайдеров
 	const galleryArrows = function (slider, arrowPrev, arrowNext) {
@@ -21,13 +24,29 @@ $(document).ready(function() {
 	};
 
 	//Функция скрытие текста
-	const hideTextSectionMain = function() {
-		textSectionMain.addClass('hidden');
+	const hideTextSectionMain = function(textSection) {
+		textSection.addClass('hidden');
 	}
 
+	//Функция скрытие текста
+	const recHideTextSectionMain = function(textSection, heightTextSection, arrow) {
+		if (heightTextSection >= 160) {
+			textSection.addClass('hidden');
+		} else {
+			arrow.css('display', 'none');
+		}
+	};
+	let total = $('.card-main-block-description-row-cost__number span');
+	let totalCount = parseInt(total.text());
+	console.log(totalCount);
 	//Функция общего рассчета
 	const totalResult = function() {
-		let a = $('.card-main-block-description-row-item_left .type-item').data('cost');
+		let	a = $('[data-result]').find('div').data('cost'),
+			b = $('[data-result-material]').find('div').data('cost'),
+			totalCountNew;
+			totalCountNew = totalCount + a + b;
+
+		total.text(totalCountNew);
 	};
 
 	firstSlider.slick({
@@ -104,11 +123,19 @@ $(document).ready(function() {
 	});
 
 	//Скрыть текст после того как посчитаем его высоту в развернутом виде
-	hideTextSectionMain();
+	hideTextSectionMain(textSectionMain);
 
 	$(document).on('click', '.text-section-main__arrow', function(){
 		$(this).closest('.text-section-main').animate({height: heightTextSectionMain}, 500).removeClass('hidden');
 		$(this).animate({opacity: 0}, 500, function() {
+			$(this).css('display', 'none');
+		});
+	});
+
+	//Скрыть текст после того как посчитаем его высоту в развернутом виде
+	$(document).on('click', '.recomendation-text__arrow', function(){
+		$(this).siblings('.recomendation-text__main').animate({height: heightTextSectionRec}, 300).removeClass('hidden');
+		$(this).animate({opacity: 0}, 500, function(){
 			$(this).css('display', 'none');
 		});
 	});
@@ -135,34 +162,79 @@ $(document).ready(function() {
 
 	//Изменение Результата
 	$(document).on('click', '.card-main-block-description-row-item-ul-horiz__item .type-item', function(){
-		let a = $(this).data('typeNumber'),
-			b = $(this).text(),
-			c = $('.card-main-block-description-row-item_left .type-item'),
-			d = c.text(),
-			f = c.data('typeNumber'),
-			g = $(this).data('cost'),
-			h = c.data('cost');
+		let clickedItem       = $(this),
+			targetItem        = $('.card-main-block-description-row-item_left .type-item'),
+			targetItemParent  = $('[data-result]'),
+			clickedItemParent = $(this).closest('.card-main-block-description-row-item-ul-horiz__item');
 
-		console.log('clicked: \n' + a + '\n' + b + '\n' +g + '\n\nResult: \n' + d + '\n' + f + '\n' + h);
+		targetItem.remove();
+		clickedItem.remove();
 
-		$(this).attr('data-type-number', f).attr('data-cost', h).text(d); //
-
-		c.attr('data-type-number', a).attr('data-cost', g).text(b); //
+		targetItemParent.append(clickedItem);
+		clickedItemParent.append(targetItem);
 
 		$('.card-main-block-description-row-item-ul-horiz').fadeOut('slow');
+
+		totalResult();
 	});
 
 	$(document).on('click', '.card-main-block-description-row-item-ul-vert .material-item', function(){
-		let a = $(this).data('materialNumber'),
-			b = $(this).text(),
-			c = $('.card-main-block-description-row-item-result .material-item'),
-			d = c.text(),
-			f = c.data('materialNumber');
+		let clickedItem       = $(this),
+			targetItem        = $('[data-result-material] .material-item'),
+			targetItemParent  = $('[data-result-material]'),
+			clickedItemParent = $(this).closest('.card-main-block-description-row-item-ul-vert__item');
 
-		$(this).attr('data-material-number', f).text(d);
+		targetItem.remove();
+		clickedItem.remove();
 
-		c.attr('data-material-number', a).text(b);
+		targetItemParent.append(clickedItem);
+		clickedItemParent.append(targetItem);
 
 		$('.card-main-block-description-row-item-ul-vert').slideUp('slow');
+
+		totalResult();
 	});
+
+	//Переключение табов
+	$(document).on('click', '.tabs-list-item:not(active)', function(){
+		$(this).addClass('active').siblings('.tabs-list-item').removeClass('active');
+		console.log($(this).index());
+		$('.tabs-container-list-item').removeClass('active').eq($(this).index()).addClass('active');
+		if($(this).index() == 3) {
+			textSectionRec.removeClass('hidden');
+			recArrow.css('display', 'block');
+			heightTextSectionRec = $('.recomendation-text__main').height();
+			recHideTextSectionMain(textSectionRec, heightTextSectionRec, recArrow);
+		};
+	});
+
+	//включение проигрывателя
+	$(document).on('click', '.tabs-container-list-item-innercontainer-side-video__play-btn', function(){
+		let video = $(this).siblings('video');
+
+		video.get(0).play();
+
+		$(this).fadeOut('slow');
+	});
+
+	//Галлерея переключение на странице карточка товара
+	$(document).on('click', '.card-main-block-gallery-mini__item:not(active)', function(){
+		$(this).addClass('active').siblings().removeClass('active');
+		let indexMini = $(this).index();
+
+		$('.card-main-block-gallery-big-item').removeClass('active').eq(indexMini).addClass('active');
+	});
+
+	//Переключение дополнительных цветов
+	$(document).on('click', '[data-color]', function(e){
+		// e.preventDefault();
+		$('.tabs-list-item').removeClass('active').eq(4).addClass('active');
+
+		$('.tabs-container-list-item').removeClass('active').eq(4).addClass('active');
+
+		let a = $('.tabs-list').offset().top;
+		$('html, body').animate({scrollTop: a}, 500);
+	});
+
+
 });
