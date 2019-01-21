@@ -49,6 +49,31 @@ $(document).ready(function() {
 		total.text(totalCountNew);
 	};
 
+	//Функция сброса фильтра
+	const resetFiltr = function() {
+		$('.card-item-row-colors.card-item-row-colors_horiz').find('.card-item-row-colors__color').removeClass('active').eq(0).addClass('active');
+		$('.filter .filter-checkbox').find('input').prop('checked', false);
+		$('.filter .filter-checkbox').eq(0).find('input').prop('checked', true);
+		$('#amount-width-min').val('30');
+		$('#amount-width-max').val('350');
+		$('#amount-cost-min').val('13500');
+		$('#amount-cost-max').val('26000');
+		$( "#slider-range-width" ).slider('values', 0, 30).slider('values', 1, 350);
+		$( "#slider-range-width .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').text('30 см');
+        $( "#slider-range-width .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').text('350 см');
+
+		$( "#slider-range-cost" ).slider('values', 0, 13500).slider('values', 1, 26000);
+		$( "#slider-range-cost .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').text('13500 ₽');
+        $( "#slider-range-cost .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').text('26000 ₽');
+
+
+		$('.filter-select').selectmenu('destroy');
+		$('.filter-select').each(function(index, item){
+			$(this).find('option').eq(0).prop('selected', true);
+		});
+		$('.filter-select').selectmenu();
+	}
+
 	firstSlider.slick({
 		arrows: false,
 		dots: true,
@@ -67,6 +92,44 @@ $(document).ready(function() {
 
 	galleryArrows(firstSlider, firstSliderArrowPrev, firstSliderArrowNext);
 	galleryArrows(secondSlider, secondSliderArrowPrev, secondSliderArrowNext);
+
+
+	//UI инициализация селектов и рэндж
+	$('.filter-select').selectmenu();
+
+	$( "#slider-range-width" ).slider({
+      range: true,
+      min: 0,
+      max: 400,
+      values: [ 30, 350 ],
+      create: function() {
+      	$( "#slider-range-width .ui-slider-handle" ).eq(0).append('<span class="slider-range-cost-text">30 см</span>');
+      	$( "#slider-range-width .ui-slider-handle" ).eq(1).append('<span class="slider-range-cost-text">350 см</span>');
+      },
+      slide: function( event, ui ) {
+        $( "#amount-width-min" ).val(ui.values[ 0 ]);
+        $( "#amount-width-max" ).val(ui.values[ 1 ]);
+        $( "#slider-range-width .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').text(ui.values[ 0 ] + ' см');
+        $( "#slider-range-width .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').text(ui.values[ 1 ] + ' см');
+      }
+    });
+
+    $( "#slider-range-cost" ).slider({
+      range: true,
+      min: 13500,
+      max: 26000,
+      values: [ 13500, 26000 ],
+      create: function() {
+      	$( "#slider-range-cost .ui-slider-handle" ).eq(0).append('<span class="slider-range-cost-text">13500 ₽</span>');
+      	$( "#slider-range-cost .ui-slider-handle" ).eq(1).append('<span class="slider-range-cost-text">26000 ₽</span>');
+      },
+      slide: function( event, ui ) {
+        $( "#amount-cost-min" ).val(ui.values[ 0 ]);
+        $( "#amount-cost-max" ).val(ui.values[ 1 ]);
+        $( "#slider-range-cost .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').text(ui.values[ 0 ] + ' ₽');
+        $( "#slider-range-cost .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').text(ui.values[ 1 ] + ' ₽');
+      }
+    });
 
 	//Открытие выпадающего списка в навигации
 	$(document).on('click', '.header-nav-list-item:not(.active)', function() {
@@ -236,5 +299,19 @@ $(document).ready(function() {
 		$('html, body').animate({scrollTop: a}, 500);
 	});
 
+	//Сбрасывание фильтра по нажаитию на кнопку
+	$(document).on('click', '.filter-btn_cancel', function(e){
+		e.preventDefault();
+		resetFiltr();
+	});
 
+	//Переключение раскладки на странице каталог
+	$(document).on('click', '.catalog-main-head-grid__item:not(active)', function() {
+		$(this).addClass('active').siblings('.catalog-main-head-grid__item').removeClass('active');
+
+
+	});
+
+	//Инициализация выпадающего меню
+	$('.filter-sort').selectmenu();
 });
