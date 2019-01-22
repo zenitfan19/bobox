@@ -3,13 +3,761 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bo-Box</title>
+	<title>Bo-Box | Страница новости</title>
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
+	<div class="wrapper">
+		<header class="header">
+			<div class="header-wrapper_background">
+				<div class="container">
+					<div class="header-wrapper">
+						<div class="header-wrapper__logo">
+							<a href="index.html"><img src="img/logo.png" alt="logo"></a>
+						</div>
+						<div class="header-wrapper-item">
+							<div class="header-wrapper-item-row">
+								<svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5.3019 3.28723C4.24478 3.28723 3.38434 4.14767 3.38434 5.20479C3.38434 6.26192 4.24478 7.12236 5.3019 7.12236C6.35903 7.12236 7.21946 6.26192 7.21946 5.20479C7.21946 4.14767 6.35903 3.28723 5.3019 3.28723ZM5.3019 6.57448C4.54666 6.57448 3.93221 5.96004 3.93221 5.20479C3.93221 4.44955 4.54666 3.83511 5.3019 3.83511C6.05715 3.83511 6.67159 4.44955 6.67159 5.20479C6.67159 5.96004 6.05715 6.57448 5.3019 6.57448Z" fill="black"/>
+									<path d="M8.96802 1.53871C7.97581 0.546506 6.65653 0 5.25342 0C3.85004 0 2.53103 0.546506 1.53883 1.53871C-0.297374 3.37464 -0.525564 6.82899 1.04465 8.92187L5.25342 15L9.4559 8.93036C11.0324 6.82899 10.8042 3.37464 8.96802 1.53871ZM9.01157 8.61013L5.25342 14.0374L1.48925 8.60164C0.065046 6.7027 0.269129 3.5831 1.92645 1.92606C2.81511 1.0374 3.9966 0.547875 5.25342 0.547875C6.51025 0.547875 7.69174 1.0374 8.58067 1.92606C10.238 3.5831 10.4421 6.7027 9.01157 8.61013Z" fill="black"/>
+								</svg>
+								<span class="header-wrapper-item-row__text">Санкт-Петербург</span>
+							</div>
+							<div class="header-wrapper-item-row">
+								<a href="tel:8 (812) 555-35-35" class="header-wrapper-item-row__link">8 (812) 555-35-35</a>
+							</div>
+						</div>
+						<div class="header-wrapper-item">
+							<div class="header-wrapper-item-row">
+								<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.5 0C3.3645 0 0 3.3645 0 7.5C0 11.6355 3.3645 15 7.5 15C11.6355 15 15 11.6355 15 7.5C15 3.3645 11.6355 0 7.5 0ZM7.5 14.5C3.64025 14.5 0.5 11.3597 0.5 7.5C0.5 3.64025 3.64025 0.5 7.5 0.5C11.3597 0.5 14.5 3.64025 14.5 7.5C14.5 11.3597 11.3597 14.5 7.5 14.5Z" fill="black"/>
+									<path d="M7.50003 1.5C7.36203 1.5 7.25003 1.61175 7.25003 1.75V7.5H3.50003C3.36203 7.5 3.25003 7.61175 3.25003 7.75C3.25003 7.88825 3.36203 8 3.50003 8H7.50003C7.63803 8 7.75003 7.88825 7.75003 7.75V1.75C7.75003 1.61175 7.63803 1.5 7.50003 1.5Z" fill="black"/>
+								</svg>
+								<span class="header-wrapper-item-row__text">10:00 - 19:00</span>
+							</div>
+							<div class="header-wrapper-item-row">
+								<a href="mailto:info@bobox.ru" class="header-wrapper-item-row__link">info@bobox.ru</a>
+							</div>
+						</div>
+						<div class="header-wrapper-item">
+							<div class="header-wrapper-item-list header-wrapper-item-list_width1">
+								<a href="about.html" class="header-wrapper-item-list-item header-wrapper-item-list-item_red-hover">О компании</a>
+								<a href="principels.html" class="header-wrapper-item-list-item header-wrapper-item-list-item_red-hover">Доставка и оплата</a>
+								<a href="catalog.html" class="header-wrapper-item-list-item header-wrapper-item-list-item_red-hover">Интересное</a>
+								<a href="where-buy.html" class="header-wrapper-item-list-item header-wrapper-item-list-item_red-hover">Где купить</a>
+							</div>
+						</div>
+						<div class="header-wrapper-item">
+							<div class="header-wrapper-item-list header-wrapper-item-list_width2">
+								<a href="#" class="header-wrapper-item-list-item">
+									<svg width="28" height="26" viewBox="0 -28 512.001 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path xmlns="http://www.w3.org/2000/svg" d="m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm-112.96875-425.523437c-31.066406 0-59.605469 12.398437-80.367188 34.914062-21.070312 22.855469-32.675781 54.449219-32.675781 88.964844 0 36.417968 13.535157 68.988281 43.882813 105.605468 29.332031 35.394532 72.960937 72.574219 123.476562 115.625l.09375.078126c17.660156 15.050781 37.679688 32.113281 58.515625 50.332031 20.960938-18.253907 41.011719-35.34375 58.707031-50.417969 50.511719-43.050781 94.136719-80.222656 123.46875-115.617188 30.34375-36.617187 43.878907-69.1875 43.878907-105.605468 0-34.515625-11.605469-66.109375-32.675781-88.964844-20.757813-22.515625-49.300782-34.914062-80.363282-34.914062-22.757812 0-43.652344 7.234374-62.101562 21.5-16.441406 12.71875-27.894532 28.796874-34.609375 40.046874-3.453125 5.785157-9.53125 9.238282-16.261719 9.238282s-12.808594-3.453125-16.261719-9.238282c-6.710937-11.25-18.164062-27.328124-34.609375-40.046874-18.449218-14.265626-39.34375-21.5-62.097656-21.5zm0 0" fill="#201F1F"/>
+									</svg>
+								</a>
+								<a href="#" class="header-wrapper-item-list-item">
+									<svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M3.31283 12.264C2.26555 10.9688 1.63636 9.309 1.63636 7.5C1.63636 3.35776 4.93283 0 9 0C13.0672 0 16.3636 3.35776 16.3636 7.5C16.3636 9.309 15.7344 10.9688 14.6872 12.264C16.6099 12.8738 18 14.5297 18 16.5V19.5C18 21.9855 15.8023 24 13.0909 24H4.90909C2.19765 24 0 21.9855 0 19.5V16.5C0 14.5297 1.39008 12.8738 3.31283 12.264ZM14.7273 7.5C14.7273 4.18648 12.1631 1.5 9 1.5C5.83689 1.5 3.27273 4.18648 3.27273 7.5C3.27273 10.8135 5.83689 13.5 9 13.5C12.1631 13.5 14.7273 10.8135 14.7273 7.5ZM1.63636 19.125C1.63636 20.9888 3.43471 22.5 5.65283 22.5H12.3472C14.5653 22.5 16.3636 20.9888 16.3636 19.125V16.875C16.3636 15.2805 15.0439 13.9522 13.2742 13.599C12.0682 14.478 10.5955 15 9 15C7.40453 15 5.93183 14.478 4.72582 13.599C2.9561 13.9522 1.63636 15.2805 1.63636 16.875V19.125Z" fill="#201F1F"/>
+									</svg>
+								</a>
+								<a href="#" class="header-wrapper-item-list-item">
+									<svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M8.09981 6.4L6.07261 0H0.8125C0.364 0 0 0.3584 0 0.8C0 1.2416 0.364 1.6 0.8125 1.6H4.875L6.50811 6.4H6.5L8.125 16C8.125 17.7672 9.58019 19.2 11.375 19.2H20.3125C22.1073 19.2 23.5625 17.7672 23.5625 16L26 6.4H8.09981ZM21.9375 16C21.9375 16.8832 21.2095 17.6 20.3125 17.6H11.375C10.4772 17.6 9.75 16.8832 9.75 16L8.39558 8H23.9688L21.9375 16ZM11.375 20.8C10.4772 20.8 9.75 21.516 9.75 22.4C9.75 23.2832 10.4772 24 11.375 24C12.2728 24 13 23.2832 13 22.4C13 21.516 12.2728 20.8 11.375 20.8ZM19.5 20.8C18.6022 20.8 17.875 21.516 17.875 22.4C17.875 23.2832 18.6022 24 19.5 24C20.3978 24 21.125 23.2832 21.125 22.4C21.125 21.516 20.3978 20.8 19.5 20.8Z" fill="#201F1F"/>
+									</svg>
+									<span class="header-wrapper-item-list-item__count">1</span>
+								</a>
+							</div>
+						</div>
+						<div class="header-wrapper-item header-wrapper-item_absoluted">
+							<a href="#" class="header-wrapper-item-lang active">Ru</a>
+							<a href="#" class="header-wrapper-item-lang">En</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="header-nav_background">
+				<div class="container">
+					<div class="header-nav">
+						<div class="header-nav-list">
+						<div class="header-nav-list-item">Диваны<span class="arrow-down"></span></div>
+						<div class="header-nav-list-item">Кресла<span class="arrow-down"></span></div>
+						<div class="header-nav-list-item">Пуфы<span class="arrow-down"></span></div>
+						<div class="header-nav-list-item">Аксессуары<span class="arrow-down"></span></div>
+						<div class="header-nav-list-item header-nav-list-item_red">Акции<span class="arrow-down arrow-down_red"></span></div>
+						</div>
+						<div class="header-nav-search-bar_wrapper">
+							<label class="header-nav-search-bar">
+								<span class="header-nav-search-bar__search-icon">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M19.8106 18.9119L14.6469 13.8308C15.9991 12.3616 16.8299 10.4187 16.8299 8.28069C16.8293 3.7071 13.0621 0 8.41464 0C3.7672 0 0 3.7071 0 8.28069C0 12.8543 3.7672 16.5614 8.41464 16.5614C10.4227 16.5614 12.2644 15.8668 13.711 14.7122L18.8948 19.8134C19.1474 20.0622 19.5575 20.0622 19.81 19.8134C20.0632 19.5646 20.0632 19.1607 19.8106 18.9119ZM8.41466 15.2873C4.48242 15.2873 1.29473 12.1504 1.29473 8.28069C1.29473 4.41101 4.48242 1.27404 8.41466 1.27404C12.3469 1.27404 15.5346 4.41101 15.5346 8.28069C15.5346 12.1504 12.3469 15.2873 8.41466 15.2873Z" fill="#201F1F"/>
+									</svg>
+								</span>
+								<input type="text" placeholder="Найти удобную мебель" class="header-nav-search-bar__search-input">
+							</label>
+						</div>
+						<div class="header-nav-list-ul-outter">
+							<div class="header-nav-list-ul-outter__shadow"></div>
+							<div class="container">
+								<div class="header-nav-list-item-ul">
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa3.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Модульный диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa3.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Модульный диван</div>
+											</div>
+										</div>
+									</div>
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Механизмы</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Дельфин</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Дельфин</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header-nav-list-item-ul">
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
+											</div>
+										</div>
+									</div>
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Механизмы</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header-nav-list-item-ul">
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
+											</div>
+										</div>
+									</div>
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Механизмы</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header-nav-list-item-ul">
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
+											</div>
+										</div>
+									</div>
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Механизмы</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
+											</div>
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header-nav-list-item-ul">
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="main">
+			<div class="container">
+				<div class="block news-item-first-screen-wrapper">
+					<div class="news-item-first-screen">
+						<img src="img/news-item-big.png">
+						<div class="news-item-first-screen__text">Новость про диваны и уход за ними</div>
+					</div>
+					<div class="news-item-description">
+						<div class="news-item-description-item">Дата публикации: 19 Ноября 2018</div>
+						<div class="news-item-description-item">
+							<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13 0C5.8318 0 0 5.8318 0 13C0 20.1682 5.8318 26 13 26C20.1682 26 26 20.1682 26 13C26 5.8318 20.1682 0 13 0ZM13 25.1333C6.30977 25.1333 0.866667 19.6902 0.866667 13C0.866667 6.30977 6.30977 0.866667 13 0.866667C19.6902 0.866667 25.1333 6.30977 25.1333 13C25.1333 19.6902 19.6902 25.1333 13 25.1333Z" fill="#777777"/>
+								<path d="M13.0005 2.6C12.7613 2.6 12.5671 2.7937 12.5671 3.03333V13H6.06712C5.82792 13 5.63379 13.1937 5.63379 13.4333C5.63379 13.673 5.82792 13.8667 6.06712 13.8667H13.0005C13.2397 13.8667 13.4338 13.673 13.4338 13.4333V3.03333C13.4338 2.7937 13.2397 2.6 13.0005 2.6Z" fill="#777777"/>
+							</svg>
+							Время чтения: 5 минут
+						</div>
+						<div class="news-item-description-item">
+							Поделиться
+							<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.8887 15.6359C14.6933 15.8313 14.5251 16.0461 14.3797 16.2732L7.93577 12.3617C8.10619 11.9351 8.20277 11.4712 8.20277 10.9845C8.20277 10.4979 8.10619 10.034 7.93614 9.60736L14.3816 5.72571C15.0435 6.76539 16.204 7.45826 17.5256 7.45826C19.5818 7.45826 21.2547 5.78537 21.2547 3.72913C21.2547 1.67289 19.5818 0 17.5256 0C15.4694 0 13.7965 1.67289 13.7965 3.72913C13.7965 4.19751 13.8871 4.64426 14.0452 5.05745L7.5912 8.94432C6.92443 7.9285 5.7766 7.25539 4.47327 7.25539C2.41703 7.25539 0.744141 8.92828 0.744141 10.9845C0.744141 13.0408 2.41703 14.7137 4.47327 14.7137C5.7766 14.7137 6.92405 14.0405 7.59082 13.0247L14.0437 16.9414C13.8834 17.3613 13.7961 17.8099 13.7961 18.2727C13.7961 19.2688 14.1839 20.2055 14.8884 20.9096C15.6152 21.6364 16.5702 22 17.5252 22C18.4803 22 19.4353 21.6364 20.1621 20.9096C20.8665 20.2052 21.2544 19.2688 21.2544 18.2727C21.2544 17.2767 20.8665 16.3399 20.1621 15.6359C18.7081 14.1815 16.3427 14.1815 14.8887 15.6359ZM17.5256 0.745826C19.1705 0.745826 20.5089 2.08421 20.5089 3.72913C20.5089 5.37405 19.1705 6.71243 17.5256 6.71243C15.8807 6.71243 14.5423 5.37405 14.5423 3.72913C14.5423 2.08421 15.8803 0.745826 17.5256 0.745826ZM4.47364 13.9678C2.82872 13.9678 1.49034 12.6294 1.49034 10.9845C1.49034 9.33961 2.82872 8.00122 4.47364 8.00122C6.11856 8.00122 7.45695 9.33961 7.45695 10.9845C7.45695 12.6294 6.11856 13.9678 4.47364 13.9678ZM19.6348 20.3823C18.4717 21.5454 16.5791 21.5454 15.416 20.3823C14.8526 19.8188 14.5423 19.0693 14.5423 18.2727C14.5423 17.4762 14.8526 16.7266 15.416 16.1632C15.9978 15.5814 16.7615 15.2909 17.5256 15.2909C18.2897 15.2909 19.0534 15.5814 19.6352 16.1632C20.1986 16.7266 20.5089 17.4762 20.5089 18.2727C20.5089 19.0693 20.1986 19.8188 19.6348 20.3823Z" fill="#777777"/>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="block news-item-main">
+					<div class="about-block-text">
+						<div class="about-block-text__head">Первый заголовок по теме</div>
+						<div class="about-block-text__main">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло. Это не было сном. Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах. Над столом, где были разложены распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного журнала и вставил в красивую золоченую рамку. </div>
+					</div>
+					<div class="news-item-img-block">
+						<div class="news-item-img-block__img"><img src="img/news-item-1.png" alt="news"></div>
+						<div class="news-item-img-block__description">Пример подписи под изображением в статье</div>
+					</div>
+					<div class="about-block-text">
+						<div class="about-block-text__head">Второй заголовок по теме</div>
+						<div class="about-block-text__main">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло. Это не было сном. Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах. Над столом, где были разложены распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного журнала и вставил в красивую золоченую рамку. </div>
+					</div>
+				</div>
+				<div class="block block_padding-ext">
+					<div class="block-head">За ними просто ухаживать</div>
+							<div class="card-wrapper">
+								<div class="card-item-wrapper">
+									<div class="card-item">
+										<div class="card-item_hide">
+											<div class="card-item-row">
+												<div class="card-item-row__like">
+													<svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M21.4751 5.9638C21.1611 2.50781 18.715 0.000413713 15.6536 0.000413713C13.6141 0.000413713 11.7467 1.09794 10.6959 2.85697C9.65468 1.07519 7.8638 0 5.85697 0C2.79605 0 0.349473 2.50739 0.0358934 5.96339C0.0110718 6.11604 -0.0906968 6.91943 0.218746 8.2296C0.664707 10.1194 1.6948 11.8382 3.19692 13.1993L10.691 20L18.3137 13.1997C19.8158 11.8382 20.8459 10.1198 21.2919 8.2296C21.6013 6.91985 21.4995 6.11645 21.4751 5.9638ZM20.4864 8.04013C20.0793 9.76606 19.1357 11.3385 17.7602 12.5845L10.6959 18.8872L3.75293 12.5862C2.37491 11.3377 1.43169 9.76564 1.02421 8.03971C0.731312 6.79988 0.851696 6.09949 0.85211 6.09494L0.858316 6.05316C1.12722 3.02534 3.22919 0.827386 5.85697 0.827386C7.79595 0.827386 9.50285 2.01882 10.3129 3.93629L10.6939 4.83938L11.0749 3.93629C11.8721 2.04819 13.6692 0.8278 15.6541 0.8278C18.2814 0.8278 20.3838 3.02575 20.6581 6.09287C20.6589 6.09949 20.7793 6.80029 20.4864 8.04013Z" fill="black"/>
+													</svg>
+												</div>
+												<div class="card-item-row__fast-search">
+													Быстрый просмотр
+													<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M19.1523 19.3607L13.5415 13.5257C14.9726 12.0904 15.8592 10.1118 15.8592 7.92962C15.8592 3.557 12.3022 0 7.92961 0C3.557 0 0 3.557 0 7.92962C0 12.3022 3.557 15.8592 7.92961 15.8592C9.84896 15.8592 11.6105 15.1731 12.9834 14.0347L18.6078 19.8841C18.6818 19.9615 18.7807 20 18.88 20C18.9744 20 19.0685 19.9649 19.1417 19.8946C19.292 19.75 19.2965 19.511 19.1523 19.3607ZM7.92961 15.104C3.97349 15.104 0.755201 11.8857 0.755201 7.92962C0.755201 3.97349 3.97349 0.755201 7.92961 0.755201C11.8857 0.755201 15.104 3.97349 15.104 7.92962C15.104 11.8857 11.8854 15.104 7.92961 15.104Z" fill="black"/>
+													</svg>
+												</div>	
+											</div>
+										</div>
+										
+										<div class="card-item-row card-item-row_relative">
+											<div class="card-item-row-colors card-item_hide">
+												<div class="card-item-row-colors__color active"></div>
+												<div class="card-item-row-colors__color"></div>
+												<div class="card-item-row-colors__color"></div>
+												<div class="card-item-row-colors__color"></div>
+												<div class="card-item-row-colors__color"></div>
+												<div class="card-item-row-colors__color"></div>
+												<div class="card-item-row-colors__color"></div>
+											</div>
+											<div class="card-item-row__img">
+												<img src="img/item-1.png">
+											</div>
+										</div>
+										<div class="card-item-row">
+											<div class="card-item-row-item">
+												<div class="card-item-row-item__head">Диван</div>
+												<div class="card-item-row-item__value">Фэнтази</div>
+											</div>
+											<div class="card-item-row-item">
+												<div class="card-item-row-item__head">Коллекция</div>
+												<div class="card-item-row-item__value">Soul</div>
+											</div>
+										</div>
+										<div class="card-item-row card-item_hide">
+											<div class="card-item-row-item">
+												<div class="card-item-row-item__head">Габариты:</div>
+												<div class="card-item-row-item__value">2000 x 920 x 860</div>
+											</div>
+										</div>
+										<div class="card-item-row card-item_hide">
+											<div class="card-item-row-item">
+												<div class="card-item-row-item__head">Спальное место:</div>
+												<div class="card-item-row-item__value">2000 x 1200</div>
+											</div>
+										</div>
+										<div class="card-item-row">
+											<div class="card-item-row-item">
+												<div class="card-item-row-item__cost-red"></div>
+												<div class="card-item-row-item__cost">от 31 500 ₽</div>
+											</div>
+											<div class="card-item-row-item">
+												<a href="#" class="card-item-row-item__button">Купить</a>
+											</div>
+										</div>
+							</div>
+						</div>
+						<div class="card-item-wrapper">
+						<div class="card-item">
+									<div class="card-item_hide">
+										<div class="card-item-row">
+											<div class="card-item-row__like">
+												<svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M21.4751 5.9638C21.1611 2.50781 18.715 0.000413713 15.6536 0.000413713C13.6141 0.000413713 11.7467 1.09794 10.6959 2.85697C9.65468 1.07519 7.8638 0 5.85697 0C2.79605 0 0.349473 2.50739 0.0358934 5.96339C0.0110718 6.11604 -0.0906968 6.91943 0.218746 8.2296C0.664707 10.1194 1.6948 11.8382 3.19692 13.1993L10.691 20L18.3137 13.1997C19.8158 11.8382 20.8459 10.1198 21.2919 8.2296C21.6013 6.91985 21.4995 6.11645 21.4751 5.9638ZM20.4864 8.04013C20.0793 9.76606 19.1357 11.3385 17.7602 12.5845L10.6959 18.8872L3.75293 12.5862C2.37491 11.3377 1.43169 9.76564 1.02421 8.03971C0.731312 6.79988 0.851696 6.09949 0.85211 6.09494L0.858316 6.05316C1.12722 3.02534 3.22919 0.827386 5.85697 0.827386C7.79595 0.827386 9.50285 2.01882 10.3129 3.93629L10.6939 4.83938L11.0749 3.93629C11.8721 2.04819 13.6692 0.8278 15.6541 0.8278C18.2814 0.8278 20.3838 3.02575 20.6581 6.09287C20.6589 6.09949 20.7793 6.80029 20.4864 8.04013Z" fill="black"/>
+												</svg>
+											</div>
+											<div class="card-item-row__fast-search">
+												Быстрый просмотр
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.1523 19.3607L13.5415 13.5257C14.9726 12.0904 15.8592 10.1118 15.8592 7.92962C15.8592 3.557 12.3022 0 7.92961 0C3.557 0 0 3.557 0 7.92962C0 12.3022 3.557 15.8592 7.92961 15.8592C9.84896 15.8592 11.6105 15.1731 12.9834 14.0347L18.6078 19.8841C18.6818 19.9615 18.7807 20 18.88 20C18.9744 20 19.0685 19.9649 19.1417 19.8946C19.292 19.75 19.2965 19.511 19.1523 19.3607ZM7.92961 15.104C3.97349 15.104 0.755201 11.8857 0.755201 7.92962C0.755201 3.97349 3.97349 0.755201 7.92961 0.755201C11.8857 0.755201 15.104 3.97349 15.104 7.92962C15.104 11.8857 11.8854 15.104 7.92961 15.104Z" fill="black"/>
+												</svg>
+											</div>	
+										</div>
+									</div>
+									
+									<div class="card-item-row card-item-row_relative">
+										<div class="card-item-row-colors card-item_hide">
+											<div class="card-item-row-colors__color active"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+										</div>
+										<div class="card-item-row__img">
+											<img src="img/item-2.png">
+										</div>
+									</div>
+									<div class="card-item-row">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Диван</div>
+											<div class="card-item-row-item__value">Кио</div>
+										</div>
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Коллекция</div>
+											<div class="card-item-row-item__value">Soul</div>
+										</div>
+									</div>
+									<div class="card-item-row card-item_hide">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Габариты:</div>
+											<div class="card-item-row-item__value">2000 x 920 x 860</div>
+										</div>
+									</div>
+									<div class="card-item-row card-item_hide">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Спальное место:</div>
+											<div class="card-item-row-item__value">2000 x 1200</div>
+										</div>
+									</div>
+									<div class="card-item-row">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__cost-red"></div>
+											<div class="card-item-row-item__cost">от 13 500 ₽</div>
+										</div>
+										<div class="card-item-row-item">
+											<a href="#" class="card-item-row-item__button">Купить</a>
+										</div>
+									</div>
+								</div>
+						</div>
+						<div class="card-item-wrapper">
+						<div class="card-item">
+									<div class="card-item_hide">
+										<div class="card-item-row">
+											<div class="card-item-row__like">
+												<svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M21.4751 5.9638C21.1611 2.50781 18.715 0.000413713 15.6536 0.000413713C13.6141 0.000413713 11.7467 1.09794 10.6959 2.85697C9.65468 1.07519 7.8638 0 5.85697 0C2.79605 0 0.349473 2.50739 0.0358934 5.96339C0.0110718 6.11604 -0.0906968 6.91943 0.218746 8.2296C0.664707 10.1194 1.6948 11.8382 3.19692 13.1993L10.691 20L18.3137 13.1997C19.8158 11.8382 20.8459 10.1198 21.2919 8.2296C21.6013 6.91985 21.4995 6.11645 21.4751 5.9638ZM20.4864 8.04013C20.0793 9.76606 19.1357 11.3385 17.7602 12.5845L10.6959 18.8872L3.75293 12.5862C2.37491 11.3377 1.43169 9.76564 1.02421 8.03971C0.731312 6.79988 0.851696 6.09949 0.85211 6.09494L0.858316 6.05316C1.12722 3.02534 3.22919 0.827386 5.85697 0.827386C7.79595 0.827386 9.50285 2.01882 10.3129 3.93629L10.6939 4.83938L11.0749 3.93629C11.8721 2.04819 13.6692 0.8278 15.6541 0.8278C18.2814 0.8278 20.3838 3.02575 20.6581 6.09287C20.6589 6.09949 20.7793 6.80029 20.4864 8.04013Z" fill="black"/>
+												</svg>
+											</div>
+											<div class="card-item-row__fast-search">
+												Быстрый просмотр
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.1523 19.3607L13.5415 13.5257C14.9726 12.0904 15.8592 10.1118 15.8592 7.92962C15.8592 3.557 12.3022 0 7.92961 0C3.557 0 0 3.557 0 7.92962C0 12.3022 3.557 15.8592 7.92961 15.8592C9.84896 15.8592 11.6105 15.1731 12.9834 14.0347L18.6078 19.8841C18.6818 19.9615 18.7807 20 18.88 20C18.9744 20 19.0685 19.9649 19.1417 19.8946C19.292 19.75 19.2965 19.511 19.1523 19.3607ZM7.92961 15.104C3.97349 15.104 0.755201 11.8857 0.755201 7.92962C0.755201 3.97349 3.97349 0.755201 7.92961 0.755201C11.8857 0.755201 15.104 3.97349 15.104 7.92962C15.104 11.8857 11.8854 15.104 7.92961 15.104Z" fill="black"/>
+												</svg>
+											</div>	
+										</div>
+									</div>
+									
+									<div class="card-item-row card-item-row_relative"> 
+										<div class="card-item-row-colors card-item_hide">
+											<div class="card-item-row-colors__color active"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+										</div>
+										<div class="card-item-row__img">
+											<img src="img/item-3.png">
+										</div>
+									</div>
+									<div class="card-item-row">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Диван</div>
+											<div class="card-item-row-item__value">Фэнтази</div>
+										</div>
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Коллекция</div>
+											<div class="card-item-row-item__value">Soul</div>
+										</div>
+									</div>
+									<div class="card-item-row card-item_hide">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Габариты:</div>
+											<div class="card-item-row-item__value">2000 x 920 x 860</div>
+										</div>
+									</div>
+									<div class="card-item-row card-item_hide">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Спальное место:</div>
+											<div class="card-item-row-item__value">2000 x 1200</div>
+										</div>
+									</div>
+									<div class="card-item-row">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__cost-red"></div>
+											<div class="card-item-row-item__cost">от 31 500 ₽</div>
+										</div>
+										<div class="card-item-row-item">
+											<a href="#" class="card-item-row-item__button">Купить</a>
+										</div>
+									</div>
+								</div>
+						</div>
+						<div class="card-item-wrapper">
+						<div class="card-item">
+									<div class="card-item_hide">
+										<div class="card-item-row">
+											<div class="card-item-row__like">
+												<svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M21.4751 5.9638C21.1611 2.50781 18.715 0.000413713 15.6536 0.000413713C13.6141 0.000413713 11.7467 1.09794 10.6959 2.85697C9.65468 1.07519 7.8638 0 5.85697 0C2.79605 0 0.349473 2.50739 0.0358934 5.96339C0.0110718 6.11604 -0.0906968 6.91943 0.218746 8.2296C0.664707 10.1194 1.6948 11.8382 3.19692 13.1993L10.691 20L18.3137 13.1997C19.8158 11.8382 20.8459 10.1198 21.2919 8.2296C21.6013 6.91985 21.4995 6.11645 21.4751 5.9638ZM20.4864 8.04013C20.0793 9.76606 19.1357 11.3385 17.7602 12.5845L10.6959 18.8872L3.75293 12.5862C2.37491 11.3377 1.43169 9.76564 1.02421 8.03971C0.731312 6.79988 0.851696 6.09949 0.85211 6.09494L0.858316 6.05316C1.12722 3.02534 3.22919 0.827386 5.85697 0.827386C7.79595 0.827386 9.50285 2.01882 10.3129 3.93629L10.6939 4.83938L11.0749 3.93629C11.8721 2.04819 13.6692 0.8278 15.6541 0.8278C18.2814 0.8278 20.3838 3.02575 20.6581 6.09287C20.6589 6.09949 20.7793 6.80029 20.4864 8.04013Z" fill="black"/>
+												</svg>
+											</div>
+											<div class="card-item-row__fast-search">
+												Быстрый просмотр
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M19.1523 19.3607L13.5415 13.5257C14.9726 12.0904 15.8592 10.1118 15.8592 7.92962C15.8592 3.557 12.3022 0 7.92961 0C3.557 0 0 3.557 0 7.92962C0 12.3022 3.557 15.8592 7.92961 15.8592C9.84896 15.8592 11.6105 15.1731 12.9834 14.0347L18.6078 19.8841C18.6818 19.9615 18.7807 20 18.88 20C18.9744 20 19.0685 19.9649 19.1417 19.8946C19.292 19.75 19.2965 19.511 19.1523 19.3607ZM7.92961 15.104C3.97349 15.104 0.755201 11.8857 0.755201 7.92962C0.755201 3.97349 3.97349 0.755201 7.92961 0.755201C11.8857 0.755201 15.104 3.97349 15.104 7.92962C15.104 11.8857 11.8854 15.104 7.92961 15.104Z" fill="black"/>
+												</svg>
+											</div>	
+										</div>
+									</div>
+									
+									<div class="card-item-row card-item-row_relative">
+										<div class="card-item-row-colors card-item_hide">
+											<div class="card-item-row-colors__color active"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+											<div class="card-item-row-colors__color"></div>
+										</div>
+										<div class="card-item-row__img">
+											<img src="img/item-4.png">
+										</div>
+									</div>
+									<div class="card-item-row">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Диван</div>
+											<div class="card-item-row-item__value">Фэнтази</div>
+										</div>
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Коллекция</div>
+											<div class="card-item-row-item__value">Soul</div>
+										</div>
+									</div>
+									<div class="card-item-row card-item_hide">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Габариты:</div>
+											<div class="card-item-row-item__value">2000 x 920 x 860</div>
+										</div>
+									</div>
+									<div class="card-item-row card-item_hide">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__head">Спальное место:</div>
+											<div class="card-item-row-item__value">2000 x 1200</div>
+										</div>
+									</div>
+									<div class="card-item-row">
+										<div class="card-item-row-item">
+											<div class="card-item-row-item__cost-red"> от <span class="text-crossed">40 000</span> ₽</div>
+											<div class="card-item-row-item__cost">от 31 500 ₽</div>
+										</div>
+										<div class="card-item-row-item">
+											<a href="#" class="card-item-row-item__button">Купить</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="catalog-main-show-more catalog-main-show-more_modified">
+							<a href="#" class="card-item-row-item__button catalog-main-show-more-btn">Показать еще</a>
+							<a href="#" class="card-item-row-item__button catalog-main-show-more-btn">Каталог</a>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+				<div class="footer-top">
+					<div class="container">
+						<div class="block footer-top-wrapper">
+							<div class="footer-top-item">
+								<div class="footer-top-item__head">Информация для покупателей</div>
+								<div class="footer-top-item-list">
+									<div class="footer-top-item-list__item"><a href="#">Вопрос - ответ</a></div>
+									<div class="footer-top-item-list__item"><a href="#">Ремонт и возврат</a></div>
+									<div class="footer-top-item-list__item"><a href="#">Вакансии</a></div>
+									<div class="footer-top-item-list__item"><a href="#">Как отличить подделку</a></div>
+								</div>
+							</div>
+							<div class="footer-top-item">
+								<div class="footer-top-item__head">Сотрудничество</div>
+								<div class="footer-top-item-list">
+									<div class="footer-top-item-list__item"><a href="#">-Дилерам</a></div>
+									<div class="footer-top-item-list__item"><a href="#">-Дизайнерам</a>	</div>
+									<div class="footer-top-item-list__item"><a href="#">-Поставщикам</a></div>
+									<div class="footer-top-item-list__item"><a href="#">-Оферта</a></div>
+								</div>
+							</div>
+							<div class="footer-top-item">
+								<div class="footer-top-item__head">Способы оплаты</div>
+								<div class="footer-top-item-list">
+									<div class="footer-top-item-list__item">
+										<a href="#">
+											<svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M21 42.0017C32.598 42.0017 42 32.5997 42 21.0017C42 9.40373 32.598 0.00170898 21 0.00170898C9.40202 0.00170898 0 9.40373 0 21.0017C0 32.5997 9.40202 42.0017 21 42.0017Z" fill="#F3F2F2"/>
+												<path d="M15.5502 25.03L17.1571 15.5413H19.7587L18.1519 25.03H15.5502Z" fill="#293688"/>
+												<path d="M27.4135 15.7867C26.8979 15.5944 26.0902 15.3884 25.0814 15.3884C22.5102 15.3884 20.6991 16.6757 20.6835 18.5199C20.6693 19.8831 21.9764 20.6434 22.9639 21.0977C23.9765 21.5619 24.3171 21.8597 24.3121 22.2746C24.3058 22.9106 23.503 23.2013 22.755 23.2013C21.7138 23.201 21.1604 23.0574 20.3058 22.7033L19.9706 22.5521L19.6052 24.6763C20.2131 24.9413 21.3371 25.1711 22.5039 25.1827C25.2385 25.182 27.0146 23.9107 27.0345 21.9407C27.0444 20.8614 26.3511 20.04 24.85 19.3626C23.9404 18.9242 23.3833 18.6314 23.3893 18.1865C23.3893 17.7922 23.8611 17.3705 24.8795 17.3705C25.7303 17.3572 26.3467 17.5416 26.8272 17.7339L27.06 17.8433L27.4135 15.7867Z" fill="#293688"/>
+												<path d="M31.8492 15.5413C31.2258 15.5413 30.7755 15.7316 30.5015 16.3494L26.6458 25.0304H29.4004L29.9359 23.5763H33.2269L33.5326 25.0304H35.9815L33.8391 15.5415H31.8492L31.8492 15.5413ZM30.6667 21.6777C30.8816 21.1312 31.7029 19.0256 31.7029 19.0256C31.688 19.0505 31.9168 18.4765 32.0481 18.1203L32.2242 18.938C32.2242 18.938 32.7219 21.2031 32.8264 21.6779H30.6667V21.6777Z" fill="#293688"/>
+												<path d="M10.8058 22.0457L10.5767 20.7449C10.1018 19.2285 8.62819 17.5878 6.97687 16.7658L9.27546 25.03H12.0306L16.1626 15.5413H13.408L10.8058 22.0457Z" fill="#293688"/>
+												<path d="M4.14851 15.5413V15.6945C7.41305 16.4796 9.67948 18.4646 10.5767 20.745L9.6334 16.3511C9.47592 15.7506 8.99871 15.5622 8.43403 15.5413L4.14851 15.5413Z" fill="#F7981D"/>
+												<path d="M20.9986 42.0017C29.104 42.0017 36.132 37.4072 39.6326 30.6829H2.36488C5.86577 37.4072 12.8935 42.0017 20.9986 42.0017Z" fill="#F7981D"/>
+												<path d="M20.9986 0C13.0218 0 6.08395 4.44725 2.52901 10.9979H39.4689C35.9135 4.4476 28.9753 0 20.9986 0Z" fill="#293688"/>
+											</svg>
+										</a>
+										<a href="#">
+											<svg width="43" height="42" viewBox="0 0 43 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M21.99 42C33.588 42 42.99 32.598 42.99 21C42.99 9.40202 33.588 0 21.99 0C10.392 0 0.98999 9.40202 0.98999 21C0.98999 32.598 10.392 42 21.99 42Z" fill="#3C80AD"/>
+												<path d="M15.1247 10.8076C9.82555 10.8411 5.53507 15.1617 5.53507 20.4797C5.53507 25.8187 9.8587 30.1512 15.1866 30.1512C17.6859 30.1512 19.9652 29.1966 21.6802 27.6312L21.6798 27.6308H21.6812C22.033 27.3102 22.3606 26.9634 22.6614 26.595H20.6845C20.4202 26.2757 20.1801 25.942 19.9646 25.5982H23.3744C23.5826 25.266 23.7696 24.9208 23.9371 24.5633H19.4023C19.2475 24.2311 19.1132 23.8925 18.9988 23.5473H24.3407C24.6634 22.583 24.8374 21.5511 24.8374 20.4797C24.8374 19.7681 24.7601 19.0758 24.6152 18.4079H18.7153C18.7889 18.0641 18.8807 17.7248 18.9902 17.3923H24.3348C24.2154 17.0374 24.0764 16.6923 23.9186 16.3567H19.4017C19.5645 16.0075 19.7492 15.669 19.9551 15.3406H23.3629C23.1357 14.9782 22.885 14.6321 22.6141 14.3058H20.7141C21.0083 13.9585 21.3312 13.632 21.6817 13.3293C19.9674 11.7632 17.6877 10.8079 15.1872 10.8079C15.1655 10.8076 15.1449 10.8076 15.1247 10.8076Z" fill="#931B1D"/>
+												<path d="M37.7835 20.4828C37.7845 25.8237 33.4659 30.1546 28.1343 30.1562C22.8049 30.1579 18.483 25.8286 18.4814 20.4867V20.4828C18.4797 15.1402 22.7997 10.8089 28.13 10.8076C33.46 10.8057 37.7823 15.1352 37.7836 20.4774C37.7835 20.4774 37.7835 20.4798 37.7835 20.4828Z" fill="#F16622"/>
+												<path d="M37.7835 20.5893C37.7845 25.9305 33.4659 30.2621 28.1343 30.2631C22.8049 30.2651 18.483 25.9352 18.4814 20.5943V20.5893C18.4797 15.2477 22.7997 10.9161 28.13 10.9148C33.46 10.9128 37.7823 15.2424 37.7836 20.5843C37.7835 20.5843 37.7835 20.5874 37.7835 20.5893Z" fill="#F7981D"/>
+												<path d="M15.1247 10.9173C9.82555 10.9514 5.53507 15.2711 5.53507 20.5894C5.53507 25.9287 9.8587 30.2616 15.1866 30.2616C17.6859 30.2616 19.9652 29.3063 21.6802 27.7412L21.6798 27.7402H21.6812C22.033 27.4198 22.3606 27.074 22.6614 26.7043H20.6845C20.4202 26.3856 20.1801 26.0527 19.9646 25.7089H23.3744C23.5826 25.3763 23.7696 25.0301 23.9371 24.673H19.4023C19.2475 24.3404 19.1132 24.0019 18.9988 23.6573H24.3407C24.6634 22.6924 24.8374 21.6608 24.8374 20.5894C24.8374 19.8782 24.7601 19.1855 24.6152 18.518H18.7153C18.7889 18.1745 18.8807 17.8346 18.9902 17.5023H24.3348C24.2154 17.1472 24.0764 16.802 23.9186 16.4661H19.4017C19.5645 16.1183 19.7492 15.7784 19.9551 15.4504H23.3629C23.1357 15.0883 22.885 14.7425 22.6141 14.4148H20.7141C21.0083 14.0683 21.3312 13.7417 21.6817 13.4384C19.9674 11.8725 17.6877 10.9172 15.1872 10.9172C15.1655 10.9173 15.1449 10.9173 15.1247 10.9173Z" fill="#CB2026"/>
+												<path d="M18.6568 23.0517L18.7858 22.1766C18.7155 22.1766 18.612 22.2065 18.5208 22.2065C18.1633 22.2065 18.1236 22.0161 18.1468 21.8752L18.4356 20.0889H18.9791L19.1104 19.1203H18.5981L18.7026 18.5188H17.6747C17.6525 18.5413 17.0679 21.9054 17.0679 22.3142C17.0679 22.9207 17.4072 23.1909 17.8866 23.1869C18.2612 23.1834 18.554 23.0797 18.6568 23.0517Z" fill="white"/>
+												<path d="M18.9827 21.3827C18.9827 22.8381 19.9407 23.1843 20.7574 23.1843C21.5114 23.1843 21.8427 23.0148 21.8427 23.0148L22.0241 22.0214C22.0241 22.0214 21.4508 22.2761 20.9329 22.2761C19.8296 22.2761 20.023 21.4512 20.023 21.4512H22.1117C22.1117 21.4512 22.2459 20.7833 22.2459 20.5114C22.2459 19.8333 21.9084 19.0063 20.7806 19.0063C19.747 19.0066 18.9827 20.1217 18.9827 21.3827ZM20.7849 19.9281C21.3646 19.9281 21.2575 20.5813 21.2575 20.634H20.1168C20.1164 20.5667 20.2243 19.9281 20.7849 19.9281Z" fill="white"/>
+												<path d="M27.2914 23.0517L27.4755 21.9279C27.4755 21.9279 26.9712 22.1826 26.6253 22.1826C25.8965 22.1826 25.6043 21.6235 25.6043 21.0253C25.6043 19.809 26.2314 19.1398 26.93 19.1398C27.4533 19.1398 27.8737 19.4349 27.8737 19.4349L28.0412 18.3447C28.0412 18.3447 27.4182 18.0913 26.8843 18.0913C25.6979 18.0913 24.5433 19.1216 24.5433 21.06C24.5433 22.3433 25.167 23.1925 26.3932 23.1925C26.7396 23.1927 27.2914 23.0517 27.2914 23.0517Z" fill="white"/>
+												<path d="M13.0052 19.0222C12.3006 19.0222 11.7604 19.2487 11.7604 19.2487L11.6115 20.1361C11.6115 20.1361 12.0578 19.955 12.7313 19.955C13.1139 19.955 13.3934 19.9978 13.3934 20.3098C13.3934 20.4989 13.3593 20.5688 13.3593 20.5688C13.3593 20.5688 13.0579 20.5433 12.918 20.5433C12.0297 20.5433 11.0959 20.9233 11.0959 22.0699C11.0959 22.9725 11.708 23.18 12.0877 23.18C12.8129 23.18 13.1246 22.7088 13.1418 22.7068L13.108 23.1007H14.0126L14.4164 20.2639C14.4164 19.0609 13.3689 19.0222 13.0052 19.0222ZM13.2257 21.3307C13.2453 21.5042 13.1169 22.3165 12.4982 22.3165C12.1792 22.3165 12.096 22.0719 12.096 21.9272C12.096 21.6457 12.2488 21.3072 13.0022 21.3072C13.1769 21.3072 13.1958 21.3264 13.2257 21.3307Z" fill="white"/>
+												<path d="M15.3783 23.1584C15.6094 23.1584 16.9325 23.2178 16.9325 21.8496C16.9325 20.5703 15.708 20.8227 15.708 20.3087C15.708 20.0538 15.9076 19.9722 16.2723 19.9722C16.4172 19.9722 16.9746 20.0189 16.9746 20.0189L17.1046 19.1091C17.1046 19.1091 16.7438 19.0288 16.1569 19.0288C15.396 19.0288 14.625 19.3319 14.625 20.3727C14.625 21.5529 15.9115 21.4335 15.9115 21.9302C15.9115 22.2618 15.5517 22.289 15.2745 22.289C14.7957 22.289 14.3643 22.1242 14.3623 22.1318L14.2254 23.0314C14.2493 23.0398 14.5159 23.1584 15.3783 23.1584Z" fill="white"/>
+												<path d="M35.803 18.2061L35.5818 19.5842C35.5818 19.5842 35.1948 19.0494 34.5897 19.0494C33.6477 19.0494 32.8632 20.1867 32.8632 21.4942C32.8632 22.3381 33.2813 23.1641 34.1375 23.1641C34.7532 23.1641 35.0938 22.7341 35.0938 22.7341L35.049 23.1011H36.0485L36.834 18.2039L35.803 18.2061ZM35.3262 20.8943C35.3262 21.4378 35.0569 22.1636 34.5001 22.1636C34.1301 22.1636 33.9573 21.8526 33.9573 21.3644C33.9573 20.5666 34.3148 20.0387 34.7657 20.0387C35.1362 20.0388 35.3262 20.2941 35.3262 20.8943Z" fill="white"/>
+												<path d="M7.44073 23.1055L8.06709 19.4082L8.15828 23.1055H8.86652L10.1872 19.4082L9.60197 23.1055H10.6538L11.4646 18.2029H9.83751L8.82451 21.2104L8.77178 18.2029H7.27262L6.45059 23.1055H7.44073Z" fill="white"/>
+												<path d="M23.2735 23.1124C23.5726 21.4084 23.628 20.024 24.3423 20.2763C24.4673 19.6171 24.5877 19.3622 24.7236 19.0827C24.7236 19.0827 24.66 19.0691 24.5253 19.0691C24.0661 19.0691 23.7248 19.6991 23.7248 19.6991L23.8156 19.1208H22.8586L22.2184 23.1124H23.2735Z" fill="white"/>
+												<path d="M29.6622 19.0222C28.9576 19.0222 28.4178 19.2487 28.4178 19.2487L28.2693 20.1361C28.2693 20.1361 28.7146 19.955 29.3887 19.955C29.771 19.955 30.0512 19.9978 30.0512 20.3098C30.0512 20.4989 30.0167 20.5688 30.0167 20.5688C30.0167 20.5688 29.7153 20.5433 29.5743 20.5433C28.6857 20.5433 27.753 20.9233 27.753 22.0699C27.753 22.9725 28.3654 23.18 28.7448 23.18C29.4699 23.18 29.782 22.7088 29.7985 22.7068L29.765 23.1007H30.6703L31.0739 20.2639C31.0742 19.0609 30.027 19.0222 29.6622 19.0222ZM29.8831 21.3307C29.9027 21.5042 29.775 22.3165 29.1553 22.3165C28.8366 22.3165 28.754 22.0719 28.754 21.9272C28.754 21.6457 28.9069 21.3072 29.6589 21.3072C29.8347 21.3072 29.853 21.3264 29.8831 21.3307Z" fill="white"/>
+												<path d="M31.9001 23.1124C32.1996 21.4084 32.255 20.024 32.9692 20.2763C33.0942 19.6171 33.2145 19.3622 33.3512 19.0827C33.3512 19.0827 33.2865 19.0691 33.1526 19.0691C32.692 19.0691 32.3518 19.6991 32.3518 19.6991L32.4434 19.1208H31.4858L30.8451 23.1121H31.9002L31.9001 23.1124Z" fill="white"/>
+											</svg>
+										</a>
+									</div>
+									<div class="footer-top-item-list__item">Кредит и рассрочка</div>
+									<div class="footer-top-item-list__item">Доставка и оплата</div>
+								</div>
+							</div>
+							<div class="footer-top-item">
+								<div class="footer-top-item__head">Мы в социальных сетях</div>
+								<div class="footer-top-item-list">
+									<div class="footer-top-item-list__item footer-top-item-list__item_mb">
+										<a href="#">
+											<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M21 42C32.598 42 42 32.598 42 21C42 9.40202 32.598 0 21 0C9.40202 0 0 9.40202 0 21C0 32.598 9.40202 42 21 42Z" fill="#55ACEE"/>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M29.9977 15.6575C29.3727 15.9385 28.6997 16.1285 27.9947 16.2145C28.7147 15.7765 29.2677 15.0845 29.5277 14.2595C28.8537 14.6645 28.1077 14.9585 27.3127 15.1155C26.6777 14.4295 25.7717 13.9995 24.7677 13.9995C22.8417 13.9995 21.2807 15.5825 21.2807 17.5345C21.2807 17.8125 21.3117 18.0815 21.3707 18.3405C18.4727 18.1935 15.9037 16.7865 14.1837 14.6485C13.8837 15.1685 13.7117 15.7765 13.7117 16.4245C13.7117 17.6505 14.3277 18.7325 15.2627 19.3655C14.6907 19.3465 14.1537 19.1875 13.6837 18.9235V18.9675C13.6837 20.6805 14.8847 22.1075 16.4807 22.4335C16.1877 22.5145 15.8807 22.5575 15.5617 22.5575C15.3377 22.5575 15.1187 22.5355 14.9067 22.4935C15.3497 23.8975 16.6377 24.9195 18.1637 24.9475C16.9697 25.8955 15.4667 26.4615 13.8327 26.4615C13.5507 26.4615 13.2727 26.4445 12.9997 26.4125C14.5427 27.4145 16.3757 27.9995 18.3457 27.9995C24.7607 27.9995 28.2677 22.6135 28.2677 17.9435C28.2677 17.7905 28.2637 17.6385 28.2577 17.4875C28.9397 16.9885 29.5307 16.3675 29.9977 15.6585V15.6575Z" fill="#FEFEFE"/>
+											</svg>
+										</a>
+										<a href="#">
+											<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M21 42C32.598 42 42 32.598 42 21C42 9.40202 32.598 0 21 0C9.40202 0 0 9.40202 0 21C0 32.598 9.40202 42 21 42Z" fill="#3B5998"/>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M22.9963 29.9915H18.9983V21.4955H17.0003V18.2215H18.9983V16.2575C18.9983 13.5885 20.1263 11.9995 23.3303 11.9995H25.9993V15.2735H24.3313C23.0843 15.2735 23.0013 15.7315 23.0013 16.5845L22.9963 18.2215H26.0183L25.6643 21.4955H22.9963V29.9915Z" fill="#FEFEFE"/>
+											</svg>
+										</a>
+										<a href="#">
+											<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M21 42C32.598 42 42 32.598 42 21C42 9.40202 32.598 0 21 0C9.40202 0 0 9.40202 0 21C0 32.598 9.40202 42 21 42Z" fill="#4D76A1"/>
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M20.2068 30.2105H21.855C21.855 30.2105 22.3529 30.1558 22.6071 29.8818C22.841 29.6302 22.8335 29.1578 22.8335 29.1578C22.8335 29.1578 22.8014 26.9462 23.8278 26.6205C24.8397 26.2997 26.139 28.758 27.5162 29.7032C28.5577 30.4186 29.349 30.2617 29.349 30.2617L33.0314 30.2105C33.0314 30.2105 34.9578 30.0918 34.0444 28.5772C33.9696 28.4533 33.5125 27.4568 31.3065 25.4091C28.9975 23.266 29.3067 23.6126 32.0881 19.9055C33.782 17.6478 34.4592 16.2695 34.2477 15.6791C34.0459 15.1169 32.8001 15.2655 32.8001 15.2655L28.6539 15.2913C28.6539 15.2913 28.3465 15.2494 28.1185 15.3856C27.8958 15.5193 27.7524 15.8307 27.7524 15.8307C27.7524 15.8307 27.0962 17.5778 26.221 19.0636C24.3747 22.1987 23.6365 22.3642 23.3348 22.1695C22.6329 21.7158 22.8081 20.3468 22.8081 19.3743C22.8081 16.3361 23.2689 15.0693 21.9108 14.7414C21.4601 14.6325 21.1284 14.5606 19.9758 14.549C18.4964 14.5336 17.2442 14.5535 16.5352 14.9009C16.0635 15.1318 15.6997 15.6466 15.9213 15.6761C16.1953 15.7128 16.816 15.8435 17.145 16.2916C17.5699 16.8695 17.5549 18.1678 17.5549 18.1678C17.5549 18.1678 17.799 21.7443 16.9848 22.1886C16.4259 22.4933 15.6592 21.8712 14.0132 19.0269C13.1698 17.5699 12.5331 15.9595 12.5331 15.9595C12.5331 15.9595 12.4103 15.6585 12.1913 15.4976C11.9255 15.3025 11.5542 15.2404 11.5542 15.2404L7.61418 15.2662C7.61418 15.2662 7.02271 15.2827 6.80559 15.5399C6.61243 15.7686 6.79025 16.2418 6.79025 16.2418C6.79025 16.2418 9.87485 23.4584 13.3675 27.0952C16.57 30.4294 20.2068 30.2105 20.2068 30.2105Z" fill="white"/>
+											</svg>
+										</a>
+										<a href="#">
+											<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M42 21C42 32.5981 32.5981 42 21 42C9.40187 42 0 32.5981 0 21C0 9.40187 9.40187 0 21 0C32.5981 0 42 9.40187 42 21Z" fill="url(#paint0_linear)"/>
+												<path d="M27.0405 35.5195H14.9595C10.284 35.5195 6.48047 31.716 6.48047 27.0405V14.9595C6.48047 10.284 10.284 6.48047 14.9595 6.48047H27.0405C31.716 6.48047 35.5195 10.284 35.5195 14.9595V27.0405C35.5195 31.716 31.716 35.5195 27.0405 35.5195ZM14.9595 8.94141C11.6411 8.94141 8.94141 11.6411 8.94141 14.9595V27.0405C8.94141 30.3589 11.6411 33.0586 14.9595 33.0586H27.0405C30.3589 33.0586 33.0586 30.3589 33.0586 27.0405V14.9595C33.0586 11.6411 30.3589 8.94141 27.0405 8.94141H14.9595Z" fill="white"/>
+												<path d="M21 28.875C16.6578 28.875 13.125 25.3422 13.125 21C13.125 16.6578 16.6578 13.125 21 13.125C25.3422 13.125 28.875 16.6578 28.875 21C28.875 25.3422 25.3422 28.875 21 28.875ZM21 15.5859C18.0145 15.5859 15.5859 18.0145 15.5859 21C15.5859 23.9855 18.0145 26.4141 21 26.4141C23.9855 26.4141 26.4141 23.9855 26.4141 21C26.4141 18.0145 23.9855 15.5859 21 15.5859Z" fill="white"/>
+												<path d="M30.0097 13.1166C30.0097 13.7385 29.5053 14.2429 28.8833 14.2429C28.2614 14.2429 27.757 13.7385 27.757 13.1166C27.757 12.4946 28.2614 11.9902 28.8833 11.9902C29.5053 11.9902 30.0097 12.4946 30.0097 13.1166Z" fill="white"/>
+												<defs>
+												<linearGradient id="paint0_linear" x1="0" y1="21" x2="42" y2="21" gradientUnits="userSpaceOnUse">
+												<stop stop-color="#F39200"/>
+												<stop offset="1" stop-color="#FF2E00"/>
+												</linearGradient>
+												</defs>
+											</svg>
+										</a>
+									</div>
+									<div class="footer-top-item-list__item">
+										<a href="#">
+											<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M21 42C32.598 42 42 32.598 42 21C42 9.40202 32.598 0 21 0C9.40202 0 0 9.40202 0 21C0 32.598 9.40202 42 21 42Z" fill="#CB2027"/>
+												<path d="M22.695 28.1209C21.1074 27.9982 20.4403 27.2109 19.1953 26.4551C18.511 30.0454 17.6747 33.4872 15.1976 35.2852C14.4321 29.8587 16.3199 25.7828 17.1966 21.4565C15.7023 18.9409 17.3763 13.8775 20.5283 15.1252C24.4077 16.6592 17.1697 24.4789 22.0287 25.4556C27.1014 26.4753 29.1723 16.6536 26.0263 13.459C21.481 8.84667 12.7959 13.3542 13.8639 19.9569C14.124 21.571 15.7921 22.061 14.5302 24.2884C11.6212 23.6441 10.7534 21.3498 10.865 18.291C11.045 13.2842 15.3639 9.77841 19.6958 9.29326C25.1743 8.68009 30.3163 11.305 31.0261 16.4582C31.8246 22.2744 28.5528 28.5731 22.695 28.1209Z" fill="#F1F2F2"/>
+											</svg>
+										</a>
+										<a href="#">
+											<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="21" cy="21" r="21" fill="#4DBC15"/>
+												<path d="M24.9622 33H33.3498V18.7994L16.5606 13.9858V8H11V33H19.3876V25.1289H24.9622V33Z" fill="white"/>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="footer-top-item">
+								<div class="footer-top-item__head">Контактная информация</div>
+								<div class="footer-top-item-list">
+									<div class="footer-top-item-list__item"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+									<div class="footer-top-item-list__item">
+										<a href="tel:8 (812) 555-35-35">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 29.731 29.731" width="22" height="22" style="enable-background:new 0 0 29.731 29.731;" xml:space="preserve">
+												<g>
+													<path d="M23.895,29.731c-1.237,0-2.731-0.31-4.374-0.93c-3.602-1.358-7.521-4.042-11.035-7.556   c-3.515-3.515-6.199-7.435-7.558-11.037C-0.307,6.933-0.31,4.245,0.921,3.015c0.177-0.177,0.357-0.367,0.543-0.563   c1.123-1.181,2.392-2.51,4.074-2.45C6.697,0.05,7.82,0.77,8.97,2.201c3.398,4.226,1.866,5.732,0.093,7.478l-0.313,0.31   c-0.29,0.29-0.838,1.633,4.26,6.731c1.664,1.664,3.083,2.882,4.217,3.619c0.714,0.464,1.991,1.166,2.515,0.642l0.315-0.318   c1.744-1.769,3.25-3.296,7.473,0.099c1.431,1.15,2.15,2.272,2.198,3.433c0.069,1.681-1.27,2.953-2.452,4.075   c-0.195,0.186-0.385,0.366-0.562,0.542C26.103,29.424,25.126,29.731,23.895,29.731z M5.418,1C4.223,1,3.144,2.136,2.189,3.141   C1.997,3.343,1.811,3.539,1.628,3.722C0.711,4.638,0.804,7.045,1.864,9.856c1.31,3.472,3.913,7.266,7.33,10.683   c3.416,3.415,7.208,6.018,10.681,7.327c2.811,1.062,5.218,1.152,6.133,0.237c0.183-0.183,0.379-0.369,0.581-0.56   c1.027-0.976,2.192-2.082,2.141-3.309c-0.035-0.843-0.649-1.75-1.825-2.695c-3.519-2.83-4.503-1.831-6.135-0.176l-0.32,0.323   c-0.78,0.781-2.047,0.608-3.767-0.51c-1.193-0.776-2.667-2.038-4.379-3.751c-4.231-4.23-5.584-6.819-4.26-8.146l0.319-0.315   c1.659-1.632,2.66-2.617-0.171-6.138C7.245,1.651,6.339,1.037,5.496,1.001C5.47,1,5.444,1,5.418,1z" fill="#201F1F" stroke="#201F1F" stroke-width="0.3"/>
+												</g>
+											</svg>
+											8 (812) 555-35-35
+										</a>
+									</div>
+									<div class="footer-top-item-list__item">
+										<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M11 0.85C5.40316 0.85 0.85 5.40316 0.85 11C0.85 16.5968 5.40316 21.15 11 21.15C16.5968 21.15 21.15 16.5968 21.15 11C21.15 5.40316 16.5968 0.85 11 0.85ZM11 20.1833C5.93651 20.1833 1.81667 16.0635 1.81667 11C1.81667 5.93651 5.93651 1.81667 11 1.81667C16.0635 1.81667 20.1833 5.93651 20.1833 11C20.1833 16.0635 16.0635 20.1833 11 20.1833Z" fill="#201F1F" stroke="#201F1F" stroke-width="0.3"/>
+											<path d="M11 2.85C10.7333 2.85 10.5167 3.06606 10.5167 3.33333V10.85H5.66668C5.39993 10.85 5.18334 11.0661 5.18334 11.3333C5.18334 11.6006 5.39993 11.8167 5.66668 11.8167H11C11.2668 11.8167 11.4833 11.6006 11.4833 11.3333V3.33333C11.4833 3.06606 11.2668 2.85 11 2.85Z" fill="#201F1F" stroke="#201F1F" stroke-width="0.3"/>
+										</svg>
+										10:00 - 19:00
+									</div>
+									<div class="footer-top-item-list__item"><a href="mailto:info@bobox.ru">info@bobox.ru</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="block block_footer-bottom">
+							<div class="footer-bottom-wrapper">
+								<div class="footer-bottom-item">© 2014 BO-BOX. All rights reserved.</div>
+								<div class="footer-bottom-item"></div>
+								<div class="footer-bottom-item"></div>
+								<div class="footer-bottom-item footer-bottom-item_ra">Сделано в Ra-studio</div>
+								<div class="footer-bottom-item"><a href="#">Политика конфиденциальности</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</footer>
+	</div>
 	
 
 	<script src="js/libs.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery.maskedinput.min.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=3f58f847-b7a1-4aa5-bda6-7e758eb3af53&lang=ru_RU" type="text/javascript"></script>
+	<script src="js/yandex.all.js"></script>
 	<script src="js/myscripts.js"></script>
 </body>
 </html>

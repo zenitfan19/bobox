@@ -9,6 +9,9 @@ $(document).ready(function() {
 		textSectionMain 	  = $('.text-section-main'),
 		textSectionRec        = $('.recomendation-text__main'),
 		recArrow              = $('.recomendation-text__arrow'),
+		aboutSlider           = $('.about-slider'),
+		aboutSliderArrowPrev  = '.about-slider__arrow-prev',
+		aboutSliderArrowNext  = '.about-slider__arrow-next',
 		heightTextSectionRec;
 
 	//Функция для стрелок слайдеров
@@ -90,8 +93,19 @@ $(document).ready(function() {
 		variableWidth: true
 	});
 
+	aboutSlider.slick({
+		arrows: false,
+		dots: false,
+		draggable: false,
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		variableWidth: true
+	});
+
 	galleryArrows(firstSlider, firstSliderArrowPrev, firstSliderArrowNext);
 	galleryArrows(secondSlider, secondSliderArrowPrev, secondSliderArrowNext);
+	galleryArrows(aboutSlider, aboutSliderArrowPrev, aboutSliderArrowNext);
 
 
 	//UI инициализация селектов и рэндж
@@ -314,4 +328,7 @@ $(document).ready(function() {
 
 	//Инициализация выпадающего меню
 	$('.filter-sort').selectmenu();
+
+	//Инциализация маски
+	$('.contacts-form-input_phone').mask('+7 (999) 999-99-99');
 });
