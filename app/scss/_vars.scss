@@ -16,3 +16,27 @@ $w320: 320px;
 		@content
 	}
 } 
+@mixin w1024 {
+	@media screen and (max-width: $w1024) {
+		@content
+	}
+} 
+
+@mixin w768 {
+	@media screen and (max-width: $w768) {
+		@content
+	}
+} 
+
+@mixin w375 {
+	@media screen and (max-width: $w375) {
+		@content
+	}
+} 
+
+@mixin w480 {
+	@media screen and (max-width: $w480) {
+		@content
+	}
+} 
+

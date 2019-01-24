@@ -105,7 +105,18 @@ $(document).ready(function() {
 		infinite: false,
 		slidesToShow: 4,
 		slidesToScroll: 1,
-		variableWidth: true
+		variableWidth: true,
+		responsive: [
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true
+			}
+		}
+
+		]
 	});
 
 	aboutSlider.slick({
@@ -384,5 +395,12 @@ $(document).ready(function() {
 
 			$('html, body').animate({scrollTop: a}, 500);
 		}
+	});
+
+	//Клик по бургеру в моб версии
+	$(document).on('click', '.header-mob-burger', function() {
+		$(this).toggleClass('active');
+		$('.header-mob-menu').toggleClass('active');
+
 	});
 });
