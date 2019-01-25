@@ -403,4 +403,27 @@ $(document).ready(function() {
 		$('.header-mob-menu').toggleClass('active');
 
 	});
+
+	//инициализация выпдающего селекта на странице ОБИВКИ
+	$('.fabrics-filter-select').SumoSelect({
+		csvDispCount: 2,
+		captionFormat: '{0} выбрано',
+		captionFormatAllSelected: 'Выбраны все',
+
+	});
 });
+
+
+	//plz dont delete me, i'm usefull in dev progress
+	//
+	//
+	//
+	// (function(){
+	// 	let a = $(document).find('.fabrics-filter-column-row-value-row').eq(1).text();
+	// 	a = a.split(' ');
+
+	// 	let b = a.map(function(item, index){
+	// 		item = '<a href="#" class="fabrics-filter-letter">' + item + '</a>';
+	// 		$(document).find('.fabrics-filter-column-row-value-row').eq(1).append(item);
+	// 	});
+	// })()
