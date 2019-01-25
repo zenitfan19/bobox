@@ -646,14 +646,15 @@ a {
 	&-gallery {
 		position: absolute;
 		top: 80px;
-	    left: 50%;
-    	transform: translate(-50%,0);
+	    left: 40px;
 		width: 100%;
 		width: calc(100% - 80px);
 		@include w480 {
 			top: 55px;
 			width: calc(100% - 175px);
-		}
+			left: 50%;
+    		transform: translate(-50%,0);
+		}	
 		@media screen and (max-width: 425px) {
 			top: 55px;
 			width: calc(100% - 125px);
@@ -1136,7 +1137,7 @@ a {
 			bottom: -10px;
 			left: 50%;
 			transform: translate(-50%, 0);
-			z-index: 20;
+			z-index: 10;
 			cursor: pointer;
 			@include w480 {
 				bottom: -10px;
@@ -1156,6 +1157,9 @@ a {
 		&-wrapper {
 			display: flex;
 			justify-content: space-between;
+			@include w480 {
+				display: none;
+			}
 		}
 		&-item {
 			display: flex;
@@ -1173,6 +1177,9 @@ a {
 					display: flex;
 					align-items: center;
 					margin-bottom: 10px;
+					@include w480 {
+						justify-content: center;
+					}
 					&_mb {
 						margin-bottom: 20px;
 					}
@@ -1181,6 +1188,12 @@ a {
 						color: inherit;
 						display: flex;
 						align-items: center;
+						@include w480 {
+							justify-content: center;
+							&:last-child {
+								margin-right: 0px;
+							}
+						}
 						svg {
 							margin-right: 10px;
 						}
@@ -1188,6 +1201,84 @@ a {
 					svg {
 							margin-right: 10px;
 						}
+				}
+			}
+		}
+		&-mob {
+			display: none;
+			flex-direction: column;
+			align-items: stretch;
+			text-align: center;
+			background: #F9F9F9;
+			border-top: 1px solid #DEDEDE;
+			border-bottom: 1px solid #DEDEDE;
+			padding: 30px 0 10px;
+			font-family: 'Proxima Nova Light', sans-serif;
+			@include w480 {
+				display: flex;
+			}
+			&-row {
+				margin-bottom: 10px;
+				font-size: 14px;
+				.footer-top-item__head {
+					font-size: 14px;
+				}
+				a {
+					color: #000;
+				}
+				&_cursive {
+					font-style: italic;
+					font-size: 18px;
+					margin-bottom: 25px;
+				}
+				&_socials {
+					margin-bottom: 35px;
+					a {
+						margin-right: 10px;
+						&:last-child {
+							margin-right: 0px;
+						}
+						svg {
+							width: 35px;
+							height: 35px;
+						}
+					}
+				}
+				&_payment {
+					a {
+						margin-right: 15px;
+						&:last-child {
+							margin-right: 0px;
+						}
+						svg {
+							width: 35px;
+							height: 35px;
+						}
+					}
+				}
+				&_ff {
+					font-family: 'Proxima Nova Semibold', sans-serif;
+				}
+				&_horiz {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					.footer-top-mob-row-item {
+						flex: 50%;
+						white-space: nowrap;
+					}
+				}
+				&-item {
+					display: flex;
+					align-items: center;
+					flex: 50%;
+					justify-content: center;
+					.footer-top-item-list__item {
+						svg {
+							width: 12px;
+							height: 12px;
+						}
+					}
 				}
 			}
 		}
@@ -1199,6 +1290,11 @@ a {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			@include w480 {
+				flex-direction: column;
+				height: auto;
+				padding: 10px 0;
+			}
 		}
 		&-item {
 			color: #737373;
@@ -1207,6 +1303,20 @@ a {
 			}
 			&_ra {
 				color: #000;
+			}
+			@include w480 {	
+				font-size: 14px;			
+				&:nth-child(1) {
+					order: -1;
+					margin-bottom: 10px;
+				}
+				&:nth-child(4) {
+					order: 1;
+				}
+				&:nth-child(5) {
+					order: 0;
+					margin-bottom: 10px;
+				}
 			}
 		}
 	}
