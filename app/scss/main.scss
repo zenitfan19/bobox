@@ -506,6 +506,9 @@ a {
 			font-size: 24px;
 			letter-spacing: 1px;
 		}
+		&_text-left {
+			text-align: left;
+		}
 	}
 	&_padding {
 		padding: 40px 40px 30px 40px ;
@@ -3559,6 +3562,9 @@ a {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 40px 40px 0px;
+	&_np {
+		padding: 0px;
+	}
 	&-item {
 		flex: 0 1 324px;
 		display: flex;
@@ -3600,6 +3606,137 @@ a {
 	}
 }
 
+.fabrics-active {
+	&-banner {
+		margin-bottom: 25px;
+		img {
+			width: 100%;
+		}
+	}
+	&-colors {
+		margin-bottom: 25px;
+		&-head {
+			font-family: Proxima Nova;
+			line-height: normal;
+			font-size: 24px;
+			color: #242424;
+			margin-bottom: 30px;
+		}
+		&-row {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: space-between;
+			.tabs-container-list-item-innercontainer-side-material-list {
+				flex-wrap: wrap;
+			}
+			&-item {
+				position: relative;
+				margin-right: 37px;
+				@include w1366 {
+					margin-right: 27px;
+				}
+				&__img{
+					border-radius: 50%;
+					width: 90px;
+					height: 90px;
+					position: relative;
+					&:after {
+						content: '';
+						position: absolute;
+						width: 0px;
+						height: 0px;
+						top: 45%;
+						left: 50%;
+						border-bottom: 2px solid #FFF;
+						border-left: 2px solid #FFF;
+						transform: translate(-50%,-50%) rotate(-45deg);
+						opacity: 0;
+					}
+				}
+				&:nth-child(1) {
+					margin-bottom: 30px;
+				}
+				&:nth-child(1n) {
+					.fabrics-active-colors-row-item__img {
+						background: #A75A2B;
+					}
+				}
+				&:nth-child(2n) {
+					.fabrics-active-colors-row-item__img {
+						background: #CBBA9F;
+					}
+				}
+				&:nth-child(3n) {
+					.fabrics-active-colors-row-item__img {
+						background: #191516;
+					}
+				}
+				&:nth-child(4n) {
+					.fabrics-active-colors-row-item__img {
+						background: #95873B;
+					}
+				}
+				&.active {
+					.fabrics-active-colors-row-item__img {
+						border-radius: 50%;
+						position: relative;
+						&:after {
+							width: 25px;
+							height: 15px;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+	&-description {
+		margin-bottom: 25px;
+		&-main {
+			font-family: 'Proxima Nova Light', sans-serif;
+			line-height: 37px;
+			font-size: 18px;
+		}
+	}
+	&-tech {
+		margin-bottom: 35px;
+	}
+	&-include {
+		margin-bottom: 40px;
+		.card-item-wrapper_fabrics {
+			width: 324px;
+			@include w1366 {
+				width: 310px;
+				.card-item {
+					width: 310px;
+				}
+			}
+		}
+	}
+}
+
+.fabrics-filter-letter.fabrics-active {
+	color: $red;
+	font-weight: 900;
+	font-family: 'Proxima Nova Semibold';
+	display: inline-block;
+	text-decoration: underline;
+}
+
+.fabrics-filter-column-row-value-row-item.fabrics-active {
+	.text-underline {
+		color: $red;
+		font-family: 'Proxima Nova';
+
+		display: inline-block;
+	}
+}
+
+.fabrics-filter-column-row-value-row-item_osob.fabrics-active {
+	color: $red;
+	font-family: 'Proxima Nova';
+}
 
 
 

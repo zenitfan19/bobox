@@ -92,6 +92,19 @@ $(document).ready(function() {
 		$('.filter-select').selectmenu();
 	};
 
+	//Функция сброса фильтра
+	const resetFiltrFabrics = function() {
+		$('.fabrics-filter-column-row-value-row-item_osob').removeClass('fabrics-active');
+		$('.fabrics-filter-column-row-value-row-item:not(.fabrics-filter-column-row-value-row-item_osob)').removeClass('fabrics-active');
+		$('.fabrics-filter-letter').removeClass('fabrics-active');
+		$('.card-item-row-colors__color').removeClass('active');
+
+		$('.filter-checkbox input').prop('checked', false);
+
+		$('.fabrics-filter-select').find('option').prop('selected', false);
+		$('.fabrics-filter-select')[0].sumo.reload();
+	};
+
 	firstSlider.slick({
 		arrows: false,
 		dots: true,
@@ -411,6 +424,54 @@ $(document).ready(function() {
 		captionFormatAllSelected: 'Выбраны все',
 
 	});
+
+	//переключение цвета на странице fabrics-active
+	$(document).on('click', '.fabrics-active-colors-row-item:not(.active)', function(){
+		$('.fabrics-active-colors-row-item').removeClass('active');
+		$(this).addClass('active');
+	});
+
+	//функция фильтра на странице fabrics
+	$(document).on('click', '.fabrics-filter-letter', function(e){
+		e.preventDefault();
+		if ( $(this).hasClass('fabrics-active') ) {
+			$(this).removeClass('fabrics-active');
+			return false;
+		}
+
+		$('.fabrics-filter-letter').removeClass('fabrics-active');
+		$(this).addClass('fabrics-active');
+	});
+
+	//функция фильтра на странице fabrics
+	$(document).on('click', '.fabrics-filter-column-row-value-row-item:not(.fabrics-filter-column-row-value-row-item_osob)', function(e){
+		e.preventDefault();
+		if ( $(this).hasClass('fabrics-active') ) {
+			$(this).removeClass('fabrics-active');
+			return false;
+		}
+
+		$('.fabrics-filter-column-row-value-row-item:not(.fabrics-filter-column-row-value-row-item_osob)').removeClass('fabrics-active');
+		$(this).addClass('fabrics-active');
+	});
+
+	//функция фильтра на странице fabrics
+	$(document).on('click', '.fabrics-filter-column-row-value-row-item_osob', function(e){
+		e.preventDefault();
+		if ( $(this).hasClass('fabrics-active') ) {
+			$(this).removeClass('fabrics-active');
+			return false;
+		}
+		
+		$('.fabrics-filter-column-row-value-row-item_osob').removeClass('fabrics-active');
+		$(this).addClass('fabrics-active');
+		
+	});
+
+	$(document).on('click', '.filter-btn_cancel', function(){
+		resetFiltrFabrics();
+	})
+
 });
 
 
