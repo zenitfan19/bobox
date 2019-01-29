@@ -108,7 +108,8 @@ $(document).ready(function() {
 	firstSlider.slick({
 		arrows: false,
 		dots: true,
-		autoplay: true
+		autoplay: true,
+		draggable: true
 	});
 
 	secondSlider.slick({
@@ -472,6 +473,28 @@ $(document).ready(function() {
 		resetFiltrFabrics();
 	})
 
+	$('.designers-projects-gallery').each(function(){
+		let arrowPrev = $(this).closest('.designers-projects-gallery-wrapper').find('.designers-projects-gallery-arrow__prev'),
+			arrowNext = $(this).closest('.designers-projects-gallery-wrapper').find('.designers-projects-gallery-arrow__next'),
+			slider    = $(this);
+
+		slider.slick({
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			infinite: false,
+			dots: false,
+			arrows: false
+		});
+
+		$(arrowPrev).on('click', function(){
+			slider.slick('slickPrev');
+			return false;
+		});
+		$(arrowNext).on('click', function(){
+			slider.slick('slickNext');
+			return false;
+		});
+	});
 });
 
 
