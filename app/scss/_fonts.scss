@@ -28,28 +28,28 @@
 
 @font-face {
 	font-family: "Proxima Nova";
-	src: url(../fonts/ProximaNova.ttf);
+	src: url(../fonts/freeset-cyrillic_[allfont.ru].ttf);
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova Bold";
-	src: url(../fonts/ProximaNovaBold.ttf);
+	src: url(../fonts/freeset-bold-cyrillic_[allfont.ru].ttf);
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova Light";
-	src: url(../fonts/ProximaNovaLight.ttf);
+	src: url(../fonts/freeset-cyrillic_[allfont.ru].ttf);
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova Semibold";
-	src: url(../fonts/ProximaNovaSemibold.ttf);
+	src: url(../fonts/freeset-bold-cyrillic_[allfont.ru].ttf);
 	font-weight: 700;
 	font-style: normal;
 }
@@ -64,4 +64,14 @@
 @font-face {
 	font-family: "Proxima Nova Extrabold";
 	src: url(../fonts/ProximaNovaExtrabld.ttf);
+}
+
+@font-face {
+	font-family: "test1";
+	src: url(../fonts/freeset-cyrillic_[allfont.ru].ttf);
+}
+
+@font-face {
+	font-family: "test2";
+	src: url(../fonts/freeset-bold-cyrillic_[allfont.ru].ttf);
 }
