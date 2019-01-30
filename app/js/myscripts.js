@@ -12,8 +12,8 @@ $(document).ready(function() {
 		aboutSlider           = $('.about-slider'),
 		aboutSliderArrowPrev  = '.about-slider__arrow-prev',
 		aboutSliderArrowNext  = '.about-slider__arrow-next',
-		total 				  = $('.card-main-block-description-row-cost__number span'),
-		totalCount 			  = parseInt(total.text()),
+		total 				  = $('.card-main-block-description-row-cost__number_main span'),
+		totalCount 			  = parseInt(total.text().replace(/\s+/g, '')),
 		discontGalleryMini    = $('.discont-row-item-gallery-mini'),
 		discontGalleryBig     = $('.discont-row-item-gallery-big'),
 		heightTextSectionRec;
@@ -61,10 +61,17 @@ $(document).ready(function() {
 	const totalResult = function() {
 		let	a = $('[data-result]').find('div').data('cost'),
 			b = $('[data-result-material]').find('div').data('cost'),
+			c = $('[data-result-material-dop]').find('div').data('cost'),
 			totalCountNew;
-			totalCountNew = totalCount + a + b;
+			totalCountNew = parseInt(totalCount) + parseInt(a) + parseInt(b) + parseInt(c);
 
-		total.text(totalCountNew);
+			totalCountNew = parseInt(totalCountNew);
+
+			totalCountNew = totalCountNew.toLocaleString('ru');
+
+		 total.text(totalCountNew);
+
+
 	};
 
 	//Функция сброса фильтра
@@ -77,12 +84,12 @@ $(document).ready(function() {
 		$('#amount-cost-min').val('13500');
 		$('#amount-cost-max').val('26000');
 		$( "#slider-range-width" ).slider('values', 0, 30).slider('values', 1, 350);
-		$( "#slider-range-width .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').text('30 см');
-        $( "#slider-range-width .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').text('350 см');
+		$( "#slider-range-width .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').val('30 см');
+        $( "#slider-range-width .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').val('350 см');
 
 		$( "#slider-range-cost" ).slider('values', 0, 13500).slider('values', 1, 26000);
-		$( "#slider-range-cost .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').text('13500 ₽');
-        $( "#slider-range-cost .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').text('26000 ₽');
+		$( "#slider-range-cost .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').val('13 500 ₽');
+        $( "#slider-range-cost .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').val('26 000 ₽');
 
 
 		$('.filter-select').selectmenu('destroy');
@@ -183,14 +190,14 @@ $(document).ready(function() {
       max: 400,
       values: [ 30, 350 ],
       create: function() {
-      	$( "#slider-range-width .ui-slider-handle" ).eq(0).append('<span class="slider-range-cost-text">30 см</span>');
-      	$( "#slider-range-width .ui-slider-handle" ).eq(1).append('<span class="slider-range-cost-text">350 см</span>');
+      	$( "#slider-range-width .ui-slider-handle" ).eq(0).append('<input class="slider-range-cost-text" disabled value="30 см">');
+      	$( "#slider-range-width .ui-slider-handle" ).eq(1).append('<input class="slider-range-cost-text" disabled value="350 см">');
       },
       slide: function( event, ui ) {
         $( "#amount-width-min" ).val(ui.values[ 0 ]);
         $( "#amount-width-max" ).val(ui.values[ 1 ]);
-        $( "#slider-range-width .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').text(ui.values[ 0 ] + ' см');
-        $( "#slider-range-width .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').text(ui.values[ 1 ] + ' см');
+        $( "#slider-range-width .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').val(ui.values[ 0 ] + ' см');
+        $( "#slider-range-width .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').val(ui.values[ 1 ] + ' см');
       }
     });
 
@@ -200,14 +207,14 @@ $(document).ready(function() {
       max: 26000,
       values: [ 13500, 26000 ],
       create: function() {
-      	$( "#slider-range-cost .ui-slider-handle" ).eq(0).append('<span class="slider-range-cost-text">13500 ₽</span>');
-      	$( "#slider-range-cost .ui-slider-handle" ).eq(1).append('<span class="slider-range-cost-text">26000 ₽</span>');
+      	$( "#slider-range-cost .ui-slider-handle" ).eq(0).append('<input class="slider-range-cost-text" disabled value="13 500 ₽">');
+      	$( "#slider-range-cost .ui-slider-handle" ).eq(1).append('<input class="slider-range-cost-text" disabled value="26 000 ₽">');
       },
       slide: function( event, ui ) {
         $( "#amount-cost-min" ).val(ui.values[ 0 ]);
         $( "#amount-cost-max" ).val(ui.values[ 1 ]);
-        $( "#slider-range-cost .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').text(ui.values[ 0 ] + ' ₽');
-        $( "#slider-range-cost .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').text(ui.values[ 1 ] + ' ₽');
+        $( "#slider-range-cost .ui-slider-handle" ).eq(0).find('.slider-range-cost-text').val(ui.values[ 0 ].toLocaleString('ru') + ' ₽');
+        $( "#slider-range-cost .ui-slider-handle" ).eq(1).find('.slider-range-cost-text').val(ui.values[ 1 ].toLocaleString('ru') + ' ₽');
       }
     });
 
@@ -334,10 +341,27 @@ $(document).ready(function() {
 		totalResult();
 	});
 
-	$(document).on('click', '.card-main-block-description-row-item-ul-vert .material-item', function(){
+	$(document).on('click', '.card-main-block-description-row-item-ul-vert:eq(0) .material-item', function(){
 		let clickedItem       = $(this),
 			targetItem        = $('[data-result-material] .material-item'),
 			targetItemParent  = $('[data-result-material]'),
+			clickedItemParent = $(this).closest('.card-main-block-description-row-item-ul-vert__item');
+
+		targetItem.remove();
+		clickedItem.remove();
+
+		targetItemParent.append(clickedItem);
+		clickedItemParent.append(targetItem);
+
+		$('.card-main-block-description-row-item-ul-vert').slideUp('slow');
+
+		totalResult();
+	});
+
+	$(document).on('click', '.card-main-block-description-row-item-ul-vert:eq(1) .material-item', function(){
+		let clickedItem       = $(this),
+			targetItem        = $('[data-result-material-dop] .material-item'),
+			targetItemParent  = $('[data-result-material-dop]'),
 			clickedItemParent = $(this).closest('.card-main-block-description-row-item-ul-vert__item');
 
 		targetItem.remove();
@@ -469,7 +493,8 @@ $(document).ready(function() {
 		
 	});
 
-	$(document).on('click', '.filter-btn_cancel', function(){
+	$(document).on('click', '.fabrics-btn_cancel', function(e){
+		e.preventDefault();
 		resetFiltrFabrics();
 	})
 
@@ -495,6 +520,46 @@ $(document).ready(function() {
 			return false;
 		});
 	});
+
+	//to top
+	$(window).scroll(function() {
+		if ($('html, body').scrollTop() > 500) {
+			$('.to-top').addClass('active');
+		} else {
+			$('.to-top').removeClass('active');
+		}
+	});
+
+	$(document).on('click', '.to-top', function() {
+		$('html, body').animate({scrollTop: 0}, 500);
+	});
+
+	$(document).on('click', '.card-item-row__like', function(){
+		changeLike($(this));
+	});
+
+	$(document).on('click', '.card-main-block__like', function(){
+		changeLike($(this));
+	});
+
+	var changeLike = function(like) {
+		let a = like.find('img').attr('src');
+
+		a = a.split('/');
+
+		if (a[a.length - 1] == 'heart.svg') {
+			like.find('img').attr('src', a.splice(0,(a.length-1)).join('/') + '/heart-active.svg');
+		} else {
+			like.find('img').attr('src', a.splice(0,(a.length-1)).join('/') + '/heart.svg');
+		}
+	};
+
+	$(document).on('click', '.where-buy-big-info-gallery__item:not(.active)', function(){
+		console.log($(this));
+		$(this).addClass('active').siblings().removeClass('active');
+		$(this).closest('.where-buy-big.active').find('.where-buy-big-img__item').removeClass('active').eq($(this).index()).addClass('active');
+	})
+
 });
 
 

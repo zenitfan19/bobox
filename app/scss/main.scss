@@ -213,6 +213,10 @@ a {
 		&-row {
 			display: flex;
 			align-items: center;
+			&_hover:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
 			&__text {
 				font-size: 14px;
 				margin-left: 10px;
@@ -253,13 +257,48 @@ a {
 			&-item {
 				color: #000;
 				position: relative;
+				display: flex;
+				flex-direction: column;
+				white-space: nowrap;
+				position: relative;
+				&-inner-ul {
+					display: none;
+					flex-direction: column;
+					position: absolute;
+					z-index: 100;
+					top: 100%;
+					left: -10px;
+					align-items: flex-start;
+					border-radius: 4px;
+					border: 1px solid #C7C7C7;
+					min-width: 150px;
+					&-item {
+						padding: 10px 0;
+						position: relative;
+						color: inherit;
+						outline: none;
+						&:after {
+							content: '';
+							display: block;
+							position: absolute;
+							bottom: 0;
+							width: 0%;
+							background: $red;
+							height: 2px;
+							transition: 0.5s ease-in-out;
+						}
+						&:hover:after {
+							width: 100%;
+						}
+					}
+				}
 				&_red-hover {
 					&:before {
 						content: '';
 						width: 0%;
 						position: absolute;
 						display: block;
-						bottom: -10px;
+						bottom: -5px;
 						left: 0px;
 						height: 2px;
 						background: $red;
@@ -283,6 +322,13 @@ a {
 					font-family: 'Poppins', sans-serif;
 					bottom: calc(100% - 12px);
 					left: calc(100% + 0px);
+				}
+				&:hover {
+					.header-wrapper-item-list-item-inner-ul {
+						display: flex;
+						background: #FFF;
+						padding: 5px 10px;
+					}
 				}
 			}
 		}
@@ -368,14 +414,22 @@ a {
 							display: flex;
 							align-items: center;
 							height: 61px;
+							padding-right: 10px;
 							margin-bottom: 10px;
 							cursor: pointer;
+							outline: none;
+							color: #000;
+							&:hover {
+								text-decoration: underline;
+								color: $red;
+							}
 							&__icon {
 								margin-right: 15px;
 							}
 							&__text {
 								font-size: 18px;
 								font-family: 'Roboto Light', sans-serif;
+								color: inherit;
 							}
 						}
 					}
@@ -400,6 +454,10 @@ a {
 				background: #D7FFD6;
 				opacity: 1;
 			}
+			&:nth-child(5):hover {
+				background: #C7C7C7;
+				opacity: 1;
+			}
 			&.active{
 				opacity: 1;
 				background: #E8D8BE;
@@ -414,6 +472,10 @@ a {
 			}
 			&:nth-child(4).active {
 				background: #D7FFD6;
+				opacity: 1;
+			}
+			&:nth-child(5).active {
+				background: #C7C7C7;
 				opacity: 1;
 			}
 		}
@@ -491,6 +553,10 @@ a {
 		padding: 15px 0;
 		padding-left: 20px;
 		padding-right: 20px;
+	}
+	&-h2 {
+		text-align: center;
+		margin-bottom: 20px;
 	}
 	&-head {
 		font-size: 36px;
@@ -798,7 +864,7 @@ a {
 			cursor: pointer;
 			img {
 				width: 100%;
-				height: 180px;
+				height: 155px;
 			}
 		}
 		&__fast-search {
@@ -813,6 +879,10 @@ a {
 		}
 		&__like {
 			cursor: pointer;
+			img {
+				width: 22px;
+				height: 20px;
+			}
 		}
 		&-item {
 			flex: 0 1 50%;
@@ -939,6 +1009,10 @@ a {
 		border: 1px solid #A7A7A7;
 
 	}
+}
+
+.choice-of-customers-gallery .card-item.active {
+	transform: translateY(-30px);
 }
 
 .seond-slider .slick-active:last-child {
@@ -1072,15 +1146,17 @@ a {
 			align-items: stretch;
 		}
 		&-item {
-			flex: 0 1 39%;
+			flex: 0 1 39.25%;
 			height: 295px;
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-end;
 			padding: 20px;
 			transition: 0.1s ease-in-out;
+			cursor: pointer;
 			@include w480 {
 				height: 150px;
+				background-size: cover !important;
 				margin-bottom: 20px;
 				flex: 1;
 				border-radius: 5px;
@@ -1115,12 +1191,12 @@ a {
 			}
 			&__head {
 				color: #000000;
-				font-size: 14px;
+				font-size: 18px;
 				margin-bottom: 10px;
 			}
 			&__name {
 				color: #000;
-				font-size: 36px;
+				font-size: 48px;
 			}
 			&_white {
 				flex: 0 1 60%;
@@ -1173,9 +1249,6 @@ a {
 				&:nth-child(4) {
 					background: url(../img/collection2-4.png);
 				}
-			}
-			&:hover {
-
 			}
 		}
 	}
@@ -1264,6 +1337,14 @@ a {
 					display: flex;
 					align-items: center;
 					margin-bottom: 10px;
+					&_hover {
+						&:hover {
+							a {
+								transform: translateX(5px);
+								color: $red;
+							}
+						}
+					}
 					@include w480 {
 						justify-content: center;
 					}
@@ -1271,6 +1352,7 @@ a {
 						margin-bottom: 20px;
 					}
 					a {
+						transition: 0.2s ease-in-out;
 						margin-right: 20px;
 						color: inherit;
 						display: flex;
@@ -1461,6 +1543,10 @@ a {
 			top: 0px;
 			right: 0px;
 			cursor: pointer;
+			img {
+				width: 27px !important;
+				height: 25px !important;
+			}
 		}
 		&-gallery-big{
 			position: relative;
@@ -1565,8 +1651,7 @@ a {
 						background: #D71921;
 						display: flex;
 						align-items: center;
-						justify-content: flex-start;
-						padding: 0 0 0 30px;
+						justify-content:center;
 						flex: 1;
 						color: #FFF;
 						border-radius: 4px;
@@ -1626,8 +1711,9 @@ a {
 							flex-direction: column;
 							align-items: center;
 							flex: 0 1 30%;
+							justify-content: space-between;
 							cursor: pointer;
-							&:nth-child(1) {
+							&:nth-child(-n+3) {
 								margin-bottom: 10px;
 							}
 							&__text {
@@ -1886,7 +1972,7 @@ a {
 						position: relative;
 						display: inline-block;
 						video {
-							width: 670px;
+							width: 100%;
 						}
 						&__play-btn {
 							position: absolute;
@@ -2181,7 +2267,7 @@ a {
 		input[type="radio"], input[type="checkbox"] {
 			display: none;
 		}
-		input[type="radio"]:checked, input[type="checkbox"]:checked ~ .filter-checkbox-square {
+		input[type="radio"]:checked ~ .filter-checkbox-square, input[type="checkbox"]:checked ~ .filter-checkbox-square {
 			background: $red;
 			border: 2px solid $red;
 			&:after {
@@ -2199,6 +2285,10 @@ a {
 	}
 	&-row {
 		margin-bottom: 30px;
+		&:last-child {
+			margin-bottom: 0px;
+			margin-top: 55px;
+		}
 		&-head {
 			font-size: 18px;
 			color: #000;
@@ -2238,13 +2328,18 @@ a {
 		outline: none;
 		height: 15px;
 		width: 15px;
-		cursor: pointer;
+		cursor: grabbing;
 		.slider-range-cost-text {
 			position: absolute;
 			top: calc(100% + 5px);
 			left: 0%;
+			background: transparent;
+			border: none;
+			outline: none;
+			width: 80px;
 			white-space: nowrap;
 			font-size: 14px;
+			cursor: text;
 		}
 		&:last-child {
 			.slider-range-cost-text {
@@ -2439,7 +2534,7 @@ a {
 				background: transparent;
 			}
 			&_modified {
-				padding: 70px 0 60px;
+				padding: 0px 0 60px;
 				.card-item-row-item__button {
 					margin-right: 20px;
 					width: 180px;
@@ -2719,6 +2814,19 @@ a {
 			&::placeholder {
 				color: #B8BFD3;
 			}
+		}
+	}
+	&-bottom {
+		display: flex;
+		&-side {
+			flex: 1;
+		}
+	}
+	&-map {
+		height: 100%;
+		#map {
+			height: 100%;
+			width: 100%;
 		}
 	}
 }
@@ -3019,6 +3127,14 @@ a {
 				width: 211px;
 				height: 47px;
 				margin-left: 25px;
+				&_red {
+					background: $red;
+					color: #FFF;
+					border: 1px solid $red;
+					&:active {
+						background: $red;
+					}
+				}
 			}
 		}
 	}
@@ -3472,12 +3588,12 @@ a {
 	&__text {
 	    position: absolute;
 	    bottom: 60px;
-	    left: 50%;
+	    left: 20%;
 	    -webkit-transform: translateX(-50%);
 	    -ms-transform: translateX(-50%);
 	    transform: translateX(-50%);
-	    color: #000;
-	    font-size: 48px;
+	    color: #FFF;
+	    font-size: 98px;
 		font-family: 'Proxima Nova Extrabold';
 	}
 }
@@ -3651,6 +3767,7 @@ a {
 		flex-direction: column;
 		align-items: stretch;
 		margin-bottom: 30px;
+		cursor: pointer;
 		@include w1366 {
 			flex: 0 1 310px;
 		}
@@ -4064,7 +4181,28 @@ a {
 	padding-right: 20px;
 }
 
+.to-top {
+	position: fixed;
+	bottom: -50px;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	left: 20px;
+	z-index: 1000;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+	svg {
+		width: 100%;
+	}
+	&.active {
+		bottom: 20px;
+	}
+}
 
+.tahoma {
+	font-family: 'Tahoma';
+	font-size: 30px;
+}
 
 
 

@@ -6,6 +6,8 @@
 	<title>Bo-Box | Новости</title>
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/sumoselect.min.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -148,7 +150,7 @@
 							<a href="index.html"><img src="img/logo.png" alt="logo"></a>
 						</div>
 						<div class="header-wrapper-item">
-							<div class="header-wrapper-item-row">
+							<div class="header-wrapper-item-row header-wrapper-item-row_hover">
 								<svg width="11" height="15" viewBox="0 0 11 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M5.3019 3.28723C4.24478 3.28723 3.38434 4.14767 3.38434 5.20479C3.38434 6.26192 4.24478 7.12236 5.3019 7.12236C6.35903 7.12236 7.21946 6.26192 7.21946 5.20479C7.21946 4.14767 6.35903 3.28723 5.3019 3.28723ZM5.3019 6.57448C4.54666 6.57448 3.93221 5.96004 3.93221 5.20479C3.93221 4.44955 4.54666 3.83511 5.3019 3.83511C6.05715 3.83511 6.67159 4.44955 6.67159 5.20479C6.67159 5.96004 6.05715 6.57448 5.3019 6.57448Z" fill="black"/>
 									<path d="M8.96802 1.53871C7.97581 0.546506 6.65653 0 5.25342 0C3.85004 0 2.53103 0.546506 1.53883 1.53871C-0.297374 3.37464 -0.525564 6.82899 1.04465 8.92187L5.25342 15L9.4559 8.93036C11.0324 6.82899 10.8042 3.37464 8.96802 1.53871ZM9.01157 8.61013L5.25342 14.0374L1.48925 8.60164C0.065046 6.7027 0.269129 3.5831 1.92645 1.92606C2.81511 1.0374 3.9966 0.547875 5.25342 0.547875C6.51025 0.547875 7.69174 1.0374 8.58067 1.92606C10.238 3.5831 10.4421 6.7027 9.01157 8.61013Z" fill="black"/>
@@ -173,9 +175,28 @@
 						</div>
 						<div class="header-wrapper-item">
 							<div class="header-wrapper-item-list header-wrapper-item-list_width1">
-								<a href="about.html" class="header-wrapper-item-list-item header-wrapper-item-list-item_red-hover">О компании</a>
+								<div class="header-wrapper-item-list-item">									
+									<a href="about.html" class="header-wrapper-item-list-item">О компании</a>
+									<div class="header-wrapper-item-list-item-inner-ul">
+										<a href="news.html" class="header-wrapper-item-list-item-inner-ul-item">История</a>
+										<a href="principels.html" class="header-wrapper-item-list-item-inner-ul-item">Принципы</a>
+										<a href="news.html" class="header-wrapper-item-list-item-inner-ul-item">Новости</a>
+										<a href="contacts.html" class="header-wrapper-item-list-item-inner-ul-item">Контакты</a>
+										<a href="collection-item.html" class="header-wrapper-item-list-item-inner-ul-item">Коллекции</a>
+									</div>
+								</div>
 								<a href="principels.html" class="header-wrapper-item-list-item header-wrapper-item-list-item_red-hover">Доставка и оплата</a>
-								<a href="catalog.html" class="header-wrapper-item-list-item header-wrapper-item-list-item_red-hover">Интересное</a>
+								<div class="header-wrapper-item-list-item">									
+									<a href="catalog.html" class="header-wrapper-item-list-item">Интересное</a>
+									<div class="header-wrapper-item-list-item-inner-ul">
+										<a href="fabrics.html" class="header-wrapper-item-list-item-inner-ul-item">Обивки</a>
+										<a href="news.html" class="header-wrapper-item-list-item-inner-ul-item">PDF-каталоги</a>
+										<a href="mechanics.html" class="header-wrapper-item-list-item-inner-ul-item">Механизмы</a>
+										<a href="news.html" class="header-wrapper-item-list-item-inner-ul-item">Справочники терминов</a>
+										<a href="news-item.html" class="header-wrapper-item-list-item-inner-ul-item">Статьи</a>
+										<a href="designers.html" class="header-wrapper-item-list-item-inner-ul-item">Дизайнеры рекомендует</a>
+									</div>
+								</div>
 								<a href="where-buy.html" class="header-wrapper-item-list-item header-wrapper-item-list-item_red-hover">Где купить</a>
 							</div>
 						</div>
@@ -232,176 +253,235 @@
 							<div class="container">
 								<div class="header-nav-list-item-ul">
 									<div class="header-nav-list-item-ul-side">
-										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-head">Типы:</div>
 										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
 												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
-												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
 												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
-												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa3.png"></div>
 												<div class="header-nav-list-item-ul-side-ul-item__text">Модульный диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Двухместный</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa3.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Модульный диван</div>
-											</div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Трехместный</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa3.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Четырехместный</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa3.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Диван-кровать</div>
+											</a>
 										</div>
 									</div>
 									<div class="header-nav-list-item-ul-side">
 										<div class="header-nav-list-item-ul-side-head">Механизмы</div>
 										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Стационарный</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Еврокнижка </div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Клик-Кляк</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Трещетка</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
 												<div class="header-nav-list-item-ul-side-ul-item__text">Дельфин</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Дельфин</div>
-											</div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Поворотный</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Поворотно-откатной</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Итальянская раскладушка</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Американская раскладушка (тент)</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Трехскладной (сетка)</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Высоковыкатной</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Реклайнер</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Электро-реклайнер</div>
+											</a>
 										</div>
 									</div>
 								</div>
 								<div class="header-nav-list-item-ul">
 									<div class="header-nav-list-item-ul-side">
-										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-head">Типы:</div>
 										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Качалка</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Кровать</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Офисное</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
-											</div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Мешок</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Трансформер</div>
+											</a>
 										</div>
 									</div>
 									<div class="header-nav-list-item-ul-side">
 										<div class="header-nav-list-item-ul-side-head">Механизмы</div>
 										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Стационарный</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Еврокнижка</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Трещетка </div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
 												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
-											</div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Реклайнер </div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Электро-реклайнер </div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Качалка с вращением</div>
+											</a>
 										</div>
 									</div>
 								</div>
 								<div class="header-nav-list-item-ul">
 									<div class="header-nav-list-item-ul-side">
-										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-head">Типы:</div>
 										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">С ящиком</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Круглый</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa2.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Угловой диван</div>
-											</div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Прямоугольны</div>
+											</a>
 										</div>
 									</div>
-									<div class="header-nav-list-item-ul-side">
+									<!-- <div class="header-nav-list-item-ul-side">
 										<div class="header-nav-list-item-ul-side-head">Механизмы</div>
 										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<div class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
 												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
 											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<div class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
 												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
 											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<div class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
 												<div class="header-nav-list-item-ul-side-ul-item__text">Аккордеон</div>
 											</div>
 										</div>
+									</div> -->
+								</div>
+								<div class="header-nav-list-item-ul">
+									<div class="header-nav-list-item-ul-side">
+										<div class="header-nav-list-item-ul-side-head"></div>
+										<div class="header-nav-list-item-ul-side-ul">
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Столы</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Подушки</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Наматрасники</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Ящики для белья</div>
+											</a>
+											<a href="catalog.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
+												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Другое (например спинки и накладки)</div>
+											</a>
+										</div>
 									</div>
 								</div>
 								<div class="header-nav-list-item-ul">
 									<div class="header-nav-list-item-ul-side">
-										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
+										<div class="header-nav-list-item-ul-side-head"></div>
 										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
+											<a href="stock-and-offers.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
-											</div>
-										</div>
-									</div>
-									<div class="header-nav-list-item-ul-side">
-										<div class="header-nav-list-item-ul-side-head">Механизмы</div>
-										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
-												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
-											</div>
-											<div class="header-nav-list-item-ul-side-ul-item">
-												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/accordion.svg"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Книжка</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="header-nav-list-item-ul">
-									<div class="header-nav-list-item-ul-side">
-										<div class="header-nav-list-item-ul-side-head">Типы диванов</div>
-										<div class="header-nav-list-item-ul-side-ul">
-											<div class="header-nav-list-item-ul-side-ul-item">
+												<div class="header-nav-list-item-ul-side-ul-item__text">Акции и горящие предложения</div>
+											</a>
+											<a href="discount.html" class="header-nav-list-item-ul-side-ul-item" target="_blank">
 												<div class="header-nav-list-item-ul-side-ul-item__icon"><img src="img/icons/sofa1.png"></div>
-												<div class="header-nav-list-item-ul-side-ul-item__text">Прямой диван</div>
-											</div>
+												<div class="header-nav-list-item-ul-side-ul-item__text">Дисконт</div>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -425,7 +505,7 @@
 							<div class="news-row-info__text">Это еще один распространенный механизм трансформации диванов. Чтобы разложить такой диван, нужно потянуть на себя находящийся под сиденьем выдвижной блок. Затем его следует поднять на уровень с сиденьем, таким образом сиденье и выдвижная часть образуют спальное место.<br>
 							Дельфин можно с уверенностью назвать надежным и долговечным механизмом. Минус этой модели — отсутствие ящика для белья. Он обычно бывает только в угловых моделях.</div>
 							<div class="news-row-info__btn-wrapper">
-								<a href="#" class="needs-list-item-text__button news-row-info__btn">ПОДРОБНЕЕ</a>
+								<a href="news-item.html" class="needs-list-item-text__button news-row-info__btn">ПОДРОБНЕЕ</a>
 								<div class="news-item-description-item">
 									<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M19.2306 2.01722C19.0221 0.995604 18.1171 0.224121 17.0345 0.224121C16.7866 0.224121 16.5862 0.4245 16.5862 0.672397C16.5862 0.920294 16.7866 1.12067 17.0345 1.12067C17.7759 1.12067 18.3793 1.72405 18.3793 2.4655C18.3793 3.20695 17.7759 3.81033 17.0345 3.81033C16.7866 3.81033 16.5862 4.01071 16.5862 4.2586C16.5862 4.5065 16.7866 4.70688 17.0345 4.70688C18.1166 4.70688 19.0221 3.9354 19.2306 2.91378H25.1034V6.94826H0.896552V2.91378H7.17241H8.51724C8.76514 2.91378 8.96552 2.7134 8.96552 2.4655C8.96552 2.2176 8.76514 2.01722 8.51724 2.01722H7.70317C7.88876 1.49633 8.38186 1.12067 8.96552 1.12067C9.70697 1.12067 10.3103 1.72405 10.3103 2.4655C10.3103 3.20695 9.70697 3.81033 8.96552 3.81033C8.71762 3.81033 8.51724 4.01071 8.51724 4.2586C8.51724 4.5065 8.71762 4.70688 8.96552 4.70688C10.2014 4.70688 11.2069 3.7014 11.2069 2.4655C11.2069 1.2296 10.2014 0.224121 8.96552 0.224121C7.88338 0.224121 6.97786 0.995604 6.76941 2.01722H0V7.84481V25.7758H26V7.84481V2.01722H19.2306ZM25.1034 24.8793H0.896552V7.84481H25.1034V24.8793Z" fill="black"/>
@@ -477,7 +557,7 @@
 							<div class="news-row-info__text">Это еще один распространенный механизм трансформации диванов. Чтобы разложить такой диван, нужно потянуть на себя находящийся под сиденьем выдвижной блок. Затем его следует поднять на уровень с сиденьем, таким образом сиденье и выдвижная часть образуют спальное место.<br>
 							Дельфин можно с уверенностью назвать надежным и долговечным механизмом. Минус этой модели — отсутствие ящика для белья. Он обычно бывает только в угловых моделях.</div>
 							<div class="news-row-info__btn-wrapper">
-								<a href="#" class="needs-list-item-text__button news-row-info__btn">ПОДРОБНЕЕ</a>
+								<a href="news-item.html" class="needs-list-item-text__button news-row-info__btn">ПОДРОБНЕЕ</a>
 								<div class="news-item-description-item">
 									<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M19.2306 2.01722C19.0221 0.995604 18.1171 0.224121 17.0345 0.224121C16.7866 0.224121 16.5862 0.4245 16.5862 0.672397C16.5862 0.920294 16.7866 1.12067 17.0345 1.12067C17.7759 1.12067 18.3793 1.72405 18.3793 2.4655C18.3793 3.20695 17.7759 3.81033 17.0345 3.81033C16.7866 3.81033 16.5862 4.01071 16.5862 4.2586C16.5862 4.5065 16.7866 4.70688 17.0345 4.70688C18.1166 4.70688 19.0221 3.9354 19.2306 2.91378H25.1034V6.94826H0.896552V2.91378H7.17241H8.51724C8.76514 2.91378 8.96552 2.7134 8.96552 2.4655C8.96552 2.2176 8.76514 2.01722 8.51724 2.01722H7.70317C7.88876 1.49633 8.38186 1.12067 8.96552 1.12067C9.70697 1.12067 10.3103 1.72405 10.3103 2.4655C10.3103 3.20695 9.70697 3.81033 8.96552 3.81033C8.71762 3.81033 8.51724 4.01071 8.51724 4.2586C8.51724 4.5065 8.71762 4.70688 8.96552 4.70688C10.2014 4.70688 11.2069 3.7014 11.2069 2.4655C11.2069 1.2296 10.2014 0.224121 8.96552 0.224121C7.88338 0.224121 6.97786 0.995604 6.76941 2.01722H0V7.84481V25.7758H26V7.84481V2.01722H19.2306ZM25.1034 24.8793H0.896552V7.84481H25.1034V24.8793Z" fill="black"/>
@@ -529,7 +609,7 @@
 							<div class="news-row-info__text">Это еще один распространенный механизм трансформации диванов. Чтобы разложить такой диван, нужно потянуть на себя находящийся под сиденьем выдвижной блок. Затем его следует поднять на уровень с сиденьем, таким образом сиденье и выдвижная часть образуют спальное место.<br>
 							Дельфин можно с уверенностью назвать надежным и долговечным механизмом. Минус этой модели — отсутствие ящика для белья. Он обычно бывает только в угловых моделях.</div>
 							<div class="news-row-info__btn-wrapper">
-								<a href="#" class="needs-list-item-text__button news-row-info__btn">ПОДРОБНЕЕ</a>
+								<a href="news-item.html" class="needs-list-item-text__button news-row-info__btn">ПОДРОБНЕЕ</a>
 								<div class="news-item-description-item">
 									<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M19.2306 2.01722C19.0221 0.995604 18.1171 0.224121 17.0345 0.224121C16.7866 0.224121 16.5862 0.4245 16.5862 0.672397C16.5862 0.920294 16.7866 1.12067 17.0345 1.12067C17.7759 1.12067 18.3793 1.72405 18.3793 2.4655C18.3793 3.20695 17.7759 3.81033 17.0345 3.81033C16.7866 3.81033 16.5862 4.01071 16.5862 4.2586C16.5862 4.5065 16.7866 4.70688 17.0345 4.70688C18.1166 4.70688 19.0221 3.9354 19.2306 2.91378H25.1034V6.94826H0.896552V2.91378H7.17241H8.51724C8.76514 2.91378 8.96552 2.7134 8.96552 2.4655C8.96552 2.2176 8.76514 2.01722 8.51724 2.01722H7.70317C7.88876 1.49633 8.38186 1.12067 8.96552 1.12067C9.70697 1.12067 10.3103 1.72405 10.3103 2.4655C10.3103 3.20695 9.70697 3.81033 8.96552 3.81033C8.71762 3.81033 8.51724 4.01071 8.51724 4.2586C8.51724 4.5065 8.71762 4.70688 8.96552 4.70688C10.2014 4.70688 11.2069 3.7014 11.2069 2.4655C11.2069 1.2296 10.2014 0.224121 8.96552 0.224121C7.88338 0.224121 6.97786 0.995604 6.76941 2.01722H0V7.84481V25.7758H26V7.84481V2.01722H19.2306ZM25.1034 24.8793H0.896552V7.84481H25.1034V24.8793Z" fill="black"/>
@@ -581,7 +661,7 @@
 							<div class="news-row-info__text">Это еще один распространенный механизм трансформации диванов. Чтобы разложить такой диван, нужно потянуть на себя находящийся под сиденьем выдвижной блок. Затем его следует поднять на уровень с сиденьем, таким образом сиденье и выдвижная часть образуют спальное место.<br>
 							Дельфин можно с уверенностью назвать надежным и долговечным механизмом. Минус этой модели — отсутствие ящика для белья. Он обычно бывает только в угловых моделях.</div>
 							<div class="news-row-info__btn-wrapper">
-								<a href="#" class="needs-list-item-text__button news-row-info__btn">ПОДРОБНЕЕ</a>
+								<a href="news-item.html" class="needs-list-item-text__button news-row-info__btn">ПОДРОБНЕЕ</a>
 								<div class="news-item-description-item">
 									<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M19.2306 2.01722C19.0221 0.995604 18.1171 0.224121 17.0345 0.224121C16.7866 0.224121 16.5862 0.4245 16.5862 0.672397C16.5862 0.920294 16.7866 1.12067 17.0345 1.12067C17.7759 1.12067 18.3793 1.72405 18.3793 2.4655C18.3793 3.20695 17.7759 3.81033 17.0345 3.81033C16.7866 3.81033 16.5862 4.01071 16.5862 4.2586C16.5862 4.5065 16.7866 4.70688 17.0345 4.70688C18.1166 4.70688 19.0221 3.9354 19.2306 2.91378H25.1034V6.94826H0.896552V2.91378H7.17241H8.51724C8.76514 2.91378 8.96552 2.7134 8.96552 2.4655C8.96552 2.2176 8.76514 2.01722 8.51724 2.01722H7.70317C7.88876 1.49633 8.38186 1.12067 8.96552 1.12067C9.70697 1.12067 10.3103 1.72405 10.3103 2.4655C10.3103 3.20695 9.70697 3.81033 8.96552 3.81033C8.71762 3.81033 8.51724 4.01071 8.51724 4.2586C8.51724 4.5065 8.71762 4.70688 8.96552 4.70688C10.2014 4.70688 11.2069 3.7014 11.2069 2.4655C11.2069 1.2296 10.2014 0.224121 8.96552 0.224121C7.88338 0.224121 6.97786 0.995604 6.76941 2.01722H0V7.84481V25.7758H26V7.84481V2.01722H19.2306ZM25.1034 24.8793H0.896552V7.84481H25.1034V24.8793Z" fill="black"/>
@@ -802,19 +882,19 @@
 						<div class="footer-top-item">
 							<div class="footer-top-item__head">Информация для покупателей</div>
 							<div class="footer-top-item-list">
-								<div class="footer-top-item-list__item"><a href="#">Вопрос - ответ</a></div>
-								<div class="footer-top-item-list__item"><a href="#">Ремонт и возврат</a></div>
-								<div class="footer-top-item-list__item"><a href="#">Вакансии</a></div>
-								<div class="footer-top-item-list__item"><a href="#">Как отличить подделку</a></div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Вопрос - ответ</a></div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Ремонт и возврат</a></div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Вакансии</a></div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Как отличить подделку</a></div>
 							</div>
 						</div>
 						<div class="footer-top-item">
 							<div class="footer-top-item__head">Сотрудничество</div>
 							<div class="footer-top-item-list">
-								<div class="footer-top-item-list__item"><a href="#">-Дилерам</a></div>
-								<div class="footer-top-item-list__item"><a href="#">-Дизайнерам</a>	</div>
-								<div class="footer-top-item-list__item"><a href="#">-Поставщикам</a></div>
-								<div class="footer-top-item-list__item"><a href="#">-Оферта</a></div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Дилерам</a></div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Дизайнерам</a>	</div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Поставщикам</a></div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Оферта</a></div>
 							</div>
 						</div>
 						<div class="footer-top-item">
@@ -853,8 +933,8 @@
 										</svg>
 									</a>
 								</div>
-								<div class="footer-top-item-list__item">Кредит и рассрочка</div>
-								<div class="footer-top-item-list__item">Доставка и оплата</div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Кредит и рассрочка</a></div>
+								<div class="footer-top-item-list__item footer-top-item-list__item_hover"><a href="#">Доставка и оплата</a></div>
 							</div>
 						</div>
 						<div class="footer-top-item">
@@ -955,24 +1035,158 @@
 					<div class="block block_footer-bottom">
 						<div class="footer-bottom-wrapper">
 							<div class="footer-bottom-item">© 2014 BO-BOX. All rights reserved.</div>
-							<div class="footer-bottom-item"></div>
-							<div class="footer-bottom-item"></div>
-							<div class="footer-bottom-item footer-bottom-item_ra">Сделано в Ra-studio</div>
 							<div class="footer-bottom-item"><a href="#">Политика конфиденциальности</a></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</footer>
+		<!-- /.main -->
 	</div>
-	
+
+	<div id="hidden-content" style="display: none;">
+		<div class="block card-main">
+			<div class="card-main-block">
+				<div class="card-main-block-gallery-mini">
+					<div class="card-main-block-gallery-mini__item active"><img src="img/card-mini-1.png"></div>
+					<div class="card-main-block-gallery-mini__item"><img src="img/card-mini-2.png"></div>
+					<div class="card-main-block-gallery-mini__item">
+						<div class="block-video-mini">
+							<img src="img/card-mini-3.png">
+							<div class="block-video-mini__button">
+								<svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M26 13.5L0.499999 26.9234L0.5 0.0766047L26 13.5Z" fill="#3F3C3C"></path>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-main-block-gallery-big">
+					<div class="card-main-block-gallery-big-item active">
+						<img src="img/card-big-1.png" alt="sofa">
+						<div class="card-main-block__like">
+							<img src="img/icons/heart.svg">
+						</div>
+					</div>
+					<div class="card-main-block-gallery-big-item">
+						<img src="img/collection-1.png" alt="sofa">
+						<div class="card-main-block__like">
+							<img src="img/icons/heart.svg">
+						</div>
+					</div>
+					<div class="card-main-block-gallery-big-item">
+						<div class="tabs-container-list-item-innercontainer-side-video">
+							<video src="" poster="img/card-big-1.png"></video>
+							<div class="tabs-container-list-item-innercontainer-side-video__play-btn">
+								<svg width="90" height="95" viewBox="0 0 90 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M87.9538 44.8451C90.0914 45.9697 90.0914 49.0303 87.9538 50.155L4.39686 94.1171C2.39915 95.1682 3.13938e-06 93.7195 3.23805e-06 91.4621L7.08135e-06 3.53786C7.18002e-06 1.28051 2.39915 -0.168167 4.39687 0.882898L87.9538 44.8451Z" fill="#D71921"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="card-main-block__like">
+							<img src="img/icons/heart.svg">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-main-block">
+				<div class="card-main-block-description">
+					<div class="card-main-block-description-name-wrapper">
+						<div class="card-main-block-description-head">Диван 2-х местный</div>
+						<div class="card-main-block-description-head">Фэнтази</div>
+					</div>
+					<div class="row-yellow">
+						<div class="card-main-block-description-row">
+							<div class="card-main-block-description-row-cost card-main-block-description-row-cost_align-stretch">
+								<div class="card-main-block-description-row-cost__number"><span>35 700</span> ₽</div>
+								<div class="card-main-block-description-row-cost__description">Цена зависит от выбранных параметров</div>
+							</div>
+						</div>
+						<div class="card-main-block-description-row">
+							<div class="card-main-block-description-row-btn-wrapper">
+								<a href="#" class="card-main-block-description-row-btn-wrapper-like">
+									<svg width="29" height="27" viewBox="0 0 29 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M14.1957 26.1851L14.3623 26.3363L14.5301 26.1866L24.0585 17.6862L24.06 17.6849C25.9734 15.9507 27.2885 13.7587 27.8581 11.3445C28.2483 9.69312 28.129 8.66085 28.0921 8.42389C27.6872 4.00593 24.5456 0.750517 20.5671 0.750517C18.0618 0.750517 15.7605 2.02951 14.3725 4.10007C13.0047 2.00707 10.7912 0.75 8.32121 0.75C4.34324 0.75 1.20119 4.00526 0.796668 8.4231C0.759091 8.66134 0.640212 9.69358 1.03013 11.3445C1.59974 13.7582 2.91489 15.9507 4.82829 17.6844L14.1957 26.1851ZM26.3647 10.9927L26.3647 10.9928C25.8681 13.0982 24.7165 15.0196 23.0331 16.5447C23.0329 16.5449 23.0326 16.5452 23.0324 16.5454L14.3714 24.2726L5.85917 16.5476L5.85902 16.5475C4.17211 15.0191 3.02072 13.0979 2.52357 10.9922L2.52356 10.9922C2.34472 10.2351 2.29291 9.64646 2.28516 9.25023C2.27841 8.90466 2.30463 8.70846 2.31217 8.65537L2.31243 8.6554L2.32018 8.60318L2.32126 8.5959L2.32191 8.58856C2.64934 4.90177 5.19494 2.28423 8.32121 2.28423C10.6351 2.28423 12.6836 3.70444 13.6607 6.01754C13.6608 6.01758 13.6608 6.01761 13.6608 6.01765L14.137 7.14641L14.3673 7.69237L14.5977 7.14641L15.0739 6.01761C15.0739 6.01758 15.0739 6.01756 15.0739 6.01754C16.033 3.74603 18.1912 2.28475 20.5676 2.28475C23.6923 2.28475 26.2394 4.90116 26.5736 8.63836L26.5735 8.63837L26.5745 8.64709L26.5747 8.64818C26.5774 8.66496 26.6104 8.86994 26.603 9.25021C26.5954 9.64687 26.5435 10.2356 26.3647 10.9927Z" fill="#D71921" stroke="#D71921" stroke-width="0.5"></path>
+									</svg>
+								</a>
+								<a href="#" class="card-main-block-description-row-btn-wrapper-buy">
+									КУПИТЬ
+								</a>
+							</div>
+							<div class="fl-clmn">
+								<div class="card-main-block-description-row-item card-main-block-description-row-item_info">
+									<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15 6.98762H14.273V3.67703C14.273 2.88335 13.6208 2.23766 12.8191 2.23766H11.8344L10.8268 0.444209C10.6733 0.170123 10.381 0 10.0641 0C9.91634 0 9.76978 0.0377154 9.64038 0.108801L5.7734 2.23762H1.45396C0.652233 2.23762 0 2.88331 0 3.67699V13.5606C0 14.3543 0.652233 15 1.45396 15H12.8191C13.6208 15 14.273 14.3543 14.273 13.5606V10.658H15V6.98762ZM12.8191 2.81338C13.2669 2.81338 13.6327 3.15018 13.6818 3.58113H12.589L12.158 2.81338H12.8191ZM9.92331 0.612003C10.0597 0.536303 10.2432 0.589248 10.3185 0.723716L11.9237 3.58086H4.52998L9.92331 0.612003ZM13.6914 13.5606C13.6914 14.0368 13.3 14.4243 12.819 14.4243H1.45396C0.972988 14.4243 0.581557 14.0368 0.581557 13.5606V3.67703C0.581557 3.20089 0.972988 2.81338 1.45396 2.81338H4.7277L3.33306 3.58118H1.63572C1.47491 3.58118 1.34492 3.71013 1.34492 3.86906C1.34492 4.02798 1.47491 4.15694 1.63572 4.15694H2.28709H12.9124H13.6914V6.98788H11.5649C10.5773 6.98788 9.77358 7.78358 9.77358 8.76118V8.88499C9.77358 9.86264 10.5773 10.6583 11.5649 10.6583H13.6914V13.5606ZM14.4184 10.0823H14.273H11.5649C10.8978 10.0823 10.3551 9.5451 10.3551 8.88468V8.76087C10.3551 8.10049 10.8977 7.56329 11.5649 7.56329H14.273H14.4184V10.0823ZM12.4555 8.84642C12.4555 9.19764 12.1682 9.48203 11.8135 9.48203C11.4587 9.48203 11.1714 9.1976 11.1714 8.84642C11.1714 8.49525 11.4588 8.21082 11.8135 8.21082C12.1683 8.21077 12.4555 8.49547 12.4555 8.84642Z" fill="black"></path>
+									</svg>
+									Варианты оплаты
+								</div>
+								<div class="card-main-block-description-row-item card-main-block-description-row-item_info">
+									<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M16.7399 8.13383L16.2738 6.26932C16.4012 6.24225 16.4969 6.12919 16.4969 5.99373V5.69311C16.4969 5.0404 15.9658 4.5094 15.3131 4.5094H13.19V3.88932C13.19 3.56813 12.9287 3.30685 12.6075 3.30685H1.78495C1.46377 3.30685 1.20248 3.56813 1.20248 3.88932V8.99998C1.20248 9.15562 1.32866 9.28183 1.48433 9.28183C1.63997 9.28183 1.76618 9.15565 1.76618 8.99998V3.88932C1.76618 3.87894 1.77458 3.87054 1.78495 3.87054H12.6075C12.6179 3.87054 12.6263 3.87894 12.6263 3.88932V9.00005C12.6263 9.15569 12.7524 9.2819 12.9081 9.2819C13.0637 9.2819 13.19 9.15572 13.19 9.00005V8.68055H16.5146C16.5149 8.68055 16.5151 8.68062 16.5154 8.68062C16.5157 8.68062 16.5159 8.68058 16.5162 8.68058C16.9253 8.68087 17.2727 8.94939 17.392 9.31941H16.5156C16.36 9.31941 16.2337 9.44558 16.2337 9.60126V10.2025C16.2337 10.6894 16.6299 11.0856 17.1168 11.0856H17.4363V12.3257H16.6993C16.4572 11.6266 15.7927 11.1231 15.0125 11.1231C14.2322 11.1231 13.5676 11.6266 13.3256 12.3257H13.1899V10.2025C13.1899 10.0468 13.0637 9.92062 12.908 9.92062C12.7524 9.92062 12.6262 10.0468 12.6262 10.2025V12.3256H6.77872C6.53664 11.6266 5.87215 11.1231 5.09186 11.1231C4.31156 11.1231 3.64704 11.6266 3.40499 12.3256H1.78495C1.77458 12.3256 1.76618 12.3172 1.76618 12.3068V11.6868H2.98747C3.14311 11.6868 3.26932 11.5606 3.26932 11.4049C3.26932 11.2492 3.14314 11.1231 2.98747 11.1231H0.281848C0.126211 11.1231 0 11.2492 0 11.4049C0 11.5606 0.126176 11.6868 0.281848 11.6868H1.20252V12.3068C1.20252 12.628 1.4638 12.8893 1.78499 12.8893H3.30739C3.30732 12.8955 3.3069 12.9018 3.3069 12.9081C3.3069 13.8923 4.10766 14.693 5.09186 14.693C6.07606 14.693 6.87681 13.8923 6.87681 12.9081C6.87681 12.9017 6.87639 12.8955 6.87632 12.8893H13.228C13.2279 12.8955 13.2275 12.9018 13.2275 12.9081C13.2275 13.8923 14.0283 14.693 15.0125 14.693C15.9967 14.693 16.7974 13.8923 16.7974 12.9081C16.7974 12.9017 16.797 12.8955 16.7969 12.8893H17.7181C17.8738 12.8893 18 12.7631 18 12.6074V9.60119C18 8.85897 17.4524 8.24229 16.7399 8.13383ZM13.19 5.07306H15.3131C15.655 5.07306 15.9332 5.35122 15.9332 5.69311V5.71189H13.19V5.07306ZM13.19 8.11689V6.27555H15.6943L16.1547 8.11689H13.19ZM5.09186 14.1294C4.41844 14.1294 3.87056 13.5816 3.87056 12.9081C3.87056 12.2347 4.41844 11.6868 5.09186 11.6868C5.76527 11.6868 6.31315 12.2347 6.31315 12.9081C6.31315 13.5816 5.76527 14.1294 5.09186 14.1294ZM15.0125 14.1294C14.3391 14.1294 13.7912 13.5816 13.7912 12.9081C13.7912 12.2347 14.3391 11.6868 15.0125 11.6868C15.6859 11.6868 16.2338 12.2347 16.2338 12.9081C16.2338 13.5816 15.6859 14.1294 15.0125 14.1294ZM17.4363 10.5219H17.1169C16.9408 10.5219 16.7975 10.3786 16.7975 10.2025V9.88303H17.4363V10.5219H17.4363Z" fill="black"></path>
+										<path d="M5.09187 12.3257C4.77068 12.3257 4.5094 12.587 4.5094 12.9081C4.5094 13.2293 4.77068 13.4906 5.09187 13.4906C5.41306 13.4906 5.67434 13.2293 5.67434 12.9081C5.67434 12.587 5.41306 12.3257 5.09187 12.3257Z" fill="black"></path>
+										<path d="M15.0125 12.3257C14.6913 12.3257 14.4301 12.587 14.4301 12.9081C14.4301 13.2293 14.6913 13.4906 15.0125 13.4906C15.3337 13.4906 15.595 13.2293 15.595 12.9081C15.595 12.587 15.3337 12.3257 15.0125 12.3257Z" fill="black"></path>
+										<path d="M11.7057 11.1232H7.49693C7.3413 11.1232 7.21509 11.2494 7.21509 11.405C7.21509 11.5607 7.34126 11.6869 7.49693 11.6869H11.7057C11.8613 11.6869 11.9875 11.5607 11.9875 11.405C11.9875 11.2494 11.8614 11.1232 11.7057 11.1232Z" fill="black"></path>
+										<path d="M4.49068 9.92067H0.883165C0.727529 9.92067 0.601318 10.0468 0.601318 10.2025C0.601318 10.3582 0.727494 10.4844 0.883165 10.4844H4.49068C4.64632 10.4844 4.77253 10.3582 4.77253 10.2025C4.77253 10.0468 4.64632 9.92067 4.49068 9.92067Z" fill="black"></path>
+										<path d="M9.80063 6.09501C9.69059 5.98498 9.5121 5.98498 9.40206 6.09505L6.89569 8.60136L5.59184 7.29753C5.48177 7.18746 5.30331 7.18746 5.19327 7.29753C5.0832 7.4076 5.0832 7.58602 5.19327 7.69609L6.69642 9.19923C6.75144 9.25428 6.82358 9.28178 6.89569 9.28178C6.96779 9.28178 7.03997 9.25428 7.09495 9.19923L9.80059 6.49361C9.91067 6.3835 9.91067 6.20509 9.80063 6.09501Z" fill="black"></path>
+									</svg>
+									Условия доставки
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-main-block-description-row jc-sb">
+						<div class="card-main-block-description-row-item card-main-block-description-row-item_name">Габариты (см):</div>
+						<div class="card-main-block-description-row-item">
+							<div class="card-main-block-description-row-item__value">200</div>
+							<div class="card-main-block-description-row-item__description">длина</div>
+						</div>
+						<div class="card-main-block-description-row-item">
+							<div class="card-main-block-description-row-item__value">92</div>
+							<div class="card-main-block-description-row-item__description">ширина</div>
+						</div>
+						<div class="card-main-block-description-row-item">
+							<div class="card-main-block-description-row-item__value">86</div>
+							<div class="card-main-block-description-row-item__description">высота</div>
+						</div>
+					</div>
+					<div class="card-main-block-description-row jc-sb">
+						<div class="card-main-block-description-row-item card-main-block-description-row-item_name">Спальное место:</div>
+						<div class="card-main-block-description-row-item">
+							<div class="card-main-block-description-row-item__value">200</div>
+							<div class="card-main-block-description-row-item__description">длина</div>
+						</div>
+						<div class="card-main-block-description-row-item">
+							<div class="card-main-block-description-row-item__value">120</div>
+							<div class="card-main-block-description-row-item__description">ширина</div>
+						</div>
+						<div class="card-main-block-description-row-item">
+							<div class="card-main-block-description-row-item__value">86</div>
+							<div class="card-main-block-description-row-item__description">высота</div>
+						</div>
+					</div>
+					<div class="fancybox-row">
+						<a href="card.html" class="fancybox-btn">Узнать больше о товаре</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="to-top">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129">
+		  <g>
+		    <path d="m121.4,61.6l-54-54c-0.7-0.7-1.8-1.2-2.9-1.2s-2.2,0.5-2.9,1.2l-54,54c-1.6,1.6-1.6,4.2 0,5.8 0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2l47-47v98.1c0,2.3 1.8,4.1 4.1,4.1s4.1-1.8 4.1-4.1v-98.1l47,47c1.6,1.6 4.2,1.6 5.8,0s1.5-4.2 1.42109e-14-5.8z" fill="#D80027"/>
+		  </g>
+		</svg>
+	</div>
+
 
 	<script src="js/libs.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/jquery.maskedinput.min.js"></script>
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=3f58f847-b7a1-4aa5-bda6-7e758eb3af53&lang=ru_RU" type="text/javascript"></script>
-	<script src="js/yandex.all.js"></script>
+	<script src="js/jquery.sumoselect.min.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
 	<script src="js/myscripts.js"></script>
 </body>
 </html>
