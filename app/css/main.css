@@ -774,6 +774,11 @@ a {
     color: #000000;
     max-width: 976px;
     letter-spacing: 0.5px; }
+  .block-text_full {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
 
 .first-slider__arrow-next, .first-slider__arrow-prev {
   opacity: 0.4;
@@ -2074,6 +2079,10 @@ a {
             -webkit-border-radius: 4px;
                     border-radius: 4px;
             margin-right: 10px; }
+            .card-main-block-description-row-btn-wrapper-like img {
+              height: 27px;
+              width: 29px;
+            }
           .card-main-block-description-row-btn-wrapper-buy {
             height: 55px;
             background: #D71921;
@@ -2203,6 +2212,8 @@ a {
               -webkit-flex: 0 1 30%;
                   -ms-flex: 0 1 30%;
                       flex: 0 1 30%;
+              border: 1px solid transparent;
+              padding: 5px 0;
               -webkit-box-pack: justify;
               -webkit-justify-content: space-between;
                   -ms-flex-pack: justify;
@@ -2213,6 +2224,11 @@ a {
               .card-main-block-description-row-item-list-item__text {
                 margin-top: 10px;
                 font-size: 14px; }
+              .card-main-block-description-row-item-list-item.active {
+                border-radius: 4px;
+                border: 1px solid #D80027;
+                box-shadow: 0px 0px 5px #D80027;
+              }
           .card-main-block-description-row-item-tooltip {
             width: 20px;
             height: 20px;
@@ -2234,13 +2250,15 @@ a {
                     justify-content: center;
             cursor: pointer;
             margin-left: 10px;
-            position: relative; }
+            position: relative;
+            font-family: sans-serif; }
             .card-main-block-description-row-item-tooltip:hover .card-main-block-description-row-item-tooltip__card {
               display: block; }
             .card-main-block-description-row-item-tooltip__card {
               position: absolute;
               display: none;
               background: #FFF;
+              font-family: 'Proxima Nova', sans-serif;
               z-index: 10;
               width: 200px;
               font-size: 14px;
@@ -2284,7 +2302,7 @@ a {
                       justify-content: space-between; }
             .card-main-block-description-row-item-ul-horiz__item {
               cursor: pointer;
-              margin-right: 5px; }
+              margin-right: 15px; }
               .card-main-block-description-row-item-ul-horiz__item:hover {
                 text-decoration: underline; }
               .card-main-block-description-row-item-ul-horiz__item:last-child {
@@ -2699,6 +2717,10 @@ a {
   -webkit-background-size: cover;
           background-size: cover; }
 
+.recomendation {
+  font-family: 'Proxima Nova';
+}
+
 .recomendation-top {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2716,14 +2738,12 @@ a {
   .recomendation-top-name {
     margin-left: 20px; }
     .recomendation-top-name__names {
-      font-family: Roboto;
       font-style: normal;
       font-weight: 300;
       line-height: 34px;
       font-size: 24px;
       margin-bottom: 10px; }
     .recomendation-top-name__job {
-      font-family: Roboto;
       font-style: normal;
       font-weight: 300;
       line-height: 25px;
@@ -2741,7 +2761,6 @@ a {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10px; }
   .recomendation-text__main {
-    font-family: Roboto;
     font-style: normal;
     font-weight: 300;
     line-height: 32px;
@@ -2782,7 +2801,6 @@ a {
 .recomendation-btn {
   width: 187px;
   height: 42px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -3203,7 +3221,7 @@ a {
                 border-radius: 4px;
         background: transparent; }
       .catalog-main-show-more_modified {
-        padding: 0px 0 60px; }
+        padding: 70px 0 60px; }
         .catalog-main-show-more_modified .card-item-row-item__button {
           margin-right: 20px;
           width: 180px;
@@ -5159,7 +5177,7 @@ a {
           border-radius: 50%;
   width: 40px;
   height: 40px;
-  left: 20px;
+  right: 20px;
   z-index: 1000;
   cursor: pointer;
   -webkit-transition: 0.3s ease-in-out;
@@ -5172,4 +5190,4 @@ a {
 
 .tahoma {
   font-family: 'Tahoma';
-  font-size: 30px; }
+  font-size: 45px; }

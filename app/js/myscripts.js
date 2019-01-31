@@ -554,11 +554,32 @@ $(document).ready(function() {
 		}
 	};
 
+	var changeLikeRed = function(like) {
+		let a = like.find('img').attr('src');
+
+		a = a.split('/');
+
+		if (a[a.length - 1] == 'heart-red.svg') {
+			like.find('img').attr('src', a.splice(0,(a.length-1)).join('/') + '/heart-active.svg');
+		} else {
+			like.find('img').attr('src', a.splice(0,(a.length-1)).join('/') + '/heart-red.svg');
+		}
+	};
+
+	$(document).on('click', '.card-main-block-description-row-btn-wrapper-like', function(e){
+		e.preventDefault();
+		changeLikeRed($(this));
+	})
+
 	$(document).on('click', '.where-buy-big-info-gallery__item:not(.active)', function(){
 		console.log($(this));
 		$(this).addClass('active').siblings().removeClass('active');
 		$(this).closest('.where-buy-big.active').find('.where-buy-big-img__item').removeClass('active').eq($(this).index()).addClass('active');
-	})
+	});
+
+	$(document).on('click', '.card-main-block-description-row-item-list-item:not(.active)', function(){
+		$(this).addClass('active').siblings().removeClass('active');
+	});
 
 });
 
