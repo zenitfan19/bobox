@@ -535,6 +535,7 @@ a {
         top: 0;
         right: 100%;
         z-index: 0;
+        border-top: 1px solid #DEDEDE;
       }
       .header-nav-list-ul-outter:before {
         content: '';
@@ -546,7 +547,7 @@ a {
         top: 0;
         left: 100%;
         z-index: 0;
-      }
+        border-top: 1px solid #DEDEDE;      }
       .header-nav-list-ul-outter__shadow {
         /*-webkit-box-shadow: 0px 0px 10px 3px #DEDEDE;
                 box-shadow: 0px 0px 10px 3px #DEDEDE;*/
