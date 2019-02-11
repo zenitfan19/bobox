@@ -147,7 +147,16 @@ $(document).ready(function() {
 		infinite: true,
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		variableWidth: true
+		variableWidth: true,
+		responsive: [
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		]
 	});
 
 	discontGalleryBig.slick({
@@ -171,7 +180,15 @@ $(document).ready(function() {
 			    draggable: true,
 			    vertical: true,
 			    centerMode: false,
-			    focusOnSelect: true
+			    focusOnSelect: true,
+			    responsive: [
+			    	{
+			    		breakpoint: 480,
+			    		settings: {
+			    			vertical: false
+			    		}
+			    	}
+			    ]
 			});
 		});
 	})();
@@ -225,13 +242,20 @@ $(document).ready(function() {
 	//Инциализация маски
 	$('.contacts-form-input_phone').mask('+7 (999) 999-99-99');
 
+	let prevIndex;
+
 	//Открытие выпадающего списка в навигации
 	$(document).on('click', '.header-nav-list-item:not(.active)', function() {
 		$(this).siblings('.header-nav-list-item').removeClass('active');
 		$(this).addClass('active');
-
+		if (prevIndex !== undefined) {
+			$('.header-nav-list-ul-outter').removeClass(`active-${prevIndex}`);
+		}
+		
 		let a = $(this).index('.header-nav-list-item');
+		prevIndex = a;
 		$('.header-nav-list-item-ul').eq(a).addClass('active').siblings('.header-nav-list-item-ul').removeClass('active');
+		$('.header-nav-list-ul-outter').addClass(`active-${a}`);
 	});
 
 	//Открытие поиска при клике на него
@@ -508,7 +532,17 @@ $(document).ready(function() {
 			slidesToScroll: 1,
 			infinite: false,
 			dots: false,
-			arrows: false
+			arrows: false,
+			responsive: [
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						dots: true
+					}
+				}
+			]
 		});
 
 		$(arrowPrev).on('click', function(){
