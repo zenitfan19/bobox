@@ -327,10 +327,17 @@ a {
   -ms-flex-align: center;
   align-items: center;
   &:first-child {
-    font-size: 14px;
-    margin-bottom: 18px;
-    .header-wrapper-item-row__text {
+    font-size: 18px;
+    margin-bottom: 0px;
+    @include w480 {
       font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .header-wrapper-item-row__text {
+      font-size: 18px;
+      @include w480 {
+        font-size: 14px;
+      }
     }
   }
 }
