@@ -630,15 +630,15 @@ a {
     border-bottom: 1px solid #DEDEDE;
   }
   &.active-0 {
-    background: rgba(232, 216, 190, 1);
+    background: rgba(238,220,130, 1);
     &:before, &:after {
-      background: rgba(232, 216, 190, 1);
+      background: rgba(238,220,130, 1);
     }
   }
   &.active-1 {
-    background: rgba(208, 255, 248, 1);
+    background: rgba(199,208,204, 1);
     &:before, &:after {
-      background: rgba(208, 255, 248, 1);
+      background: rgba(199,208,204, 1);
     }
   }
   &.active-2 {
@@ -785,11 +785,11 @@ a {
 
 .header-nav-list-item {
   &:hover {
-    background: rgba(232,216,190, 0.7);
+    background: rgba(238,220,130, 0.7);
     opacity: 1;
   }
   &:nth-child(2):hover {
-    background: rgba(208,255,248, 0.7);
+    background: rgba(199,208,204, 0.7);
     opacity: 1;
   }
   &:nth-child(3):hover {
@@ -806,10 +806,10 @@ a {
   }
   &.active {
     opacity: 1;
-    background: rgba(232,216,190, 0.7);
+    background: rgba(238,220,130, 0.7);
   }
   &:nth-child(2).active {
-    background: rgba(208,255,248, 0.7);
+    background: rgba(199,208,204, 0.7);
     opacity: 1;
   }
   &:nth-child(3).active {
