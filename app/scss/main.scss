@@ -308,7 +308,7 @@ a {
 }
 
 .header-wrapper_background {
-  background: #F9F9F9;
+  background: #FFF;
 }
 
 @media screen and (max-width: 1024px) {
@@ -6953,13 +6953,19 @@ a {
   width: 40px;
   height: 40px;
   right: 20px;
+  border-radius: 50%;
+  border: 2px solid #D80027;
   z-index: 1000;
   cursor: pointer;
   -webkit-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   svg {
-    width: 100%;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
   &.active {
     bottom: 20px;
