@@ -19,7 +19,7 @@
   min-height: 100vh;
   background: url(../img/icons/parallax.svg) no-repeat;
   background-attachment: fixed;
-  background-position: 40px 90%;
+  background-position: -40px 90%;
   @include w768 {
     background-size: 100px;
   }
