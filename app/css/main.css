@@ -28,25 +28,25 @@
 
 @font-face {
   font-family: "Proxima Nova";
-  src: url(../fonts/freeset-cyrillic_[allfont.ru].ttf);
+  src: url(../fonts/ProximaNova.ttf);
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: "Proxima Nova Bold";
-  src: url(../fonts/freeset-bold-cyrillic_[allfont.ru].ttf);
+  src: url(../fonts/ProximaNovaBold.ttf);
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: "Proxima Nova Light";
-  src: url(../fonts/freeset-cyrillic_[allfont.ru].ttf);
+  src: url(../fonts/ProximaNovaLight.ttf);
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: "Proxima Nova Semibold";
-  src: url(../fonts/freeset-bold-cyrillic_[allfont.ru].ttf);
+  src: url(../fonts/ProximaNovaSemibold.ttf);
   font-weight: 700;
   font-style: normal; }
 
@@ -71,6 +71,10 @@
 @font-face {
   font-family: "Tahoma";
   src: url(../fonts/Tahoma.ttf); }
+
+@font-face {
+  font-family: "journalism";
+  src: url(../fonts/journalism.ttf); }
 
 * {
   padding: 0;
@@ -650,8 +654,6 @@ a {
       background: #fcdc91; }
 
 .header-nav-list-ul-outter__shadow {
-  /*-webkit-box-shadow: 0px 0px 10px 3px #DEDEDE;
-          box-shadow: 0px 0px 10px 3px #DEDEDE;*/
   border-top: 1px solid #DEDEDE; }
 
 .header-nav-list-item {

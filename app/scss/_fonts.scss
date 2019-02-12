@@ -28,28 +28,28 @@
 
 @font-face {
 	font-family: "Proxima Nova";
-	src: url(../fonts/freeset-cyrillic_[allfont.ru].ttf);
+	src: url(../fonts/ProximaNova.ttf);
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova Bold";
-	src: url(../fonts/freeset-bold-cyrillic_[allfont.ru].ttf);
+	src: url(../fonts/ProximaNovaBold.ttf);
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova Light";
-	src: url(../fonts/freeset-cyrillic_[allfont.ru].ttf);
+	src: url(../fonts/ProximaNovaLight.ttf);
 	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova Semibold";
-	src: url(../fonts/freeset-bold-cyrillic_[allfont.ru].ttf);
+	src: url(../fonts/ProximaNovaSemibold.ttf);
 	font-weight: 700;
 	font-style: normal;
 }
@@ -79,4 +79,9 @@
 @font-face {
 	font-family: "Tahoma";
 	src: url(../fonts/Tahoma.ttf);
+}
+
+@font-face {
+	font-family: "journalism";
+	src: url(../fonts/journalism.ttf);
 }
