@@ -16,7 +16,12 @@ $(document).ready(function() {
 		totalCount 			  = parseInt(total.text().replace(/\s+/g, '')),
 		discontGalleryMini    = $('.discont-row-item-gallery-mini'),
 		discontGalleryBig     = $('.discont-row-item-gallery-big'),
+		windowWidth			  = $(window).innerWidth(),
 		heightTextSectionRec;
+
+	if (windowWidth <= 480) {
+		$('.card-main, .tabs').remove();
+	}
 
 	//Функция навешивания класса на Body на странице ДИСКОНТ
 	(function () {
@@ -614,6 +619,104 @@ $(document).ready(function() {
 	$(document).on('click', '.card-main-block-description-row-item-list-item:not(.active)', function(){
 		$(this).addClass('active').siblings().removeClass('active');
 	});
+	$(document).on('click', '.filter-mob-btn[data-sort]', function(e){
+		e.preventDefault();
+
+		$('.filter-mob-sort').addClass('active');
+		$('html, body').css('overflow', 'hidden');
+	});
+	$(document).on('click', '.fabrics-filter_mob-btn', function(e){
+		e.preventDefault();
+
+		$('.filter-mob-filter-fabrics').addClass('active');
+		$('html, body').css('overflow', 'hidden');
+	})
+
+	$(document).on('click', '.filter-mob-sort .filter-mob-main-row', function(){
+		$(this).addClass('active').siblings().removeClass('active');
+		$('.filter-mob-sort').removeClass('active');
+	});
+
+	$(document).on('click', '.filter-mob-header-btn-cross', function(){
+		$('html, body').css('overflow', 'auto');
+		$('.filter-mob-side').removeClass('active');
+	});
+
+	$(document).on('click', '.filter-mob-header-btn-back', function(){
+		$(this).closest('.filter-mob-side').removeClass('active');
+	});
+
+	$(document).on('click', '.filter-mob-btn[data-filter-catalog]', function(e){
+		e.preventDefault();
+
+		$('.filter-mob-filter-catalog').addClass('active');
+		$('html, body').css('overflow', 'hidden');
+	});
+
+	$(document).on('click', '[data-filter-type]', function(e){
+		$('.filter-mob-filter-type').addClass('active');
+	});
+	$(document).on('click', '[data-filter-fabric]', function(e){
+		$('.filter-mob-filter-fabric').addClass('active');
+	});
+	$(document).on('click', '[data-filter-color]', function(e){
+		$('.filter-mob-filter-color').addClass('active');
+	});
+	$(document).on('click', '[data-filter-collection]', function(e){
+		$('.filter-mob-filter-collection').addClass('active');
+	});
+	$(document).on('click', '[data-filter-cost]', function(e){
+		$('.filter-mob-filter-cost').addClass('active');
+	});
+	$(document).on('click', '[data-filter-width]', function(e){
+		$('.filter-mob-filter-width').addClass('active');
+	});
+
+
+	$(document).on('click', '[data-filter-fabrics-alphabet]', function(e){
+		$('.filter-mob-filter-fabrics-alphabet').addClass('active');
+	});
+	$(document).on('click', '[data-filter-fabrics-type]', function(e){
+		$('.filter-mob-filter-fabrics-type').addClass('active');
+	});
+	$(document).on('click', '[data-filter-fabrics-cost-category]', function(e){
+		$('.filter-mob-filter-fabrics-cost-category').addClass('active');
+	});
+	$(document).on('click', '[data-filter-fabrics-specials]', function(e){
+		$('.filter-mob-filter-fabrics-specials').addClass('active');
+	});
+	$(document).on('click', '[data-filter-fabrics-design]', function(e){
+		$('.filter-mob-filter-fabrics-design').addClass('active');
+	});
+
+
+
+	$(document).on('click', '.filter-mob-side-additional .filter-mob-main-row', function(){
+		$(this).addClass('active').siblings().removeClass('active');
+		$(this).closest('.filter-mob-side-additional').removeClass('active');
+	});
+	$(document).on('click', '.filter-mob-filter-color-row .card-item-row-colors__color', function(){
+		$(this).closest('.filter-mob-side-additional').removeClass('active');
+	});
+
+	$(document).on('click', '.filter-btn_cancel-mob', function(e){
+		e.preventDefault();
+		$('.filter-mob-side-additional .filter-mob-main-row').removeClass('active');
+		$('.filter-mob-filter-color-row .card-item-row-colors__color').removeClass('active');
+
+		$('.filter-mob-main-input').val('');
+		$('.filter-mob-main-custom .filter-checkbox').find('input').prop('checked', false);
+	});
+
+	$(document).on('click', '.card-main-mob-main-accordion-item-head:not(.active)', function(){
+		$('.card-main-mob-main-accordion-item-head').removeClass('active');
+		$(this).addClass('active');
+		$('.card-main-mob-main-accordion-item').removeClass('active');
+		$('.card-main-mob-main-accordion-item-main').slideUp(100);
+		$(this).closest('.card-main-mob-main-accordion-item').addClass('active');
+		$(this).siblings('.card-main-mob-main-accordion-item-main').slideDown(100);
+	});
+
 
 });
 
