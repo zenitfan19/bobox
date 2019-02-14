@@ -12,15 +12,21 @@ $(document).ready(function() {
 		aboutSlider           = $('.about-slider'),
 		aboutSliderArrowPrev  = '.about-slider__arrow-prev',
 		aboutSliderArrowNext  = '.about-slider__arrow-next',
-		total 				  = $('.card-main-block-description-row-cost__number_main span'),
+		total 				  = $('.card-main-block-description-row-cost__number_main:visible span'),
 		totalCount 			  = parseInt(total.text().replace(/\s+/g, '')),
 		discontGalleryMini    = $('.discont-row-item-gallery-mini'),
+		discontGalleryMiniArrowPrev = '.discont-row-item-gallery-mini__arrow-prev',
+		discontGalleryMiniArrowNext = '.discont-row-item-gallery-mini__arrow-next',
 		discontGalleryBig     = $('.discont-row-item-gallery-big'),
 		windowWidth			  = $(window).innerWidth(),
 		heightTextSectionRec;
 
+	$([])
+
 	if (windowWidth <= 480) {
 		$('.card-main, .tabs').remove();
+	} else {
+		$('.card-main-mob').remove();
 	}
 
 	//Функция навешивания класса на Body на странице ДИСКОНТ
@@ -68,8 +74,14 @@ $(document).ready(function() {
 			b = $('[data-result-material]').find('div').data('cost'),
 			c = $('[data-result-material-dop]').find('div').data('cost'),
 			totalCountNew;
-			totalCountNew = parseInt(totalCount) + parseInt(a) + parseInt(b) + parseInt(c);
 
+			totalCountNew = parseInt(totalCount) + parseInt(a) + parseInt(b) + parseInt(c);
+			console.log(typeof(totalCount));
+			console.log(typeof(totalCountNew));
+			console.log(typeof(total));
+			console.log(totalCount);
+			console.log(totalCountNew);
+			console.log(total);
 			totalCountNew = parseInt(totalCountNew);
 
 			totalCountNew = totalCountNew.toLocaleString('ru');
@@ -175,7 +187,10 @@ $(document).ready(function() {
 	//инициализация галлерей на связывание их на странице ДИСКОНТ
 	(function(){
 		discontGalleryMini.each(function(index){
-			$(this).slick({
+			let a = $(this).closest('.discont-row-item-gallery-mini-wrapper').find('.discont-row-item-gallery-mini__arrow-prev');
+			let b = $(this).closest('.discont-row-item-gallery-mini-wrapper').find('.discont-row-item-gallery-mini__arrow-next');
+			let slider = $(this);
+			slider.slick({
 				slidesToShow: 3,
 			    slidesToScroll: 1,
 			    asNavFor: discontGalleryBig.eq(index),
@@ -183,7 +198,7 @@ $(document).ready(function() {
 			    arrows: false,
 			    infinite: true,
 			    draggable: true,
-			    vertical: true,
+			    vertical: false,
 			    centerMode: false,
 			    focusOnSelect: true,
 			    responsive: [
@@ -195,6 +210,66 @@ $(document).ready(function() {
 			    	}
 			    ]
 			});
+
+			$(a).on('click', function(){
+				slider.slick('slickPrev');
+				return false;
+			});
+
+			$(b).on('click', function(){
+				slider.slick('slickNext');
+				return false;
+			});
+		});
+	})();
+
+	let mechGalleryBig = $('.mech-row-gallery-big');
+	let mechGalleryMini = $('.mech-row-gallery-mini');
+
+	mechGalleryBig.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		draggable: false
+	});
+
+	//инициализация галлерей на связывание их на странице МЕХАНИЗМЫ
+	(function(){
+		mechGalleryMini.each(function(index){
+			// let a = $(this).closest('.discont-row-item-gallery-mini-wrapper').find('.discont-row-item-gallery-mini__arrow-prev');
+			// let b = $(this).closest('.discont-row-item-gallery-mini-wrapper').find('.discont-row-item-gallery-mini__arrow-next');
+			let slider = $(this);
+			slider.slick({
+				slidesToShow: 3,
+			    slidesToScroll: 1,
+			    asNavFor: mechGalleryBig.eq(index),
+			    dots: false,
+			    arrows: false,
+			    infinite: true,
+			    draggable: true,
+			    vertical: false,
+			    centerMode: false,
+			    focusOnSelect: true,
+			    responsive: [
+			    	{
+			    		breakpoint: 480,
+			    		settings: {
+			    			vertical: false
+			    		}
+			    	}
+			    ]
+			});
+
+			// $(a).on('click', function(){
+			// 	slider.slick('slickPrev');
+			// 	return false;
+			// });
+
+			// $(b).on('click', function(){
+			// 	slider.slick('slickNext');
+			// 	return false;
+			// });
 		});
 	})();
 
@@ -250,7 +325,14 @@ $(document).ready(function() {
 	let prevIndex;
 
 	//Открытие выпадающего списка в навигации
-	$(document).on('click', '.header-nav-list-item:not(.active)', function() {
+	$(document).on('click', '.header-nav-list-item', function() {
+		if ($(this).hasClass('active')) {
+			$('.header-nav-list-item').removeClass('active');
+			$('.header-nav-list-item-ul').removeClass('active');
+			return false;
+		}
+
+
 		$(this).siblings('.header-nav-list-item').removeClass('active');
 		$(this).addClass('active');
 		if (prevIndex !== undefined) {
@@ -476,7 +558,6 @@ $(document).ready(function() {
 		csvDispCount: 2,
 		captionFormat: '{0} выбрано',
 		captionFormatAllSelected: 'Выбраны все',
-
 	});
 
 	//переключение цвета на странице fabrics-active
@@ -492,8 +573,6 @@ $(document).ready(function() {
 			$(this).removeClass('fabrics-active');
 			return false;
 		}
-
-		$('.fabrics-filter-letter').removeClass('fabrics-active');
 		$(this).addClass('fabrics-active');
 	});
 
@@ -504,8 +583,6 @@ $(document).ready(function() {
 			$(this).removeClass('fabrics-active');
 			return false;
 		}
-
-		$('.fabrics-filter-column-row-value-row-item:not(.fabrics-filter-column-row-value-row-item_osob)').removeClass('fabrics-active');
 		$(this).addClass('fabrics-active');
 	});
 
@@ -515,9 +592,7 @@ $(document).ready(function() {
 		if ( $(this).hasClass('fabrics-active') ) {
 			$(this).removeClass('fabrics-active');
 			return false;
-		}
-		
-		$('.fabrics-filter-column-row-value-row-item_osob').removeClass('fabrics-active');
+		}		
 		$(this).addClass('fabrics-active');
 		
 	});
@@ -708,13 +783,23 @@ $(document).ready(function() {
 		$('.filter-mob-main-custom .filter-checkbox').find('input').prop('checked', false);
 	});
 
-	$(document).on('click', '.card-main-mob-main-accordion-item-head:not(.active)', function(){
+	$(document).on('click', '.card-main-mob-main-accordion-item-head', function(){
+		
+
+		if ($(this).hasClass('active')) {
+			$('.card-main-mob-main-accordion-item-head').removeClass('active');
+			$('.card-main-mob-main-accordion-item-main').hide();
+			$('.card-main-mob-main-accordion-item').removeClass('active');
+			return false;
+		}
+
 		$('.card-main-mob-main-accordion-item-head').removeClass('active');
+
 		$(this).addClass('active');
 		$('.card-main-mob-main-accordion-item').removeClass('active');
-		$('.card-main-mob-main-accordion-item-main').slideUp(100);
+		$('.card-main-mob-main-accordion-item-main').hide();
 		$(this).closest('.card-main-mob-main-accordion-item').addClass('active');
-		$(this).siblings('.card-main-mob-main-accordion-item-main').slideDown(100);
+		$(this).siblings('.card-main-mob-main-accordion-item-main').show();
 	});
 
 
