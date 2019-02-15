@@ -760,7 +760,22 @@ a {
   &:hover {
     text-decoration: underline;
     color: #D71921;
+    .header-nav-list-item-ul-side-ul-item__icon {
+      svg {
+        path {
+          stroke: #D71921;
+        }
+        .svg-transparent {
+          stroke: #444;
+        }
+      }
+    }
   }
+  .transformed {
+      svg{
+        transform: translateX(-50%);
+      }
+    }
 }
 
 .header-nav-list-item-ul-side-ul-item__icon {
@@ -2850,6 +2865,18 @@ a {
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  .type-item {
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+    &.active {
+      color: #D71921;
+      font-family: 'Proxima Nova Semibold'
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
 }
 
 .card-main-block-description-row-item_info {
@@ -3012,7 +3039,7 @@ a {
 }
 
 .card-main-block-description-row-item-ul-horiz {
-  display: none;
+  display: block;
 }
 
 .card-main-block-description-row-item-ul-horiz_wrapper {

@@ -70,18 +70,19 @@ $(document).ready(function() {
 	
 	//Функция общего рассчета
 	const totalResult = function() {
-		let	a = $('[data-result]').find('div').data('cost'),
+		let	a = $('[data-result]').find('.active'),
 			b = $('[data-result-material]').find('div').data('cost'),
 			c = $('[data-result-material-dop]').find('div').data('cost'),
+			typeResult = 0,
 			totalCountNew;
 
-			totalCountNew = parseInt(totalCount) + parseInt(a) + parseInt(b) + parseInt(c);
-			console.log(typeof(totalCount));
-			console.log(typeof(totalCountNew));
-			console.log(typeof(total));
-			console.log(totalCount);
-			console.log(totalCountNew);
-			console.log(total);
+			a.each(function(){
+				typeResult += $(this).data('cost');
+
+			});
+
+			totalCountNew = parseInt(totalCount) + parseInt(typeResult) + parseInt(b) + parseInt(c);
+
 			totalCountNew = parseInt(totalCountNew);
 
 			totalCountNew = totalCountNew.toLocaleString('ru');
@@ -435,19 +436,21 @@ $(document).ready(function() {
 	});
 
 	//Изменение Результата
-	$(document).on('click', '.card-main-block-description-row-item-ul-horiz__item .type-item', function(){
-		let clickedItem       = $(this),
-			targetItem        = $('.card-main-block-description-row-item_left .type-item'),
-			targetItemParent  = $('[data-result]'),
-			clickedItemParent = $(this).closest('.card-main-block-description-row-item-ul-horiz__item');
+	$(document).on('click', '.card-main-block-description-row-item_left .type-item', function(){
+		// let clickedItem       = $(this),
+		// 	targetItem        = $('.card-main-block-description-row-item_left .type-item'),
+		// 	targetItemParent  = $('[data-result]'),
+		// 	clickedItemParent = $(this).closest('.card-main-block-description-row-item-ul-horiz__item');
 
-		targetItem.remove();
-		clickedItem.remove();
+		// targetItem.remove();
+		// clickedItem.remove();
 
-		targetItemParent.append(clickedItem);
-		clickedItemParent.append(targetItem);
+		// targetItemParent.append(clickedItem);
+		// clickedItemParent.append(targetItem);
 
-		$('.card-main-block-description-row-item-ul-horiz').fadeOut('slow');
+		// $('.card-main-block-description-row-item-ul-horiz').fadeOut('slow');
+
+		$(this).toggleClass('active');
 
 		totalResult();
 	});
