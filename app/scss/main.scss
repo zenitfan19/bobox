@@ -2973,6 +2973,9 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between;
   cursor: pointer;
+  svg {
+    width: 70px;
+  }
   &:nth-child(-n+3) {
     margin-bottom: 10px;
   }
@@ -2981,6 +2984,7 @@ a {
 .card-main-block-description-row-item-list-item__text {
   margin-top: 10px;
   font-size: 14px;
+  text-align: center;
 }
 
 .card-main-block-description-row-item-list-item.active {
