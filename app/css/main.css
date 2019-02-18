@@ -5215,14 +5215,14 @@ a {
 
 .discont-row-item-gallery-big-item {
   width: 360px;
-  height: 300px;
+  height: 200px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   overflow: hidden;
   outline: none;
   position: relative; }
   .discont-row-item-gallery-big-item img {
-    height: 100%;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
