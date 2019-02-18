@@ -122,6 +122,7 @@ $(document).ready(function() {
 		let	a = $('[data-result]').find('.active'),
 			b = $('[data-result-material]').find('div').data('cost'),
 			c = $('[data-result-material-dop]').find('div').data('cost'),
+			previewTotal = $('.card-preview-cost__number'),
 			typeResult = 0,
 			totalCountNew;
 
@@ -137,6 +138,7 @@ $(document).ready(function() {
 			totalCountNew = totalCountNew.toLocaleString('ru');
 
 		 total.text(totalCountNew);
+		 previewTotal.text(totalCountNew);
 
 
 	};
@@ -287,8 +289,8 @@ $(document).ready(function() {
 	//инициализация галлерей на связывание их на странице МЕХАНИЗМЫ
 	(function(){
 		mechGalleryMini.each(function(index){
-			// let a = $(this).closest('.discont-row-item-gallery-mini-wrapper').find('.discont-row-item-gallery-mini__arrow-prev');
-			// let b = $(this).closest('.discont-row-item-gallery-mini-wrapper').find('.discont-row-item-gallery-mini__arrow-next');
+			let a = $(this).closest('.mech-row-gallery-mini-wrapper').find('.mech-row-gallery-mini__arrow-prev');
+			let b = $(this).closest('.mech-row-gallery-mini-wrapper').find('.mech-row-gallery-mini__arrow-next');
 			let slider = $(this);
 			slider.slick({
 				slidesToShow: 3,
@@ -311,15 +313,15 @@ $(document).ready(function() {
 			    ]
 			});
 
-			// $(a).on('click', function(){
-			// 	slider.slick('slickPrev');
-			// 	return false;
-			// });
+			$(a).on('click', function(){
+				slider.slick('slickPrev');
+				return false;
+			});
 
-			// $(b).on('click', function(){
-			// 	slider.slick('slickNext');
-			// 	return false;
-			// });
+			$(b).on('click', function(){
+				slider.slick('slickNext');
+				return false;
+			});
 		});
 	})();
 
@@ -884,7 +886,67 @@ $(document).ready(function() {
 
 	});
 
+	;(function(){
+		let item = $('.header-nav-list-item-ul-side-ul-item');
+		
+		item.each(function(){
+			let a = $(this).find('.header-nav-list-item-ul-side-ul-item__text');
+			if ( a.text() == 'Реклайнер' || a.text() == 'Качалка с вращением') {
+				$(this).find('.header-nav-list-item-ul-side-ul-item__icon').addClass('transformed-mod');
+			}
+		});
 
+		
+	})();
+
+	;(function(){
+		let a = $(document).find('a.header-wrapper-item-list-item');
+		a.each(function(){
+			if( $(this).text() == 'Где купить' ) {
+				$(this).attr('href', '#');
+			}
+		})
+	})();
+
+	$(document).on('click', '.card-preview-cross', function(){
+		$('.card-preview').removeClass('active').addClass('closed');
+	});
+
+	$(document).on('click', '.card-preview-arrow', function(){
+		$('.card-preview').removeClass('closed').addClass('active');
+	});
+
+	let offsetCardItem = $('.card-main-block-description-row-cost__number').offset().top
+
+	$(window).scroll(function(){
+		let windowHeight = $(window).height();
+		if ($(this).scrollTop() >= (offsetCardItem - windowHeight / 2)) {
+			if ($('.card-preview').hasClass('closed')) {
+				return false;
+			}
+			$('.card-preview').addClass('active');
+			return false;
+		}
+		if ($(this).scrollTop() < (offsetCardItem - windowHeight / 2)) {
+			$('.card-preview').removeClass('active');
+			$('.card-preview').removeClass('closed');
+			return false;
+		}
+	});
+
+	function changeColorPreview(color, material, fabrics) {
+		$('.card-preview-img').find('style').eq(1).html(`.cls-1{fill:${color}`);
+		$('.type-material').text(material);
+		$('.type-fabrics').text(fabrics);
+	}
+
+	$('.tabs-container-list-item-innercontainer-side-material-list-item').on('click', function(){
+		let color = $(this).data('color');
+		let material = $(this).data('prev-material');
+		let fabrics = $(this).data('prev-fabrics');
+
+		changeColorPreview(color, material, fabrics);
+	});
 });
 
 
