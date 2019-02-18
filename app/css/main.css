@@ -5210,12 +5210,19 @@ a {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   overflow: hidden;
-  outline: none; }
+  outline: none;
+  position: relative; }
   .discont-row-item-gallery-big-item img {
-    width: 100%; }
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
   .discont-row-item-gallery-big-item .card-main-block__like {
-    top: 10px;
-    right: 10px; }
+    top: 20px;
+    right: 20px; }
 
 .discont-row-item-row {
   display: -webkit-box;

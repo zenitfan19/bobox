@@ -5714,12 +5714,17 @@ a {
   border-radius: 5px;
   overflow: hidden;
   outline: none;
+  position: relative;
   img {
     width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .card-main-block__like {
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
   }
 }
 
