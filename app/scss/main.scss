@@ -946,7 +946,7 @@ a {
 }
 
 .slider-wrapper {
-  max-height: 768px;
+  height: calc(100vh - 165px);
   position: relative;
 }
 
@@ -1086,10 +1086,13 @@ a {
 
 .first-slider-item {
   outline: none;
-  max-height: 768px;
+  height: calc(100vh - 165px);
   position: relative;
   img {
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     z-index: 1;
     margin: 0 auto;
@@ -1330,9 +1333,12 @@ a {
 
 .in-work-item__img {
   height: 90px;
-  margin-bottom: 28px;
+  margin-bottom: 40px;
   img {
     height: 100%;
+    @include w480 {
+      width: 100%;
+    }
   }
 }
 
@@ -7872,5 +7878,137 @@ a {
 .designers{
   &-projects {
     border-bottom: 2px solid #bebebe;
+  }
+}
+
+.search-tags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  @include w480 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  &-name {
+    margin-right: 100px;
+    @include w480 {
+      flex: 0 1 100%;
+    }
+  }
+
+}
+
+.search-tag {
+  a {
+    font-family: Proxima Nova;
+    line-height: 14px;
+    font-size: 14px;
+    text-decoration-line: underline;
+    color: #767676;
+    cursor: pointer;
+  }
+  @include w480 {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  &.active {
+    a {
+      color: #CB131A;
+      font-family: Proxima Nova Semibold;
+    }
+  }
+}
+
+.designers-block {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 30px 0;
+  position: relative;
+  @include w480 {
+    flex-direction: column;
+  }
+  &:after, &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1px;
+    background: #EAEAEA;
+    width: 100vw;
+    bottom: 0;
+    left: 50%;
+  }
+  &:before {
+    left: unset;
+    right: 50%;
+  }
+  &-profile {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 300px;
+    padding-right: 100px;
+    @include w480 {
+      padding-right: 0px;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .designers-personal-name {
+      margin-right: 0px;
+      .designers-personal-name__name {
+        font-size: 24px;
+      }
+      .designers-personal-name__job {
+        font-size: 14px;
+        margin-top: 20px;
+      }
+    }
+    &-top {
+      display: flex;
+      align-items: stretch;
+    }
+    &-bottom {
+      margin-top: auto;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      .designers-projects-btn {
+        margin-right: 0px;
+      }
+    }
+  }
+  &-gallery {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    &-inn {
+      width: 800px;
+      &-item {
+        width: 211px;
+        margin-right: 20px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        &-img {
+          margin-bottom: 10px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    &-arrow {
+      padding-left: 10px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: 0.3s ease-in-out;
+      @include w480 {
+        display: none;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }

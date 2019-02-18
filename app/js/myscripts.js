@@ -855,6 +855,36 @@ $(document).ready(function() {
 	});
 
 
+	$('.designers-block-gallery-inn').each(function() {
+		let a = $(this).closest('.designers-block-gallery').find('.designers-block-gallery-arrow');
+		let slider = $(this);
+		$(this).slick({
+			infinity: true,
+			arrows: false,
+			dots: false,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 480,
+					slidesToShow: 1,
+					draggable: true
+				}
+			]
+		});
+		a.on('click', function(){
+			slider.slick('slickNext');
+			return false;
+		});
+	});
+
+	$(document).on('click', '.search-tag:not(.active)', function(e){
+		e.preventDefault();
+		$(this).addClass('active').siblings().removeClass('active');
+
+	});
+
+
 });
 
 
