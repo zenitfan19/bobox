@@ -567,7 +567,7 @@ $(document).ready(function() {
 		$(this).addClass('active').siblings().removeClass('active');
 		let indexMini = $(this).index();
 
-		$('.card-main-block-gallery-big-item').removeClass('active').eq(indexMini).addClass('active');
+		$(this).closest('.card-main-block-gallery-mini').siblings('.card-main-block-gallery-big').find('.card-main-block-gallery-big-item').removeClass('active').eq(indexMini).addClass('active');
 	});
 
 	//Переключение дополнительных цветов
