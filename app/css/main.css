@@ -3995,9 +3995,8 @@ a {
   height: 30px;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 0.5px solid #D71921;
   color: #FFF;
-  background: #FF5050;
+  background: #FF9B06;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4012,6 +4011,10 @@ a {
   justify-content: center;
   text-transform: uppercase;
   font-size: 15px; }
+  .card-item-row-percentage_hot {
+    background: url(../img/icons/hot.svg) no-repeat center center;
+    -webkit-background-size: cover;
+            background-size: cover; }
 
 .grey-line {
   background: #E9E9E9;
