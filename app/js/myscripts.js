@@ -47,7 +47,7 @@ $(document).ready(function() {
 	}, function(){
 		let a = $(this).find('path');
 
-		$.each(a, function(i){
+		a.each(function(i){
 			if ($(this).attr('stroke')) {
 				if($(this).attr('stroke') == '#D71921') {
 					$(this).attr('stroke', 'black');
