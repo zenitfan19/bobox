@@ -23,6 +23,7 @@ $(document).ready(function() {
 
 	$('.header-nav-list-item-ul-side-ul-item').hover(function(){
 		let a = $(this).find('path');
+		$(this).find('circle').css('stroke', '#D71921');
 
 		a.each(function(){
 			if ($(this).attr('stroke')) {
@@ -42,10 +43,13 @@ $(document).ready(function() {
 					$(this).attr('fill', '#444');
 				}
 			}
-		})
+		});
+
+
 		
 	}, function(){
 		let a = $(this).find('path');
+		$(this).find('circle').css('stroke', 'black');
 
 		a.each(function(i){
 			if ($(this).attr('stroke')) {

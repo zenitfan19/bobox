@@ -1257,8 +1257,10 @@ a {
   margin-bottom: 10px; }
 
 .in-work-item__img {
-  height: 70px;
+  height: 90px;
   margin-bottom: 28px; }
+  .in-work-item__img img {
+    height: 100%; }
 
 .in-work-item__text {
   text-align: center; }
