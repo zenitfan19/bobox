@@ -4875,7 +4875,7 @@ a {
     .news-item-description-item {
       font-size: 12px; }
       .news-item-description-item:nth-child(1) {
-        margin-right: 20px; } }
+        margin-right: 80px; } }
 
 .news-item-main {
   max-width: 1130px;
