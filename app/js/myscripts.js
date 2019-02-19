@@ -947,6 +947,31 @@ $(document).ready(function() {
 
 		changeColorPreview(color, material, fabrics);
 	});
+
+	if ($(window).width() <= 768) {
+		let a = $('.card-main-mob-img').offset().top;
+		
+		$(window).scroll(function(){
+			let scroll = $(this).scrollTop();
+
+			if ( a < scroll ) {
+				$('.card-main-mob-img').css({
+					position: 'fixed',
+					top: '70px',
+					zIndex: '100'
+				});
+			}
+
+			if ( a >= scroll ) {
+				$('.card-main-mob-img').css({
+					position: 'relative',
+					top: 'unset'
+				});
+			}
+		});
+
+		console.log(a);
+	}
 });
 
 
