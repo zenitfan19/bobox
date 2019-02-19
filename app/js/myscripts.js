@@ -950,11 +950,14 @@ $(document).ready(function() {
 
 	if ($(window).width() <= 768) {
 		let a = $('.card-main-mob-img').offset().top;
+		let b = $('.card-main-mob-img').height();
+
+		$('.card-main-mob-img-wrapper').css('height', b);
 		
 		$(window).scroll(function(){
 			let scroll = $(this).scrollTop();
 
-			if ( a < scroll ) {
+			if ( a < (scroll + 70) ) {
 				$('.card-main-mob-img').css({
 					position: 'fixed',
 					top: '70px',
@@ -962,7 +965,7 @@ $(document).ready(function() {
 				});
 			}
 
-			if ( a >= scroll ) {
+			if ( a >= (scroll + 70) ) {
 				$('.card-main-mob-img').css({
 					position: 'relative',
 					top: 'unset'
