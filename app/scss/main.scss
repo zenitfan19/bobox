@@ -612,8 +612,7 @@ a {
     display: block;
     position: absolute;
     width: 100vw;
-    height: calc(100% - 1px);
-    border-top: 1px solid #DEDEDE;
+    height: 100%;
     background: #FFF;
     top: 0;
     right: 100%;
@@ -624,8 +623,7 @@ a {
     display: block;
     position: absolute;
     width: 100vw;
-    border-top: 1px solid #DEDEDE;
-    height: calc(100% - 1px);
+    height: 100%;
     background: #FFF;
     top: 0;
     left: 100%;
@@ -2273,6 +2271,14 @@ a {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 10px;
+  &_logo {
+    a {
+      max-width: 155px;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .footer-top-item-list__item_hover:hover a {
