@@ -1235,7 +1235,8 @@ a {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
-  align-items: flex-start; }
+  align-items: flex-start;
+  padding-bottom: 0px; }
 
 @media screen and (max-width: 480px) {
   .in-work {
@@ -1279,7 +1280,7 @@ a {
 
 .in-work-item__img {
   height: 90px;
-  margin-bottom: 40px; }
+  margin-bottom: 20px; }
   .in-work-item__img img {
     height: 100%; }
     @media screen and (max-width: 480px) {
