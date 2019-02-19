@@ -630,9 +630,9 @@ a {
     z-index: 0;
   }
   &.active-0 {
-    background: rgba(238,220,130, 1);
+    background: #dec0dc;
     &:before, &:after {
-      background: rgba(238,220,130, 1);
+      background: #dec0dc;
     }
   }
   &.active-1 {
@@ -814,7 +814,7 @@ a {
 
 .header-nav-list-item {
   &:hover {
-    background: rgba(238,220,130, 0.7);
+    background: rgba(222, 192, 220, 0.7);
     opacity: 1;
   }
   &:nth-child(2):hover {
@@ -835,7 +835,7 @@ a {
   }
   &.active {
     opacity: 1;
-    background: rgba(238,220,130, 0.7);
+    background: rgba(222, 192, 220, 0.7);
   }
   &:nth-child(2).active {
     background: rgba(199,208,204, 0.7);
@@ -1341,9 +1341,14 @@ a {
 
 .in-work-item__head {
   font-size: 20px;
-  font-family: 'Proxima Nova Extrabold', sans-serif;
+  font-family: 'Proxima Nova Semibold', sans-serif;
   font-weight: 900;
   margin-bottom: 10px;
+  color: #D71921 ;
+  @include w480 {
+    text-align: center;
+    font-size: 16px;
+  }
 }
 
 .in-work-item__img {
@@ -1359,11 +1364,13 @@ a {
 
 .in-work-item__text {
   text-align: center;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 480px) {
   .in-work-item__text {
     font-size: 14px;
+    display: none;
   }
 }
 
@@ -1793,7 +1800,7 @@ a {
     margin-right: 0px;
   }
   &:nth-child(1) {
-    background: #eedc82;
+    background: #dec0dc;
   }
   &:nth-child(2) {
     background: #c7d0cc;
@@ -1917,7 +1924,8 @@ a {
   &:active {
     -webkit-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background: rgba(215, 25, 33, 0.2);
+    background: #D71921;
+    color: #FFF;
   }
 }
 
@@ -4450,6 +4458,7 @@ a {
   justify-content: center;
   text-transform: uppercase;
   font-size: 11px;
+  transform: scale(1.35) translateX(-5px);
   &_mod {
     background: url(../img/icons/hit.svg) no-repeat center center;
     background-size: cover;
@@ -4485,6 +4494,7 @@ a {
   text-transform: uppercase;
   background: url(../img/icons/percentage.svg) no-repeat center center;
   background-size: cover;
+  transform: scale(1.35) translateX(-5px);
   &_hot {
     background: url(../img/icons/hot.svg) no-repeat center center;
     background-size: cover;
@@ -5661,7 +5671,7 @@ a {
     -webkit-flex: 0 1 95px;
     -ms-flex: 0 1 95px;
     flex: 0 1 95px;
-    margin-right: 20px;
+    margin-right: 30px;
     @include w480 {
       margin-right: 0px;
       flex: 1;
@@ -5984,7 +5994,7 @@ a {
 }
 
 .discont-row-item-row-list-item-name {
-  width: 180px;
+  width: 170px;
   @include w480 {
     width: 100px;
   }
@@ -7359,6 +7369,7 @@ a {
   border: 2px solid #D80027;
   z-index: 1000;
   cursor: pointer;
+  background: rgba(216, 0, 39, 0.7);
   -webkit-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -7377,15 +7388,17 @@ a {
     left: 50%;
     transform: translate(-50%, -30%) rotate(135deg);
     display: block;
-    width: 20px;
-    height: 20px;
-    border-bottom: 2px solid #D80027;
-    border-left: 2px solid #D80027;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #FFF;
+    border-left: 2px solid #FFF;
   }
   &.active {
     bottom: 20px;
   }
 }
+
+//#D80027
 
 .tahoma {
   font-family: 'Tahoma';
@@ -8159,8 +8172,8 @@ a {
   position: fixed;
   bottom: 50px;
   right: -10px;
-  width: 410px;
-  padding: 20px 70px 20px 20px;
+  width: 330px;
+  padding: 20px 30px 20px 20px;
   background: #FFF;
   z-index: 100;
   background: #FFFFFF;
@@ -8171,18 +8184,45 @@ a {
   transition: 0.3s ease-in-out;
   transform: translateX(200%);
   // transform: translateX(95%);
+  .card-main-block-description-row-btn-wrapper-like {
+    height: 45px;
+    width: 45px;
+  }
+  .card-main-block-description-row-btn-wrapper-buy {
+    height: 45px;
+  }
+  .card-main-block-description-row-btn-wrapper {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-wrapper {
+    display: flex;
+    self-align: stretch;
+  }
+  &-head {
+    text-align: center;
+    font-size: 18px;
+    font-family: Proxima Nova Semibold;
+    margin-bottom: 20px;
+  }
   @include w480 {
     display: none;
   }
+  &-img {
+    margin-bottom: 20px;
+  }
   &-info {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
     margin-bottom: 10px;
     &-item {
       font-size: 14px;
       color: #5E5E5E;
-      margin-right: 50px;
+      margin-bottom: 10px;
       white-space: nowrap;
       &:last-child {
         margin-right: 0px;
@@ -8194,6 +8234,14 @@ a {
   }
   &-cost {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    &-row {
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
   }
   &.active {
     transform: translateX(0%);
