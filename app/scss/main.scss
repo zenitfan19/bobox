@@ -636,15 +636,15 @@ a {
     }
   }
   &.active-1 {
-    background: rgba(199,208,204, 1);
+    background: rgba(255, 251, 180, 1);
     &:before, &:after {
-      background: rgba(199,208,204, 1);
+      background: rgba(255, 251, 180, 1);
     }
   }
   &.active-2 {
-    background: rgba(255,251,180, 1);
+    background: rgba(199, 208, 204, 1);
     &:before, &:after {
-      background: rgba(255,251,180, 1);
+      background: rgba(199, 208, 204, 1);
     }
   }
   &.active-3 {
@@ -818,11 +818,12 @@ a {
     opacity: 1;
   }
   &:nth-child(2):hover {
-    background: rgba(199,208,204, 0.7);
+
+    background: rgba(255,251,180, 0.7);
     opacity: 1;
   }
   &:nth-child(3):hover {
-    background: rgba(255,251,180, 0.7);
+    background: rgba(199,208,204, 0.7);
     opacity: 1;
   }
   &:nth-child(4):hover {
@@ -838,11 +839,11 @@ a {
     background: rgba(222, 192, 220, 0.7);
   }
   &:nth-child(2).active {
-    background: rgba(199,208,204, 0.7);
+    background: rgba(255,251,180, 0.7);
     opacity: 1;
   }
   &:nth-child(3).active {
-    background: rgba(255,251,180, 0.7);
+    background: rgba(199,208,204, 0.7);
     opacity: 1;
   }
   &:nth-child(4).active {
@@ -1803,10 +1804,10 @@ a {
     background: #dec0dc;
   }
   &:nth-child(2) {
-    background: #c7d0cc;
+    background: #fffbb4;
   }
   &:nth-child(3) {
-    background: #fffbb4;
+    background: #c7d0cc;
   }
   &:nth-child(4) {
     background: #dafff6;
