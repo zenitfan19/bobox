@@ -1073,6 +1073,18 @@ a {
     display: flex;
     width: 100%;
     height: 100%; }
+  .first-slider-item:nth-child(2) {
+    background: url(../img/Kioa-1.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+            background-size: cover; }
+  .first-slider-item:nth-child(3) {
+    background: url(../img/Kioa-2.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+            background-size: cover; }
+  .first-slider-item:nth-child(4) {
+    background: url(../img/Kioa-3.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+            background-size: cover; }
 
 @media screen and (max-width: 480px) {
   .first-slider-item {
