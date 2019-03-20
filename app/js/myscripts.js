@@ -916,7 +916,7 @@ $(document).ready(function() {
 		$('.card-preview').removeClass('closed').addClass('active');
 	});
 
-	let offsetCardItem = $('.card-main-block-description-row-cost__number').offset().top
+	let offsetCardItem = $('.card-main-block-description-row-cost__number').offset().top || 0;
 
 	$(window).scroll(function(){
 		let windowHeight = $(window).height();
@@ -949,7 +949,12 @@ $(document).ready(function() {
 	});
 
 	if ($(window).width() <= 768) {
-		let a = $('.card-main-mob-img').offset().top;
+
+		if ($('.card-main-mob-img').length <= 0) {
+			return false;
+		}
+
+		let a = $('.card-main-mob-img').offset().top || 0;
 		let b = $('.card-main-mob-img').height();
 
 		$('.card-main-mob-img-wrapper').css('height', b);
