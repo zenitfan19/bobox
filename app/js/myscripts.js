@@ -954,6 +954,7 @@ $(document).ready(function() {
 		changeColorPreview(color, material, fabrics);
 	});
 
+	
 	if ($(window).width() <= 768) {
 
 		if ($('.card-main-mob-img').length <= 0) {
