@@ -9184,14 +9184,17 @@ a {
         }
       }
       .block.collections-tablet {
-        padding: 20px;
-        .block-head-mini {
+        padding: 20px;        
+        .block-head-mini, .block-h2 {
           font-size: 20px;
         }
         .block-text {
           font-size: 18px;
         }
       }
+      .block.about-tablet {
+        padding: 20px;
+      }      
       .block.about {
         padding: 20px;
         .about-slider-wrapper {
