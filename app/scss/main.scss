@@ -9176,6 +9176,22 @@ a {
           }
         }
       }
+      .block.block_padding-less {
+        .collection-big {
+          .collection-big__text-bottom {
+            font-size: 36px;
+          }
+        }
+      }
+      .block.collections-tablet {
+        padding: 20px;
+        .block-head-mini {
+          font-size: 20px;
+        }
+        .block-text {
+          font-size: 18px;
+        }
+      }
       .block.about {
         padding: 20px;
         .about-slider-wrapper {
