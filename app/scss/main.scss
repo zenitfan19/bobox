@@ -9183,6 +9183,47 @@ a {
           }
         }
       }
+      .block.contacts {
+        padding: 20px;
+        .contacts-bottom {
+          flex-direction: column;
+          .contacts-bottom-side {
+            .contacts-form {
+              width: 100%;
+              padding-bottom: 25px;
+              form {
+                .contacts-info-column-row_head {
+                  font-size: 20px;
+                }
+                .contacts-form-row {
+                  .contacts-form-input-wrapper {
+                    .contacts-form-input {
+                      width: 45vw;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .contacts-info {
+          .contacts-info-column {
+            flex: 0 1 100%;
+            justify-content: space-between;
+            &:last-child {
+              flex: 0 1 40%;
+            }
+            .contacts-info-column-row {
+              .contacts-info-column-row_head {
+                font-size: 20px;
+              }
+              .contacts-info-column-row_text {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
       .block.collections-tablet {
         padding: 20px;        
         .block-head-mini, .block-h2 {
