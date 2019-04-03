@@ -9621,6 +9621,29 @@ a {
           }
         }
       }
+      .block.person {
+        padding: 0 20px 30px;
+        .person-card {
+          .person-card-info {
+            .person-card-info-item {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .block.principels-tablet {
+        padding: 20px;
+        .principels-block {
+          .principels-block-head {
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+          .principels-block-text {
+            font-size: 14px;
+            line-height: 36px;
+          }
+        }
+      }
       .block.card-main {
         padding: 0 20px;
         .card-main-block {
