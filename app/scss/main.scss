@@ -9463,6 +9463,43 @@ a {
           }
         }
       }
+      .block.news-item-main {
+        padding: 20px;
+        .about-block-text {
+          .about-block-text__head {
+            font-size: 20px;
+          }
+        }
+      }
+      .catalog-main-show-more {
+        padding-top: 30px; 
+      }
+      .block.news-item-first-screen-wrapper {
+        padding: 0 20px;
+        .news-item-first-screen {
+          .news-item-first-screen__text {
+            font-size: 24px;
+            bottom: 30px;
+          }
+        }
+        .news-item-description {
+          .news-item-description-item {
+            font-size: 14px;
+            &:nth-child(2) {
+              svg {
+                width: 15px;
+                height: 15px;
+              }
+            }
+            &:last-child {
+              svg {
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+        }
+      }
       .block.catalog {
         padding: 20px;        
         .catalog-main {
