@@ -9500,6 +9500,30 @@ a {
           }
         }
       }
+      .news-row {
+        margin-bottom: 30px;
+        .news-row-info {
+          .news-row-info__name {
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+          .news-row-info__text {
+            font-size: 14px;
+          }
+          .news-row-info__btn-wrapper {
+            display: flex;
+            justify-content: space-between;
+            .needs-list-item-text__button, .news-item-description-item {
+              margin-right: 0;
+              font-size: 14px;
+              svg {
+                width: 15px;
+                height: 15px;
+              }
+            }
+          }
+        }
+      }
       .block.catalog {
         padding: 20px;        
         .catalog-main {
@@ -9820,6 +9844,12 @@ a {
   }
 }
 @media screen and (min-width: 480px) and (max-width: 1011px) {
+  .news-row {
+    flex-direction: column;
+    .news-row-img {
+      margin-bottom: 25px;
+    }
+  }
   .block.mechanics-tablet {   
     .mech-row {
       flex-direction: column;
