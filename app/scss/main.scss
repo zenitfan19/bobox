@@ -9189,6 +9189,61 @@ a {
           }
         }
       }
+      .block.stock-and-offers-tablet {
+        padding: 20px;
+        .discount-card-wrapper {
+          .discount-card {
+            .discount-card-img {
+              height: auto;
+              margin-bottom: 20px;
+            }
+            .discount-card-date {
+              margin-bottom: 15px;
+            }
+            .discount-card-text {
+              margin-bottom: 15px;
+            }            
+          }
+        }
+        .discount-head {
+          .discount-head-background {
+            .discount-head-text {
+              font-size: 48px;
+            }
+          }
+        }
+      }
+      .block.where-buy-tablet {
+        padding: 20px;
+        .where-buy-small {
+          .where-buy-small-item {
+            height: auto;
+            margin-bottom: 20px;
+            flex: 0 1 100%;
+            .where-buy-small-item-info {              
+              .where-buy-small-item-info__item_head {
+                margin-bottom: 10px;
+              }
+              .where-buy-small-item-info__item_address {
+                margin-bottom: 5px;
+              }
+              .where-buy-small-item-info__item_address .where-buy-small-item-info__item_text {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        .where-buy-big {
+          .where-buy-big-info {
+            .where-buy-big-info__head {
+              font-size: 24px;
+            }
+            .where-buy-big-info__item {
+              font-size: 18px;
+            }
+          }
+        }
+      }
       .block.block_padding-less {
         .collection-big {
           .collection-big__text-bottom {
